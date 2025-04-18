@@ -3,6 +3,7 @@
 
 #include "Aplic.hpp"
 #include "TaskBeep.hpp"
+#include "Modules/WiFi_AP.hpp"
 
 /**
  * @class TaskWIFI

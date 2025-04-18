@@ -2,6 +2,8 @@
 //      Inclusões
 
 #include "Aplic.hpp"
+#include "HW.hpp"
+#include "Tasks.hpp"
 
 //----------------------------------------------------------------------------------
 //      Setup

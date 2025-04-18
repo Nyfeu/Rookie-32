@@ -2,6 +2,9 @@
 #define _HW_H
 
 #include "Aplic.hpp"
+#include "Modules/Beeper.hpp"
+#include "Modules/BatteryMonitor.hpp"
+#include "Modules/ObstacleDetector.hpp"
 
 // Instância do beeper utilizando o pino do buzzer
 Beeper beeper(BUZZER_PIN);

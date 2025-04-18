@@ -2,6 +2,7 @@
 #define TASK_EYES_HPP
 
 #include "Aplic.hpp"
+#include "Modules/EyeAnimator.hpp"
 
 /**
  * @class TaskBeep

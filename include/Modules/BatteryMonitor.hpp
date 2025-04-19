@@ -13,8 +13,9 @@ class BatteryMonitor {
     public:
     
         // Construtor
-        BatteryMonitor(int pin) {
-            adcPin = pin;
+        BatteryMonitor(int pin) : adcPin(pin) {
+            maxBatteryVoltage = 8.0;   // Tensão máxima padrão
+            minBatteryVoltage = 0.0;   // Tensão mínima padrão
         }
 
         void setMaxBatteryVoltage(float voltage) {
@@ -26,22 +27,10 @@ class BatteryMonitor {
         }
     
         // Ler a tensão real da bateria diretamente do ADC (em volts)
-        float readBatteryVoltage() {
-            int millivolts = analogReadMilliVolts(adcPin); // Retorna milivolts
-            return millivolts / 1000.0;                    // Converter para volts
-        }
+        float readBatteryVoltage() ;
 
         // Obter o nível de carga em porcentagem
-        float getBatteryPercentage() {
-
-            float voltage = readBatteryVoltage();
-
-            if (voltage > maxBatteryVoltage) voltage = maxBatteryVoltage;      // Limitar a tensão máxima
-            else if (voltage < minBatteryVoltage) voltage = minBatteryVoltage; // Limitar a tensão mínima
-
-            return ((voltage - minBatteryVoltage) / (maxBatteryVoltage - minBatteryVoltage)) * 100.0;
-
-        }
+        float getBatteryPercentage();
     
 };
 

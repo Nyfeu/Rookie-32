@@ -29,10 +29,6 @@ SemaphoreHandle_t taskEyesSemaphore;
 //------------------------------------------------------------------------------
 //   TaskEyes
 
-#define EYES_PRIORITY 1             // Prioridade da task
-#define EYES_DELAY  100             // vTaskDelay em ms
-#define EYES_STACK 4096             // Tamanho da stack (bytes)
-
 #include "Tasks/TaskEyes.hpp"       // Implementação da task
 
 //------------------------------------------------------------------------------

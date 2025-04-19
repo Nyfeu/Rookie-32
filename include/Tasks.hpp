@@ -24,10 +24,6 @@ SemaphoreHandle_t taskEyesSemaphore;
 //------------------------------------------------------------------------------
 //   TaskBeep
 
-#define BEEP_PRIORITY 1             // Prioridade da task
-#define BEEP_DELAY  100             // vTaskDelay em ms
-#define BEEP_STACK 4096             // Tamanho da stack (bytes)
-
 #include "Tasks/TaskBeep.hpp"       // Implementação da task
 
 //------------------------------------------------------------------------------

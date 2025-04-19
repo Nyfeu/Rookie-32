@@ -43,10 +43,6 @@ SemaphoreHandle_t taskEyesSemaphore;
 //------------------------------------------------------------------------------
 //   TaskObstacle
 
-#define OBSTACLE_PRIORITY 2         // Prioridade da task
-#define OBSTACLE_DELAY  250         // vTaskDelay em ms
-#define OBSTACLE_STACK 2048         // Tamanho da stack (bytes)
-
 #include "Tasks/TaskObstacle.hpp"
 
 //------------------------------------------------------------------------------

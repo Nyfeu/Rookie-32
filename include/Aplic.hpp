@@ -25,6 +25,12 @@
 // Está sendo considerado um divisor de tensão, para limitar a tensão de entrada do ADC a 3.0V
 // Um limiar (threshold) é definido a partir de 8.0V na bateria - para 100% da carga
 
+//------------------------------------------------------------------------------
+//   Watchdog Timer (WDT)
+
+#define WDT_ACTIVE  ON              // ON/OFF o WDT do sistema
+#define WDT_TIMEOUT  5              // Timeout Watchdog Timer (WDT) [s]
+
 //-----------------------------------------------------------------------------------------------------------
 //   Debug
 

@@ -7,12 +7,6 @@
 #include "Aplic.hpp"
 
 //------------------------------------------------------------------------------
-//   Watchdog Timer (WDT)
-
-#define WDT_ACTIVE  ON              // ON/OFF o WDT do sistema
-#define WDT_TIMEOUT 5               // Timeout Watchdog Timer (WDT) [s]
-
-//------------------------------------------------------------------------------
 //   SemaphoreHandle
 
 SemaphoreHandle_t taskWIFISemaphore;
@@ -33,10 +27,6 @@ SemaphoreHandle_t taskEyesSemaphore;
 
 //------------------------------------------------------------------------------
 //   TaskWIFI
-
-#define WIFI_PRIORITY 3             // Prioridade da task
-#define WIFI_DELAY  100             // vTaskDelay em ms
-#define WIFI_STACK 4096             // Tamanho da stack (bytes)
 
 #include "Tasks/TaskWiFi.hpp"       // Implementação da task
 

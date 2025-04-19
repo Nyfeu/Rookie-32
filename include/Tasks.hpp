@@ -16,28 +16,12 @@ SemaphoreHandle_t taskBeeperSemaphore;
 SemaphoreHandle_t taskEyesSemaphore;
 
 //------------------------------------------------------------------------------
-//   TaskBeep
+//   Tasks
 
-#include "Tasks/TaskBeep.hpp"       // Implementação da task
-
-//------------------------------------------------------------------------------
-//   TaskEyes
-
-#include "Tasks/TaskEyes.hpp"       // Implementação da task
-
-//------------------------------------------------------------------------------
-//   TaskWIFI
-
-#include "Tasks/TaskWiFi.hpp"       // Implementação da task
-
-//------------------------------------------------------------------------------
-//   TaskObstacle
-
+#include "Tasks/TaskBeep.hpp"       
+#include "Tasks/TaskEyes.hpp"       
+#include "Tasks/TaskWiFi.hpp"      
 #include "Tasks/TaskObstacle.hpp"
-
-//------------------------------------------------------------------------------
-//   TaskBattery
-
 #include "Tasks/TaskBattery.hpp"
 
 //------------------------------------------------------------------------------

@@ -60,10 +60,6 @@ SemaphoreHandle_t taskEyesSemaphore;
 //------------------------------------------------------------------------------
 //   TaskBattery
 
-#define BATTERY_PRIORITY 1          // Prioridade da task
-#define BATTERY_DELAY 5000          // vTaskDelay em ms
-#define BATTERY_STACK 4096          // Tamanho da stack (bytes)
-
 #include "Tasks/TaskBattery.hpp"
 
 //------------------------------------------------------------------------------

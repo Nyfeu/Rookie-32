@@ -8,15 +8,19 @@
 //------------------------------------------------------------------------------
 //   TaskWIFI Parameters
 
-#define WIFI_PRIORITY 3             // Prioridade da task
-#define WIFI_DELAY  100             // vTaskDelay em ms
-#define WIFI_STACK 4096             // Tamanho da stack (bytes)
+/// Prioridade das TaskWIFI
+#define WIFI_PRIORITY 3
+
+/// Delay da TaskWIFI em [ms]
+#define WIFI_DELAY  100
+
+/// Tamanho da stack da TaskWIFI em [bytes]
+#define WIFI_STACK 4096
 
 /**
  * @class TaskWIFI
- * @brief Classe responsável pela comunicação Wi-Fi do sistema.
- * 
- * Esta classe encapsula as funcionalidades de comunicação Wi-Fi,
+ * @brief Gerencia a comunicação Wi-Fi via task dedicada.
+ * @details Esta classe encapsula as funcionalidades de comunicação Wi-Fi,
  * criando e gerenciando a task que executa as operações relacionadas.
  */
 
@@ -29,21 +33,19 @@ class TaskWIFI {
 
         /**
          * @brief Inicia a task de comunicação Wi-Fi.
-         * 
-         * Esta função cria a task responsável pela comunicação Wi-Fi,
-         * configurando o ambiente necessário para a operação da task.
+         * @details Cria e configura a task responsável pela comunicação Wi-Fi.
+         * @return void
          */
 
         static void start();
 
         /**
          * @brief Função da task responsável pela execução da comunicação Wi-Fi.
-         * 
-         * Esta é a função executada pela task de comunicação Wi-Fi. Ela 
-         * é executada periodicamente em loop para garantir a comunicação. 
-         * 
+         * @details Função executada periodicamente pela task Wi-Fi para manter 
+         * a comunicação ativa.
          * @param pvParameters Parâmetros fornecidos pela função xTaskCreate,
          *        normalmente utilizados para passar dados para a task.
+         * @return void
          */
 
         static void taskFunction(void *pvParameters);

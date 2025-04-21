@@ -8,11 +8,11 @@ class Beeper {
 private:
 
     int buzzerPin;
+    void playTone(int frequency, int duration);
 
 public:
 
     Beeper(int pin) : buzzerPin(pin) {}
-    void playTone(int frequency, int duration);
     void playEmotion(Emotion emotion);    
 
 };

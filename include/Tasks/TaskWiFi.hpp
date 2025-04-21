@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 //   TaskWIFI Parameters
 
-/// Prioridade das TaskWIFI
+/// Prioridade da TaskWIFI
 #define WIFI_PRIORITY 3
 
 /// Delay da TaskWIFI em [ms]

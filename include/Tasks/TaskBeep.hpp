@@ -7,15 +7,19 @@
 //--------------------------------------------------------------------------------
 //   TaskBeep Parameters
 
-#define BEEP_PRIORITY 1             // Prioridade da task
-#define BEEP_DELAY  100             // vTaskDelay em ms
-#define BEEP_STACK 4096             // Tamanho da stack (bytes)
+/// Prioridade da TaskBeep
+#define BEEP_PRIORITY 1             
+
+/// Delay da TaskBeep em [ms]
+#define BEEP_DELAY  100             
+
+/// Tamanho da stack da TaskBeep em [bytes]
+#define BEEP_STACK 4096             
 
 /**
  * @class TaskBeep
  * @brief Classe responsável pelo controle do beep do sistema com diferentes emoções.
- * 
- * Esta classe encapsula as funcionalidades de controle de beep,
+ * @details Esta classe encapsula as funcionalidades de controle de beep,
  * criando e gerenciando a task que executa as operações relacionadas.
  */
 class TaskBeep {
@@ -30,30 +34,28 @@ class TaskBeep {
 
         /**
          * @brief Inicia a task de controle do beep.
-         * 
-         * Esta função cria a task responsável pelo controle do beep,
+         * @details Cria e configura a task responsável pelo controle do beep,
          * configurando o ambiente necessário para a operação da task.
          */
         static void start();
 
         /**
          * @brief Função da task responsável pela execução do beep.
-         * 
-         * Esta é a função executada pela task de controle do beep. Ela 
-         * aguarda até que uma emoção seja colocada na fila para emitir o beep correspondente.
-         * 
+         * @details Esta é a função executada pela task de controle do beep. Ela 
+         * aguarda até que uma emoção seja colocada na fila para emitir o beep 
+         * correspondente.
          * @param pvParameters Parâmetros fornecidos pela função xTaskCreate,
          *        normalmente utilizados para passar dados para a task.
+         * @return void
          */
         static void taskFunction(void *pvParameters);
 
         /**
          * @brief Função para agendar um beep com uma emoção específica.
-         * 
-         * Esta função coloca uma emoção na fila para que a task de beep
+         * @details Esta função coloca uma emoção na fila para que a task de beep
          * a processe posteriormente.
-         * 
-         * @param emotion A emoção a ser emitida (HAPPINESS, ANXIETY, etc.).
+         * @param emotion A emoção (tipo Emotion) - podendo ser: HAPPINESS, ANXIETY, etc.
+         * @return void
          */
         static void triggerBeep(Emotion emotion);
 
@@ -61,8 +63,9 @@ class TaskBeep {
 
         /**
          * @brief Função para emitir o beep.
-         * 
-         * Esta função pode ser chamada para emitir um beep imediatamente.
+         * @details Esta função pode ser chamada para emitir um beep imediatamente.
+         * @param emotion A emoção (tipo Emotion) - podendo ser: HAPPINESS, ANXIETY, etc.
+         * @return void
          */
         static void emitBeep(Emotion emotion);
 

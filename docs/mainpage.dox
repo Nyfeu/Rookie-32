@@ -1,17 +1,30 @@
 /**
- * @mainpage Projeto Robô ESP32
+ * @mainpage Projeto Robô ESP32 (Rookie-32)
  * 
- * @section intro_sec Introdução
- * Este projeto é um sistema embarcado multitarefa utilizando FreeRTOS,
- * rodando no ESP32, com foco em interações com sensores e atuadores via Wi-Fi.
+ * * @section intro_sec Introdução
+ * Este projeto consiste em um sistema embarcado desenvolvido para o ESP32,
+ * utilizando FreeRTOS para realizar multitarefas de forma eficiente e modular.
+ * O sistema integra controle de olhos animados em display OLED, comunicação Wi-Fi,
+ * detecção de obstáculos, monitoramento de bateria e emissão de sinais sonoros (beep).
  * 
- * @section tasks_sec Tarefas do sistema
- * - TaskWIFI
- * - TaskEyes
- * - TaskBattery
- * - TaskObstacle
- * - TaskBeep
+ * @section features_sec Funcionalidades Principais
+ * - Controle multitarefa com FreeRTOS
+ * - Animações faciais por OLED (TaskEyes)
+ * - Comunicação Wi-Fi (TaskWIFI)
+ * - Sinalização sonora com base em estados emocionais (TaskBeep)
+ * - Detecção de obstáculos com sensores de proximidade (TaskObstacle)
+ * - Monitoramento de carga e tensão de bateria (TaskBattery)
+ * - Integração com watchdog (TWDT) para robustez
  * 
- * @section doc_sec Organização da Documentação
- * Consulte a aba "Modules" para ver a separação por grupo de funcionalidades.
+ * @section arch_sec Arquitetura
+ * Cada funcionalidade é encapsulada em uma tarefa independente, representada por uma
+ * classe C++ e gerenciada pelo FreeRTOS. A inicialização das tarefas e semáforos
+ * ocorre por meio da função `createFreeRTOSTasks()`, garantindo sincronização segura.
+ *
+ * @section dev_sec Desenvolvimento
+ * Desenvolvido utilizando:
+ * - ESP32 Dev Module
+ * - FreeRTOS (via ESP-IDF / Arduino)
+ * - PlatformIO (estrutura de projeto)
+ * - C++
  */

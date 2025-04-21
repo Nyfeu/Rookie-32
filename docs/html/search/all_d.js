@@ -8,6 +8,5 @@ var searchData=
   ['obstacledetector_2ehpp_5',['ObstacleDetector.hpp',['../_obstacle_detector_8hpp.html',1,'']]],
   ['off_6',['OFF',['../_aplic_8hpp.html#a29e413f6725b2ba32d165ffaa35b01e5',1,'Aplic.hpp']]],
   ['oled_5freset_7',['OLED_RESET',['../_eye_animator_8hpp.html#a619e07239fb3b9b14d40646ab41d5b4f',1,'EyeAnimator.hpp']]],
-  ['on_8',['ON',['../_aplic_8hpp.html#ad76d1750a6cdeebd506bfcd6752554d2',1,'Aplic.hpp']]],
-  ['organização_20da_20documentação_9',['Organização da Documentação',['../index.html#doc_sec',1,'']]]
+  ['on_8',['ON',['../_aplic_8hpp.html#ad76d1750a6cdeebd506bfcd6752554d2',1,'Aplic.hpp']]]
 ];

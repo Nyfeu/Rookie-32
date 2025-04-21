@@ -1,7 +1,7 @@
 /**
  * @mainpage Projeto Robô ESP32 (Rookie-32)
  * 
- * * @section intro_sec Introdução
+ * @section intro_sec Introdução
  * Este projeto consiste em um sistema embarcado desenvolvido para o ESP32,
  * utilizando FreeRTOS para realizar multitarefas de forma eficiente e modular.
  * O sistema integra controle de olhos animados em display OLED, comunicação Wi-Fi,

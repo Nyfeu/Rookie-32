@@ -14,6 +14,5 @@ var searchData=
   ['setsoundcallback_11',['setSoundCallback',['../class_wi_fi___a_p.html#a1c1ac786ebaeaf11c3ec7b0647e4ced4',1,'WiFi_AP']]],
   ['setup_12',['setup',['../main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d',1,'main.cpp']]],
   ['singleimage_13',['singleImage',['../struct_eye_frame.html#aefbbc212fa6318c0ab9ab607633125eb',1,'EyeFrame']]],
-  ['sistema_14',['Tarefas do sistema',['../index.html#tasks_sec',1,'']]],
-  ['start_15',['start',['../class_task_battery.html#a1fee491bdeea4ab60756139bbb5bce69',1,'TaskBattery::start()'],['../class_task_beep.html#a106bf56cef3fbcb17fdb59024208ba99',1,'TaskBeep::start()'],['../class_task_eyes.html#af145370590b71aa2290feeec54ef29b8',1,'TaskEyes::start()'],['../class_task_obstacle.html#a4b0b57cb73f8946661f31a24105fd977',1,'TaskObstacle::start()'],['../class_task_w_i_f_i.html#a3ec0a992dab7341fb30d723c85ee2ba3',1,'TaskWIFI::start()']]]
+  ['start_14',['start',['../class_task_battery.html#a1fee491bdeea4ab60756139bbb5bce69',1,'TaskBattery::start()'],['../class_task_beep.html#a106bf56cef3fbcb17fdb59024208ba99',1,'TaskBeep::start()'],['../class_task_eyes.html#af145370590b71aa2290feeec54ef29b8',1,'TaskEyes::start()'],['../class_task_obstacle.html#a4b0b57cb73f8946661f31a24105fd977',1,'TaskObstacle::start()'],['../class_task_w_i_f_i.html#a3ec0a992dab7341fb30d723c85ee2ba3',1,'TaskWIFI::start()']]]
 ];

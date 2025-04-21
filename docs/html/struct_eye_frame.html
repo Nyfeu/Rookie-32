@@ -78,24 +78,36 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Representa um frame de uma animação facial com olhos esquerdo e direito.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_eye_frame_8hpp_source.html">EyeFrame.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:abb1d99b2d9ce1724a44e8075ff73017a" id="r_abb1d99b2d9ce1724a44e8075ff73017a"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb1d99b2d9ce1724a44e8075ff73017a">leftEye</a></td></tr>
+<tr class="memdesc:abb1d99b2d9ce1724a44e8075ff73017a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ponteiro para o bitmap do olho esquerdo.  <br /></td></tr>
 <tr class="separator:abb1d99b2d9ce1724a44e8075ff73017a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acce42c847dc8d959a8f29092e7b93d7c" id="r_acce42c847dc8d959a8f29092e7b93d7c"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acce42c847dc8d959a8f29092e7b93d7c">rightEye</a></td></tr>
+<tr class="memdesc:acce42c847dc8d959a8f29092e7b93d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ponteiro para o bitmap do olho direito (pode ser nullptr se for uma imagem única)  <br /></td></tr>
 <tr class="separator:acce42c847dc8d959a8f29092e7b93d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e354b6e35b9cac58ff33708c7436260" id="r_a9e354b6e35b9cac58ff33708c7436260"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e354b6e35b9cac58ff33708c7436260">width</a></td></tr>
+<tr class="memdesc:a9e354b6e35b9cac58ff33708c7436260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Largura do bitmap [pixels].  <br /></td></tr>
 <tr class="separator:a9e354b6e35b9cac58ff33708c7436260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a421a55f6099a1f84bc8c82bfd74d7d83" id="r_a421a55f6099a1f84bc8c82bfd74d7d83"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a421a55f6099a1f84bc8c82bfd74d7d83">height</a></td></tr>
+<tr class="memdesc:a421a55f6099a1f84bc8c82bfd74d7d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altura do bitmap [pixels].  <br /></td></tr>
 <tr class="separator:a421a55f6099a1f84bc8c82bfd74d7d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec6fb32b6835218a776547016e589222" id="r_aec6fb32b6835218a776547016e589222"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec6fb32b6835218a776547016e589222">duration</a></td></tr>
+<tr class="memdesc:aec6fb32b6835218a776547016e589222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duração do frame [ms].  <br /></td></tr>
 <tr class="separator:aec6fb32b6835218a776547016e589222"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefbbc212fa6318c0ab9ab607633125eb" id="r_aefbbc212fa6318c0ab9ab607633125eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefbbc212fa6318c0ab9ab607633125eb">singleImage</a></td></tr>
+<tr class="memdesc:aefbbc212fa6318c0ab9ab607633125eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica se é uma imagem única (true) ou dois olhos separados (false)  <br /></td></tr>
 <tr class="separator:aefbbc212fa6318c0ab9ab607633125eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Representa um frame de uma animação facial com olhos esquerdo e direito. </p>
+<p>Essa estrutura permite controlar animações de olhos em displays gráficos, especificando o bitmap de cada olho, dimensões, tempo de exibição e se é uma imagem única. </p><dl class="section note"><dt>Note</dt><dd>Caso singleImage seja verdadeiro, o bitmap é referenciado por leftEye. </dd></dl>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="aec6fb32b6835218a776547016e589222" name="aec6fb32b6835218a776547016e589222"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec6fb32b6835218a776547016e589222">&#9670;&#160;</a></span>duration</h2>
 
@@ -107,6 +119,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Duração do frame [ms]. </p>
 
 </div>
 </div>
@@ -122,6 +136,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Altura do bitmap [pixels]. </p>
+
 </div>
 </div>
 <a id="abb1d99b2d9ce1724a44e8075ff73017a" name="abb1d99b2d9ce1724a44e8075ff73017a"></a>
@@ -135,6 +151,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Ponteiro para o bitmap do olho esquerdo. </p>
 
 </div>
 </div>
@@ -150,6 +168,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Ponteiro para o bitmap do olho direito (pode ser nullptr se for uma imagem única) </p>
+
 </div>
 </div>
 <a id="aefbbc212fa6318c0ab9ab607633125eb" name="aefbbc212fa6318c0ab9ab607633125eb"></a>
@@ -164,6 +184,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Indica se é uma imagem única (true) ou dois olhos separados (false) </p>
+
 </div>
 </div>
 <a id="a9e354b6e35b9cac58ff33708c7436260" name="a9e354b6e35b9cac58ff33708c7436260"></a>
@@ -177,6 +199,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Largura do bitmap [pixels]. </p>
 
 </div>
 </div>

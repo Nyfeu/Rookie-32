@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto Rookie-32: include/Assets Directory Reference</title>
+<title>Projeto Rookie-32: Projeto Robô ESP32 (Rookie-32)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -48,6 +48,7 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -69,23 +70,37 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2cd7e651a2b0059902d1cba21662f8f9.html">Assets</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div class="header">
-  <div class="headertitle"><div class="title">Assets Directory Reference</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Projeto Robô ESP32 (Rookie-32) </div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="_bit_maps_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_bit_maps_8hpp.html">BitMaps.hpp</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="_eye_frame_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_eye_frame_8hpp.html">EyeFrame.hpp</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
+<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
+Introdução</h1>
+<p>Este projeto consiste em um sistema embarcado desenvolvido para o ESP32, utilizando FreeRTOS para realizar multitarefas de forma eficiente e modular. O sistema integra controle de olhos animados em display OLED, comunicação Wi-Fi, detecção de obstáculos, monitoramento de bateria e emissão de sinais sonoros (beep).</p>
+<h1><a class="anchor" id="features_sec"></a>
+Funcionalidades Principais</h1>
+<ul>
+<li>Controle multitarefa com FreeRTOS</li>
+<li>Animações faciais por OLED (<a class="el" href="class_task_eyes.html">TaskEyes</a>)</li>
+<li>Comunicação Wi-Fi (<a class="el" href="class_task_w_i_f_i.html" title="Gerencia a comunicação Wi-Fi via task dedicada.">TaskWIFI</a>)</li>
+<li>Sinalização sonora com base em estados emocionais (<a class="el" href="class_task_beep.html" title="Classe responsável pelo controle do beep do sistema com diferentes emoções.">TaskBeep</a>)</li>
+<li>Detecção de obstáculos com sensores de proximidade (<a class="el" href="class_task_obstacle.html" title="Classe responsável pela verificação de obstáculos.">TaskObstacle</a>)</li>
+<li>Monitoramento de carga e tensão de bateria (<a class="el" href="class_task_battery.html" title="Classe responsável pela verificação do nível de tensão da bateria.">TaskBattery</a>)</li>
+<li>Integração com watchdog (TWDT) para robustez</li>
+</ul>
+<h1><a class="anchor" id="arch_sec"></a>
+Arquitetura</h1>
+<p>Cada funcionalidade é encapsulada em uma tarefa independente, representada por uma classe C++ e gerenciada pelo FreeRTOS. A inicialização das tarefas e semáforos ocorre por meio da função <code><a class="el" href="group___tasks.html#ga1247d85777caa9a24ccbd2bbcd2b1772" title="Cria e inicializa as tarefas do FreeRTOS.">createFreeRTOSTasks()</a></code>, garantindo sincronização segura.</p>
+<h1><a class="anchor" id="dev_sec"></a>
+Desenvolvimento</h1>
+<p>Desenvolvido utilizando:</p><ul>
+<li>ESP32 Dev Module</li>
+<li>FreeRTOS (via ESP-IDF / Arduino)</li>
+<li>PlatformIO (estrutura de projeto)</li>
+<li>C++ </li>
+</ul>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"/>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

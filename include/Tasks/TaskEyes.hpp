@@ -7,17 +7,22 @@
 //--------------------------------------------------------------------------------
 //   TaskEyes Parameters
 
-#define EYES_PRIORITY 1             // Prioridade da task
-#define EYES_DELAY  100             // vTaskDelay em ms
-#define EYES_STACK 4096             // Tamanho da stack (bytes)
+/// Prioridade da TaskEyes
+#define EYES_PRIORITY 1             
+
+/// Delay da TaskEyes em [ms]
+#define EYES_DELAY  100             
+
+/// Tamanho da stack da TaskEyes em [bytes]
+#define EYES_STACK 4096             
 
 /**
  * @class TaskBeep
  * @brief Classe responsável pelo controle do beep do sistema com diferentes emoções.
- * 
- * Esta classe encapsula as funcionalidades de controle de beep,
+ * @details Esta classe encapsula as funcionalidades de controle de beep,
  * criando e gerenciando a task que executa as operações relacionadas.
  */
+
 class TaskEyes {
 
     public:
@@ -25,32 +30,39 @@ class TaskEyes {
         /// Handle da task do Beep
         static TaskHandle_t taskHandle;
 
-        /// Gerenciador de estado
+        /// Gerenciamento de estado
         static SemaphoreHandle_t mutex;
         static Emotion currentEmotion;
 
-        /// Instância de gerenciador do display
+        /// Instância de módulo gerenciador do display
         static EyeAnimator eyes;
 
         /**
          * @brief Inicia a task de controle dos olhos.
-         * 
-         * Esta função cria a task responsável pelo controle dos
+         * @details Cria e configura a task responsável pelo controle dos
          * olhos exibidos no display OLED.
+         * @return void
          */
         static void start();
 
         /**
          * @brief Função da task responsável pela renderização dos olhos.
-         * 
-         * Esta é a função executada pela task de de gerenciamento do display. Ela 
+         * @details Esta é a função executada pela task de de gerenciamento do display. Ela 
          * aguarda até que uma emoção definida, para acionar a exibição correspondente.
-         * 
          * @param pvParameters Parâmetros fornecidos pela função xTaskCreate,
          *        normalmente utilizados para passar dados para a task.
+         * @return void
          */
         static void taskFunction(void *pvParameters);
 
+        /**
+         * @brief Altera a emoção exibida nos olhos.
+         * @details Esta função permite alterar a emoção atual exibida no display OLED
+         * de forma segura, utilizando um mutex para evitar condições de corrida. A nova
+         * emoção será aplicada por meio do módulo EyeAnimator.
+         * @param newEmotion Emoção a ser exibida (tipo Emotion).
+         * @return void
+         */
         static void triggerEmotion(Emotion newEmotion) {
             if(xSemaphoreTake(mutex, pdMS_TO_TICKS(100))) {
                 eyes.setEmotion(newEmotion);

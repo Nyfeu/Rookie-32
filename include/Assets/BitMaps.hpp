@@ -1,9 +1,17 @@
+/**
+ * @file BitMaps.hpp
+ * @brief Contém as definições dos bitmaps utilizados para expressões faciais.
+ */
+
 #ifndef BITMAPS_H
 #define BITMAPS_H
 
 #include "Aplic.hpp"
 
-// Bitmaps para felicidade (32x16 pixels cada)
+/**
+ * @brief Bitmap de rosto feliz com olhos totalmente abertos.
+ * @note Tamanho: 32x16 pixels.
+ */
 static const uint8_t PROGMEM happy_open[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 
@@ -23,6 +31,10 @@ static const uint8_t PROGMEM happy_open[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 };
 
+/**
+ * @brief Bitmap de rosto feliz com olhos semiabertos.
+ * @note Tamanho: 32x16 pixels.
+ */
 static const uint8_t PROGMEM happy_half[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
@@ -42,8 +54,11 @@ static const uint8_t PROGMEM happy_half[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
-// Bitmaps para calma (32x16 pixels)
-
+/**
+ * @brief Bitmap de expressão calma (metade direita).
+ * @details Pode ser combinado com calm_half_left para formar um rosto completo.
+ * @note Tamanho: 32x16 pixels (cada lado com 16x16).
+ */
 static const uint8_t PROGMEM calm_half_right[] = {
     0xff, 0xff, 0xff, 0xff, 
     0xff, 0xff, 0xff, 0xff, 
@@ -63,6 +78,11 @@ static const uint8_t PROGMEM calm_half_right[] = {
     0x00, 0xff, 0xff, 0xff
 };
 
+/**
+ * @brief Bitmap de expressão calma (metade esquerda).
+ * @details Pode ser combinado com calm_half_right para formar um rosto completo.
+ * @note Tamanho: 32x16 pixels (cada lado com 16x16).
+ */
 static const uint8_t PROGMEM calm_half_left[] = {
     0xff, 0xff, 0xff, 0xff, 
     0xff, 0xff, 0xff, 0xff, 
@@ -82,6 +102,11 @@ static const uint8_t PROGMEM calm_half_left[] = {
     0xff, 0xff, 0xff, 0x00
 };
 
+/**
+ * @brief Bitmap de olho redondo (lado direito).
+ * @details Usado para representar um olho em estado neutro ou de surpresa.
+ * @note Tamanho: 16x16 pixels.
+ */
 static const uint8_t PROGMEM round_eye_right[] = {
     0x00, 0x00, 0x00, 0x00,
     0x07, 0xFF, 0xFF, 0xE0,
@@ -101,6 +126,11 @@ static const uint8_t PROGMEM round_eye_right[] = {
     0x00, 0x00, 0x00, 0x00
   };
 
+  /**
+   * @brief Bitmap de olho redondo (lado esquerdo).
+   * @details Usado para representar um olho em estado neutro ou de surpresa.
+   * @note Tamanho: 16x16 pixels.
+   */
   static const uint8_t PROGMEM round_eye_left[] = {
     0x00, 0x00, 0x00, 0x00,
     0x07, 0xFF, 0xFF, 0xE0,
@@ -120,6 +150,10 @@ static const uint8_t PROGMEM round_eye_right[] = {
     0x00, 0x00, 0x00, 0x00
   };
 
+  /**
+   * @brief Bitmap nerd_face (tela total).
+   * @note Tamanho: 128x64 pixels.
+   */
   static const uint8_t PROGMEM nerd_face [] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 

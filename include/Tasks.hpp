@@ -1,3 +1,15 @@
+/**
+ * @file Tasks.hpp
+ * @brief Inicialização e gerenciamento central das tasks do sistema.
+ * 
+ * @details Este arquivo é responsável por declarar os semáforos e
+ * iniciar todas as tasks do sistema FreeRTOS. Inclui os headers individuais
+ * de cada task e define a função `createFreeRTOSTasks`, que realiza a
+ * criação, sincronização e, se ativado, registro no watchdog timer.
+ * 
+ * @ingroup Tasks
+ */
+
 #ifndef TASKS_HPP
 #define TASKS_HPP
 
@@ -9,10 +21,24 @@
 //------------------------------------------------------------------------------
 //   SemaphoreHandle
 
+/// @ingroup Tasks
+/// Semáforo da TaskWIFI
 SemaphoreHandle_t taskWIFISemaphore;
+
+/// @ingroup Tasks
+/// Semáforo da TaskObstacle
 SemaphoreHandle_t taskObstacleSemaphore;
+
+/// @ingroup Tasks
+/// Semáforo da TaskBattery
 SemaphoreHandle_t taskBatterySemaphore;
+
+/// @ingroup Tasks
+/// Semáforo da TaskBeep
 SemaphoreHandle_t taskBeeperSemaphore;
+
+/// @ingroup Tasks
+/// Semáforo da TaskEyes
 SemaphoreHandle_t taskEyesSemaphore;
 
 //------------------------------------------------------------------------------
@@ -29,12 +55,19 @@ SemaphoreHandle_t taskEyesSemaphore;
 
 /**
  * @brief Cria e inicializa as tarefas do FreeRTOS.
- *
- * Esta função é responsável por criar as tarefas do sistema utilizando o FreeRTOS.
- * Cada tarefa é configurada com um nome, tamanho da pilha, prioridade e um handle 
- * para gerenciamento. As tarefas criadas incluem:
+ * @ingroup Tasks
+ * @details Esta função é responsável por:
+ * - Criar os semáforos globais utilizados para sincronização entre as tasks.
+ * - Inicializar cada uma das tasks do sistema via suas respectivas funções `start()`.
+ * - Registrar as tasks no Task Watchdog Timer (`esp_task_wdt_add`), se habilitado.
+ * - Verificar o status do watchdog (`esp_task_wdt_status`), se habilitado.
  * 
- * - `TaskWIFI`: Realiza comunicação via Wi-Fi. 
+ * Tarefas criadas:
+ * - `TaskBeep`: Gerencia sinais sonoros de feedback.
+ * - `TaskWIFI`: Realiza comunicação via Wi-Fi.
+ * - `TaskObstacle`: Faz leitura de sensor de obstáculos.
+ * - `TaskBattery`: Monitora nível da bateria.
+ * - `TaskEyes`: Controla o display OLED.
  */
 
  void createFreeRTOSTasks() {

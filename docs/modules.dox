@@ -1,0 +1,7 @@
+/**
+ * @defgroup Tasks Tasks
+ * @brief Conjunto de tarefas do sistema baseadas em FreeRTOS.
+ * @{
+ */
+
+/** @} */ // end of Tasks

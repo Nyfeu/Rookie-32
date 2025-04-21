@@ -1,3 +1,9 @@
+/**
+ * @file TaskEyes.hpp
+ * @ingroup Tasks
+ * @brief Task responsável pelo controle dos olhos no display.
+ */
+
 #ifndef TASK_EYES_HPP
 #define TASK_EYES_HPP
 

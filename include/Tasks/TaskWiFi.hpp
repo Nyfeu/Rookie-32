@@ -1,3 +1,10 @@
+/**
+ * @file TaskWiFi.hpp
+ * @ingroup Tasks
+ * @brief Task responsável pela comunicação Wi-Fi.
+ */
+
+
 #ifndef TASK_WIFI_HPP
 #define TASK_WIFI_HPP
 

@@ -1,0 +1,17 @@
+/**
+ * @mainpage Projeto Robô ESP32
+ * 
+ * @section intro_sec Introdução
+ * Este projeto é um sistema embarcado multitarefa utilizando FreeRTOS,
+ * rodando no ESP32, com foco em interações com sensores e atuadores via Wi-Fi.
+ * 
+ * @section tasks_sec Tarefas do sistema
+ * - TaskWIFI
+ * - TaskEyes
+ * - TaskBattery
+ * - TaskObstacle
+ * - TaskBeep
+ * 
+ * @section doc_sec Organização da Documentação
+ * Consulte a aba "Modules" para ver a separação por grupo de funcionalidades.
+ */

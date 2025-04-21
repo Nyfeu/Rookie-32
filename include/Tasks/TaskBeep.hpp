@@ -1,3 +1,9 @@
+/**
+ * @file TaskBeep.hpp
+ * @ingroup Tasks
+ * @brief Task responsável pela emissão de beeps de feedback.
+ */
+
 #ifndef TASK_BEEP_HPP
 #define TASK_BEEP_HPP
 

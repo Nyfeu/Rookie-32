@@ -1,3 +1,9 @@
+/**
+ * @file TaskBattery.hpp
+ * @ingroup Tasks
+ * @brief Task responsável pelo controle do nível de bateria.
+ */
+
 #ifndef TASK_BATTERY_HPP
 #define TASK_BATTERY_HPP
 

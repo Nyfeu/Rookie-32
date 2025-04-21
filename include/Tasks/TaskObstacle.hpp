@@ -1,3 +1,9 @@
+/**
+ * @file TaskObstacle.hpp
+ * @ingroup Tasks
+ * @brief Task responsável pela verificação de obstáculos.
+ */
+
 #ifndef TASK_OBSTACLE_HPP
 #define TASK_OBSTACLE_HPP
 

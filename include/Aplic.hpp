@@ -36,6 +36,7 @@
 
 #define WDT_CHECK       ON                  // Verifica inicialização dos TWDTs
 #define DEBUG_OBSTACLE  OFF                 // Verifica sensor de distância
+#define DEBUG_DISTANCE  OFF                 // Verifica distância lida pelo sensor
 #define DEBUG_VOLTAGE   ON                  // Verifica nível de bateria
 
 //-----------------------------------------------------------------------------------------------------------

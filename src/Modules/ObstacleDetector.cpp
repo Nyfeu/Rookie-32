@@ -29,7 +29,7 @@ bool ObstacleDetector::verify() {
     // Realiza a medição da distância em [cm]
     int distancia = measureDistance();
 
-    #if DEBUG
+    #if DEBUG_DISTANCE
 
         // Caso em modo de depuração (DEBUG), imprime a distância lida no monitor serial
         Serial.printf("Distance: %d [cm]\n", distancia);

@@ -2,6 +2,7 @@
 #define _OBSTACLE_DETECTOR_H
 
 #include "Arduino.h"
+#include "Aplic.hpp"
 
 class ObstacleDetector {
     

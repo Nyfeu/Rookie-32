@@ -36,7 +36,11 @@ void TaskObstacle::taskFunction(void *pvParameters) {
 
         // Execution loop: aqui são realizadas as operações periódicas para
         // verificação de obstáculos:
-        if (detector.verify()) Serial.println("OBSTACLE: [DETECTED]");
+        #if DEBUG_OBSTACLE
+            if (detector.verify()) Serial.println("OBSTACLE: [DETECTED]");
+        #else 
+            detector.verify();
+        #endif
 
         // Move a task para o estado 'Blocked' por um intervalo de tempo (em milissegundos), 
         // permitindo que outras tasks sejam executadas durante esse período.

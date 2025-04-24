@@ -1,4 +1,9 @@
 #include "Modules/WiFi_AP.hpp"
+#include "Modules/Mobility/MotionController.hpp"
+#include <string>
+
+// Referecia ao controlador de motor (definido em HW.hpp)
+extern MotionController motionController;
 
 // Inicializa o Access Point e configura os endpoints do servidor
 void WiFi_AP::begin() {
@@ -37,6 +42,13 @@ void WiFi_AP::handleMove() {
 
         // Imprime os valores recebidos via Serial
         Serial.printf("Received X: %s, Y: %s\n", x.c_str(), y.c_str());
+
+        // Converte os valores de string para float
+        float x_value = std::stof(std::string(x.c_str()));
+        float y_value = std::stof(std::string(y.c_str()));
+
+        // Chama o controlador de movimento com os valores convertidos
+        motionController.drive(x_value, y_value);
 
         // Retorna sucesso para o cliente
         server.send(200, "text/plain", "Coordinates received");

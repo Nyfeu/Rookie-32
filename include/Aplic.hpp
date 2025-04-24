@@ -13,8 +13,8 @@
 //-----------------------------------------------------------------------------------------------------------
 //   Gerais
 
-#define ON                   1
-#define OFF                  0
+#define ON  1                               // Ativo (ON)
+#define OFF 0                               // Inativo (OFF)
 
 //-----------------------------------------------------------------------------------------------------------
 //   Bateria
@@ -28,8 +28,8 @@
 //------------------------------------------------------------------------------
 //   Watchdog Timer (WDT)
 
-#define WDT_ACTIVE  ON              // ON/OFF o WDT do sistema
-#define WDT_TIMEOUT  5              // Timeout Watchdog Timer (WDT) [s]
+#define WDT_ACTIVE  OFF                     // ON/OFF o WDT do sistema
+#define WDT_TIMEOUT  5                      // Timeout Watchdog Timer (WDT) [s]
 
 //-----------------------------------------------------------------------------------------------------------
 //   Debug
@@ -47,6 +47,14 @@
 #define BUZZER_PIN           15 
 #define BUZZER_CHANNEL       0  
 #define BATT_PIN             34 
+#define MOTOR_FL_PIN1        12
+#define MOTOR_FL_PIN2        13
+#define MOTOR_FR_PIN1        14
+#define MOTOR_FR_PIN2        15
+#define MOTOR_RL_PIN1        16
+#define MOTOR_RL_PIN2        17
+#define MOTOR_RR_PIN1        18
+#define MOTOR_RR_PIN2        19
 
 //-----------------------------------------------------------------------------------------------------------
 //   Comunicação Serial

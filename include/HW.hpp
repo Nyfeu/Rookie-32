@@ -32,9 +32,9 @@ MotionController motionController(&fourWheelDrive);
  */
 void initBuzzerPWM() {
 
-    ledcSetup(BUZZER_CHANNEL, 1000, 8); // Frequência de 1kHz, resolução de 8 bits
+    ledcSetup(BUZZER_CHANNEL, BUZZER_FREQUENCY, BUZZER_RESOLUTION); // Frequência de 1kHz, resolução de 8 bits
     ledcAttachPin(BUZZER_PIN, BUZZER_CHANNEL);
-    ledcWrite(BUZZER_CHANNEL, 128); // Duty cycle de 50% (valor entre 0-255)
+    ledcWrite(BUZZER_CHANNEL, BUZZER_DUTY_CYCLE);
 
 }
 

@@ -13,6 +13,9 @@ void TaskEyes::start() {
     if(!eyes.begin()) Serial.println("OLED DISPLAY: [NOT FOUND]");
     Serial.println("OLED DISPLAY: [OK]");
 
+    // Ativa o modo vetorial
+    eyes.useVectorEyes = true;
+
     // Cria mutex para acesso seguro
     mutex = xSemaphoreCreateMutex();
 
@@ -30,25 +33,22 @@ void TaskEyes::start() {
 void TaskEyes::taskFunction(void *pvParameters) {
 
     // Define a emoção inicial:
-    eyes.setEmotion(Emotion::HAPPINESS);
+    eyes.setEmotion(Emotion::CALM);
     xSemaphoreGive(taskEyesSemaphore);
 
     while (true) {
 
-        // Realiza a animação
-        // Atualização segura do frame
+        // Atualiza expressão vetorial com segurança
         xSemaphoreTake(mutex, portMAX_DELAY);
-        eyes.updateAnimation();
+        eyes.drawEyes();
         xSemaphoreGive(mutex);
 
         // Permite que outras tasks sejam executadas enquanto a task Beep está aguardando
         vTaskDelay(pdMS_TO_TICKS(EYES_DELAY));
-
     }
-
 }
 
 // Inicializa componentes estáticos
 SemaphoreHandle_t TaskEyes::mutex = NULL;
-Emotion TaskEyes::currentEmotion = HAPPINESS;
+Emotion TaskEyes::currentEmotion = CALM;
 EyeAnimator TaskEyes::eyes;

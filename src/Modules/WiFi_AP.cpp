@@ -3,6 +3,12 @@
 // Inicializa o Access Point e configura os endpoints do servidor
 void WiFi_AP::begin() {
 
+    // Configuração do IP fixo do AP (Gateway)
+    IPAddress local_IP(192, 168, 4, 1);
+    IPAddress gateway(192, 168, 4, 1);
+    IPAddress subnet(255, 255, 255, 0);
+    WiFi.softAPConfig(local_IP, gateway, subnet);
+
     // Cria um ponto de acesso com o SSID e senha definidos
     WiFi.softAP(ssid, password);
 
@@ -12,6 +18,18 @@ void WiFi_AP::begin() {
     Serial.print("Endereço IP: [");
     Serial.print(IP);
     Serial.println("]");
+
+    // Define o intervalo DHCP para liberar apenas 192.168.4.3 (dispositivo móvel)
+    tcpip_adapter_dhcps_lease_t lease;
+    lease.enable = true;
+    IP4_ADDR(&lease.start_ip, 192, 168, 4, 3);
+    IP4_ADDR(&lease.end_ip, 192, 168, 4, 3);
+    tcpip_adapter_dhcps_option(
+        TCPIP_ADAPTER_OP_SET,
+        TCPIP_ADAPTER_REQUESTED_IP_ADDRESS,
+        &lease,
+        sizeof(lease)
+    );
 
     // Define a função que será chamada quando um cliente se conectar ou desconectar
     WiFi.onEvent(std::bind(&WiFi_AP::handleClientConnection, this, std::placeholders::_1));

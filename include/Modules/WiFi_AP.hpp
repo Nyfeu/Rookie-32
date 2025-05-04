@@ -2,6 +2,7 @@
 #define WIFI_AP_HPP
 
 #include <WiFi.h>
+#include <WiFiServer.h>
 #include <WebServer.h>
 #include <functional>
 #include "Emotion.hpp"
@@ -33,7 +34,8 @@ class WiFi_AP {
 
     private:
 
-        WebServer server;
+        WebServer server;          // Servidor principal (porta 80)
+        WebServer mjpegServer;     // Servidor MJPEG (porta 81)
         
         const char* ssid;
         const char* password;
@@ -50,6 +52,10 @@ class WiFi_AP {
         
         // Callback que será chamada quando um cliente se conectar
         void handleClientConnection(WiFiEvent_t event);
+
+        // Proxy para os endpoints de controle e stream da ESP32-CAM
+        void handleControlProxy();   // Método para o controle da câmera
+        void handleMJPEGProxy();     // Método para o stream
 
         // Converte string para enum
         Emotion getEmotionFromString(const String& emotionStr);

@@ -12,12 +12,12 @@ class WiFi_AP {
     public:
 
         WiFi_AP(const char* ssid, const char* password)
-            : ssid(ssid), password(password), server(80), onConnectionCallback(nullptr), onDisconnectionCallback(nullptr) {}
+            : ssid(ssid), password(password), controlServer(80), onConnectionCallback(nullptr), onDisconnectionCallback(nullptr) {}
 
         void begin();
 
         void handleClient() {
-            server.handleClient();
+            controlServer.handleClient();
         }
 
         void setClientConnectCallback(void (*cb)()) {
@@ -34,8 +34,7 @@ class WiFi_AP {
 
     private:
 
-        WebServer server;          // Servidor principal (porta 80)
-        WebServer mjpegServer;     // Servidor MJPEG (porta 81)
+        WebServer controlServer;           // Servidor de controle (porta 80)
         
         const char* ssid;
         const char* password;
@@ -52,10 +51,6 @@ class WiFi_AP {
         
         // Callback que será chamada quando um cliente se conectar
         void handleClientConnection(WiFiEvent_t event);
-
-        // Proxy para os endpoints de controle e stream da ESP32-CAM
-        void handleControlProxy();   // Método para o controle da câmera
-        void handleMJPEGProxy();     // Método para o stream
 
         // Converte string para enum
         Emotion getEmotionFromString(const String& emotionStr);

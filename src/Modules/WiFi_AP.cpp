@@ -3,44 +3,45 @@
 // Inicializa o Access Point e configura os endpoints do servidor
 void WiFi_AP::begin() {
 
-    // Configuração do IP fixo do AP (Gateway)
-    IPAddress local_IP(192, 168, 4, 1);
-    IPAddress gateway(192, 168, 4, 1);
-    IPAddress subnet(255, 255, 255, 0);
-    WiFi.softAPConfig(local_IP, gateway, subnet);
+    // Configurações de rede estática
+    IPAddress staticIP(192, 168, 4, 2);     // IP do cliente
+    IPAddress gateway(192, 168, 4, 1);      // IP do AP (Gateway)
+    IPAddress subnet(255, 255, 255, 0);     // Máscara de rede
 
-    // Cria um ponto de acesso com o SSID e senha definidos
-    WiFi.softAP(ssid, password);
+    // Configura IP estático antes de conectar
+    WiFi.config(staticIP, gateway, subnet);
 
-    // Obtém o IP do Access Point
-    IPAddress IP = WiFi.softAPIP();
-    Serial.println("Access Point: [OK]");
-    Serial.print("Endereço IP: [");
-    Serial.print(IP);
+    Serial.println();
+    Serial.print("Conectando a: [");
+    Serial.print(ssid);
     Serial.println("]");
 
-    // Define o intervalo DHCP para liberar apenas 192.168.4.3 (dispositivo móvel)
-    tcpip_adapter_dhcps_lease_t lease;
-    lease.enable = true;
-    IP4_ADDR(&lease.start_ip, 192, 168, 4, 3);
-    IP4_ADDR(&lease.end_ip, 192, 168, 4, 3);
-    tcpip_adapter_dhcps_option(
-        TCPIP_ADAPTER_OP_SET,
-        TCPIP_ADAPTER_REQUESTED_IP_ADDRESS,
-        &lease,
-        sizeof(lease)
-    );
+    WiFi.begin(ssid, password);
 
-    // Define a função que será chamada quando um cliente se conectar ou desconectar
-    WiFi.onEvent(std::bind(&WiFi_AP::handleClientConnection, this, std::placeholders::_1));
+    // Aguarda conexão
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
 
-    // Define os endpoints do servidor web local
-    server.on("/move", [this]() { this->handleMove(); });      // Endpoint para movimento
-    server.on("/sound", [this]() { this->handleSound(); });    // Endpoint para som/emotion
-    server.onNotFound([this]() { this->handleNotFound(); });   // Tratamento para endpoints inexistentes
+    // Exibe informações da conexão
+    Serial.println("\nConection: [OK]");
+    Serial.print("IP estático: [");
+    Serial.print(WiFi.localIP());
+    Serial.println("]");
 
-    // Inicia o servidor
-    server.begin();
+    // Endpoints reais
+    controlServer.on("/move", [this]() { handleMove(); });
+    controlServer.on("/sound", [this]() { handleSound(); });
+
+    // Inicializa o servidor de controle
+    controlServer.begin();
+    
+    // Exibe informações do servidor
+    Serial.println("Control Server: [OK]");
+    Serial.print("IP: [");
+    Serial.print(WiFi.localIP());
+    Serial.println("]");
 
 }
 
@@ -48,21 +49,21 @@ void WiFi_AP::begin() {
 void WiFi_AP::handleMove() {
 
     // Verifica se os parâmetros "x" e "y" foram recebidos
-    if (server.hasArg("x") && server.hasArg("y")) {
+    if (controlServer.hasArg("x") && controlServer.hasArg("y")) {
 
-        String x = server.arg("x");
-        String y = server.arg("y");
+        String x = controlServer.arg("x");
+        String y = controlServer.arg("y");
 
         // Imprime os valores recebidos via Serial
         Serial.printf("Received X: %s, Y: %s\n", x.c_str(), y.c_str());
 
         // Retorna sucesso para o cliente
-        server.send(200, "text/plain", "Coordinates received");
+        controlServer.send(200, "text/plain", "Coordinates received");
 
     } else {
 
         // Parâmetros ausentes
-        server.send(400, "text/plain", "Missing x or y parameter");
+        controlServer.send(400, "text/plain", "Missing x or y parameter");
 
     }
 
@@ -72,13 +73,13 @@ void WiFi_AP::handleMove() {
 void WiFi_AP::handleSound() {
 
     // Verifica se o parâmetro "name" foi recebido
-    if (server.hasArg("name")) {
+    if (controlServer.hasArg("name")) {
 
-        String name = server.arg("name");
+        String name = controlServer.arg("name");
 
         // Imprime o nome do som recebido
         Serial.printf("SOUND NAME: [%s]\n", name.c_str());
-        server.send(200, "text/plain", "SOUND NAME RECEIVED: [OK]");
+        controlServer.send(200, "text/plain", "SOUND NAME RECEIVED: [OK]");
 
         // Converte o nome do som em uma emoção
         Emotion emotion = getEmotionFromString(name);
@@ -89,45 +90,17 @@ void WiFi_AP::handleSound() {
             soundCallback(emotion);
 
         }
-    
+
+        String response = "{\"status\":\"success\",\"sound\":\"" + name + "\"}";
+        controlServer.send(200, "application/json", response);
 
     } else {
 
         // Parâmetro ausente
-        server.send(400, "text/plain", "MISSING SOUND 'name' PARAMETER");
+        controlServer.send(400, "text/plain", "MISSING SOUND 'name' PARAMETER");
 
     }
 
-}
-
-// Trata requisições para endpoints inexistentes
-void WiFi_AP::handleNotFound() {
-
-    server.send(404, "text/plain", "Endpoint not found");
-
-}
-
-// Trata eventos de conexão e desconexão de clientes no Access Point
-void WiFi_AP::handleClientConnection(WiFiEvent_t event) {
-
-    if (event == ARDUINO_EVENT_WIFI_AP_STACONNECTED) {
-
-        // Quando o cliente se CONECTA
-
-        Serial.println("WIFI CLIENT: [CONNECTED]");
-        if (onConnectionCallback) onConnectionCallback();
-        else  Serial.println("Nenhuma callback configurada");
-
-    } else if (event == ARDUINO_EVENT_WIFI_AP_STADISCONNECTED) {
-
-        // Quando o cliente se DESCONECTA
-
-        Serial.println("WIFI CLIENT: [DISCONNECTED]");
-        if (onDisconnectionCallback) onDisconnectionCallback();
-        else  Serial.println("Nenhuma callback configurada");
-
-    }
-    
 }
 
 // Converte uma string recebida para o tipo de emoção correspondente

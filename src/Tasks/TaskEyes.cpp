@@ -3,6 +3,9 @@
 // Referência ao semáforo da task (definido em Tasks.hpp)
 extern SemaphoreHandle_t taskEyesSemaphore;
 
+// Referência ao mutex de inicialização (definido em Tasks.hpp)
+extern SemaphoreHandle_t initMutex;
+
 // Inicialização do handle da task e da fila
 TaskHandle_t TaskEyes::taskHandle = NULL;
 
@@ -29,8 +32,16 @@ void TaskEyes::start() {
 // Implementação da função da task Beep
 void TaskEyes::taskFunction(void *pvParameters) {
 
+    // Inicializa o semáforo de inicialização da task
+    xSemaphoreTake(initMutex, portMAX_DELAY);
+
     // Define a emoção inicial:
     eyes.setEmotion(Emotion::HAPPINESS);
+
+    // Libera o semáforo de inicialização
+    xSemaphoreGive(initMutex);
+
+    // Libera o semáforo da task
     xSemaphoreGive(taskEyesSemaphore);
 
     while (true) {

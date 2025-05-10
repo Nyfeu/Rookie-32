@@ -41,6 +41,10 @@ SemaphoreHandle_t taskBeeperSemaphore;
 /// Semáforo da TaskEyes
 SemaphoreHandle_t taskEyesSemaphore;
 
+/// @ingroup Tasks
+/// Mutex de inicialização
+SemaphoreHandle_t initMutex;
+
 //------------------------------------------------------------------------------
 //   Tasks
 
@@ -74,6 +78,9 @@ SemaphoreHandle_t taskEyesSemaphore;
 
     Serial.println("Creating FreeRTOS Tasks...");
 
+    // Inicializando o mutex de inicialização
+    initMutex = xSemaphoreCreateMutex();
+
     // Criando semáforos para cada task
     taskBeeperSemaphore = xSemaphoreCreateBinary();
     taskUARTSemaphore = xSemaphoreCreateBinary();
@@ -89,18 +96,16 @@ SemaphoreHandle_t taskEyesSemaphore;
     // Inicializando as tarefas do sistema:
 
     TaskBeep::start();
-    xSemaphoreTake(taskBeeperSemaphore, portMAX_DELAY);
-
     TaskUART::start();
-    xSemaphoreTake(taskUARTSemaphore, portMAX_DELAY);
-
     TaskObstacle::start();
-    xSemaphoreTake(taskObstacleSemaphore, portMAX_DELAY);
-
     TaskBattery::start();
-    xSemaphoreTake(taskBatterySemaphore, portMAX_DELAY);
-
     TaskEyes::start();
+    
+    // Barreira de sincronização: espera até que todas as tasks estejam prontas
+    xSemaphoreTake(taskBeeperSemaphore, portMAX_DELAY);
+    xSemaphoreTake(taskUARTSemaphore, portMAX_DELAY);
+    xSemaphoreTake(taskObstacleSemaphore, portMAX_DELAY);
+    xSemaphoreTake(taskBatterySemaphore, portMAX_DELAY);
     xSemaphoreTake(taskEyesSemaphore, portMAX_DELAY);
 
     // Adicionando os TWDTs (Task Watchdog Timer)

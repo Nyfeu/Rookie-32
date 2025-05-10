@@ -7,6 +7,9 @@ extern BatteryMonitor battery;
 // Referência ao semáforo da task (definido em Tasks.hpp)
 extern SemaphoreHandle_t taskBatterySemaphore;
 
+// Referência ao mutex de inicialização (definido em Tasks.hpp)
+extern SemaphoreHandle_t initMutex;
+
 // Inicialização do handle da task, como NULL
 TaskHandle_t TaskBattery::taskHandle = NULL;
 
@@ -24,8 +27,16 @@ void TaskBattery::start() {
 // Implementação da função da task battery
 void TaskBattery::taskFunction(void *pvParameters) {
 
+    // Inicializa o semáforo de inicialização da task
+    xSemaphoreTake(initMutex, portMAX_DELAY);
+
+    // Inicialização do ADC para leitura da bateria
     Serial.println("Battery ADC: [OK]");
 
+    // Libera o semáforo de inicialização
+    xSemaphoreGive(initMutex);
+
+    // Libera o semáforo da task
     xSemaphoreGive(taskBatterySemaphore);
 
     while (true) {

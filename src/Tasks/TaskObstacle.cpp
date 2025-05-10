@@ -4,6 +4,9 @@
 // Referência ao semáforo da task (definido em Tasks.hpp)
 extern SemaphoreHandle_t taskObstacleSemaphore;
 
+// Referência ao mutex de inicialização (definido em Tasks.hpp)
+extern SemaphoreHandle_t initMutex;
+
 // Inicialização do handle da task, como NULL
 TaskHandle_t TaskObstacle::taskHandle = NULL;
 
@@ -21,6 +24,9 @@ void TaskObstacle::start() {
 // Implementação da função da task obstacle
 void TaskObstacle::taskFunction(void *pvParameters) {
 
+    // Inicializa o semáforo de inicialização da task
+    xSemaphoreTake(initMutex, portMAX_DELAY);
+
     // Inicialização do sensor ultrassônico
     ObstacleDetector detector(TRIGGER_PIN, ECHO_PIN, MIN_DISTANCE);
     
@@ -30,6 +36,10 @@ void TaskObstacle::taskFunction(void *pvParameters) {
     
     Serial.println("Obstacle Sensor: [OK]");
 
+    // Libera o semáforo de inicialização
+    xSemaphoreGive(initMutex);
+
+    // Libera o semáforo da task
     xSemaphoreGive(taskObstacleSemaphore);
 
     while (true) {

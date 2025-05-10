@@ -7,6 +7,9 @@ extern Beeper beeper;
 // Referência ao semáforo da task (definido em Tasks.hpp)
 extern SemaphoreHandle_t taskBeeperSemaphore;
 
+// Referência ao mutex de inicialização (definido em Tasks.hpp)
+extern SemaphoreHandle_t initMutex;
+
 // Inicialização do handle da task e da fila
 TaskHandle_t TaskBeep::taskHandle = NULL;
 QueueHandle_t TaskBeep::beepQueue = NULL;
@@ -35,9 +38,16 @@ void TaskBeep::start() {
 // Implementação da função da task Beep
 void TaskBeep::taskFunction(void *pvParameters) {
 
+    // Inicializa o semáforo de inicialização da task
+    xSemaphoreTake(initMutex, portMAX_DELAY);
+
     emitBeep(HAPPINESS);
     Emotion emotion;
 
+    // Libera o semáforo de inicialização
+    xSemaphoreGive(initMutex);
+
+    // Libera o semáforo da task
     xSemaphoreGive(taskBeeperSemaphore);
 
     while (true) {

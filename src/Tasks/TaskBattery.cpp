@@ -21,7 +21,7 @@ void TaskBattery::start() {
 
 }
 
-// Implementação da função da task WiFi
+// Implementação da função da task battery
 void TaskBattery::taskFunction(void *pvParameters) {
 
     Serial.println("Battery ADC: [OK]");

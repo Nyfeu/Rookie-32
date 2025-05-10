@@ -18,7 +18,7 @@ void TaskObstacle::start() {
 
 }
 
-// Implementação da função da task WiFi
+// Implementação da função da task obstacle
 void TaskObstacle::taskFunction(void *pvParameters) {
 
     // Inicialização do sensor ultrassônico

@@ -38,6 +38,7 @@
 #define DEBUG_OBSTACLE  OFF                 // Verifica sensor de distância
 #define DEBUG_DISTANCE  OFF                 // Verifica distância lida pelo sensor
 #define DEBUG_VOLTAGE   OFF                 // Verifica nível de bateria
+#define DEBUG_UART      ON                  // Verifica comunicação UART
 
 //-----------------------------------------------------------------------------------------------------------
 //   Pinout
@@ -59,10 +60,11 @@
 #define MIN_DISTANCE 20
 
 //-----------------------------------------------------------------------------------------------------------
-//   Comunicação Wi-Fi
+//   Comunicação UART
 
-#define WIFI_NAME "ESP32_Car_Controller"    // Nome da rede Wi-Fi (SSID)
-#define WIFI_PASSWORD "123456789"           // Senha da rede Wi-Fi
+#define UART_BAUD_RATE 115200
+#define UART_RX_PIN 16
+#define UART_TX_PIN 17
 
 //-----------------------------------------------------------------------------------------------------------
 

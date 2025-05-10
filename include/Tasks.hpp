@@ -22,8 +22,8 @@
 //   SemaphoreHandle
 
 /// @ingroup Tasks
-/// Semáforo da TaskWIFI
-SemaphoreHandle_t taskWIFISemaphore;
+/// Semáforo da TaskUART
+SemaphoreHandle_t taskUARTSemaphore;
 
 /// @ingroup Tasks
 /// Semáforo da TaskObstacle
@@ -46,7 +46,7 @@ SemaphoreHandle_t taskEyesSemaphore;
 
 #include "Tasks/TaskBeep.hpp"       
 #include "Tasks/TaskEyes.hpp"       
-#include "Tasks/TaskWiFi.hpp"      
+#include "Tasks/TaskUART.hpp"      
 #include "Tasks/TaskObstacle.hpp"
 #include "Tasks/TaskBattery.hpp"
 
@@ -64,7 +64,7 @@ SemaphoreHandle_t taskEyesSemaphore;
  * 
  * Tarefas criadas:
  * - `TaskBeep`: Gerencia sinais sonoros de feedback.
- * - `TaskWIFI`: Realiza comunicação via Wi-Fi.
+ * - `TaskUART`: Realiza comunicação via UART.
  * - `TaskObstacle`: Faz leitura de sensor de obstáculos.
  * - `TaskBattery`: Monitora nível da bateria.
  * - `TaskEyes`: Controla o display OLED.
@@ -76,7 +76,7 @@ SemaphoreHandle_t taskEyesSemaphore;
 
     // Criando semáforos para cada task
     taskBeeperSemaphore = xSemaphoreCreateBinary();
-    taskWIFISemaphore = xSemaphoreCreateBinary();
+    taskUARTSemaphore = xSemaphoreCreateBinary();
     taskObstacleSemaphore = xSemaphoreCreateBinary();
     taskBatterySemaphore = xSemaphoreCreateBinary();
     taskEyesSemaphore = xSemaphoreCreateBinary();
@@ -91,8 +91,8 @@ SemaphoreHandle_t taskEyesSemaphore;
     TaskBeep::start();
     xSemaphoreTake(taskBeeperSemaphore, portMAX_DELAY);
 
-    TaskWIFI::start();
-    xSemaphoreTake(taskWIFISemaphore, portMAX_DELAY);
+    TaskUART::start();
+    xSemaphoreTake(taskUARTSemaphore, portMAX_DELAY);
 
     TaskObstacle::start();
     xSemaphoreTake(taskObstacleSemaphore, portMAX_DELAY);
@@ -105,15 +105,15 @@ SemaphoreHandle_t taskEyesSemaphore;
 
     // Adicionando os TWDTs (Task Watchdog Timer)
     #if WDT_ACTIVE
-        esp_task_wdt_add(TaskWIFI::taskHandle);
+        esp_task_wdt_add(TaskUART::taskHandle);
     #endif
 
     // Verifica se os TWDTs das tasks foram inicializados adequadamente:
     #if WDT_CHECK
 
-        // TWDT: TaskWIFI
-        if (esp_task_wdt_status(TaskWIFI::taskHandle) != ESP_OK) Serial.println("TWDT TaskWIFI: [FAILED]");
-        else Serial.println("TWDT TaskWIFI: [OK]");
+        // TWDT: TaskUART
+        if (esp_task_wdt_status(TaskUART::taskHandle) != ESP_OK) Serial.println("TWDT TaskUART: [FAILED]");
+        else Serial.println("TWDT TaskUART: [OK]");
 
     #endif
 

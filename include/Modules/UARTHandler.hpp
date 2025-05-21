@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include <HardwareSerial.h>
 #include "Emotion.hpp"
+#include "Aplic.hpp"
 
 class UartHandler {
 

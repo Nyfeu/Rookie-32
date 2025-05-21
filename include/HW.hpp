@@ -67,6 +67,7 @@ void initPinout() {
     pinMode(TRIGGER_PIN, OUTPUT);
     pinMode(ECHO_PIN, INPUT);
     pinMode(BUZZER_PIN, OUTPUT);
+    pinMode(LED_BUILTIN, OUTPUT);
     
 }
 

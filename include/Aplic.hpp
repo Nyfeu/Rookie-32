@@ -28,7 +28,7 @@
 //------------------------------------------------------------------------------
 //   Watchdog Timer (WDT)
 
-#define WDT_ACTIVE  ON              // ON/OFF o WDT do sistema
+#define WDT_ACTIVE  OFF              // ON/OFF o WDT do sistema
 #define WDT_TIMEOUT  5              // Timeout Watchdog Timer (WDT) [s]
 
 //-----------------------------------------------------------------------------------------------------------
@@ -48,6 +48,7 @@
 #define BUZZER_PIN           15 
 #define BUZZER_CHANNEL       0  
 #define BATT_PIN             34 
+#define LED_BUILTIN          2
 
 //-----------------------------------------------------------------------------------------------------------
 //   Comunicação Serial

@@ -14,6 +14,8 @@ void UartHandler::handleClient() {
 
     if (_serial.available()) {
 
+        digitalWrite(LED_BUILTIN, HIGH);
+
         String command = _serial.readStringUntil('\n');
         command.trim();
 
@@ -23,6 +25,8 @@ void UartHandler::handleClient() {
         if (command.startsWith("/move?")) onMoveCommand(command);
         else if (command.startsWith("/sound?")) onSoundCommand(command);
         else onUnknownCommand(command);
+
+        digitalWrite(LED_BUILTIN, LOW);
         
     }
 

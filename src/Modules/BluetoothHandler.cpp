@@ -1,28 +1,32 @@
-#include "Modules/UARTHandler.hpp"
+#include "Modules/BluetoothHandler.hpp"
 #include "Modules/MotorController.hpp"
+#include "Modules/BatteryMonitor.hpp"
 
+// Referência ao leitor de bateria (definido em HW.hpp)
+extern BatteryMonitor battery;
+
+// Referência ao controle dos motores (definido em HW.hpp)
 extern MotorController motor;
 
-UartHandler::UartHandler(HardwareSerial& serial, int rxPin, int txPin, unsigned long baud)
-    : _serial(serial), _rxPin(rxPin), _txPin(txPin), _baud(baud) {}
+// Inicialização do Serial Bluetooth
+BluetoothHandler::BluetoothHandler() {}
 
-void UartHandler::begin() {
-
-    _serial.begin(_baud, SERIAL_8N1, _rxPin, _txPin);
-    Serial.println("UART Handler: [OK]");
-
+void BluetoothHandler::begin(const String& deviceName) {
+    _btSerial.begin(deviceName);
+    Serial.println("Bluetooth Handler: [OK]");
 }
 
-void UartHandler::handleClient() {
+// Inicia o Bluetooth e aguarda conexão
+void BluetoothHandler::handleClient() {
 
-    if (_serial.available()) {
+    if (_btSerial.available()) {
 
         digitalWrite(LED_BUILTIN, HIGH);
 
-        String command = _serial.readStringUntil('\n');
+        String command = _btSerial.readStringUntil('\n');
         command.trim();
 
-        Serial.print("Recebido via UART: ");
+        Serial.print("Recebido via Bluetooth: ");
         Serial.println(command);
 
         if (command.startsWith("/move?")) onMoveCommand(command);
@@ -30,13 +34,13 @@ void UartHandler::handleClient() {
         else onUnknownCommand(command);
 
         digitalWrite(LED_BUILTIN, LOW);
-        
+
     }
 
 }
 
 // Trata comandos do tipo /move?x=...&y=...
-void UartHandler::onMoveCommand(const String& cmd) {
+void BluetoothHandler::onMoveCommand(const String& cmd) {
 
     float x = extractParam(cmd, "x");
     float y = extractParam(cmd, "y");
@@ -45,8 +49,22 @@ void UartHandler::onMoveCommand(const String& cmd) {
 
 }
 
+void BluetoothHandler::onBatteryCommand() {
+
+    float voltage = battery.readBatteryVoltage();      
+    float percentage = battery.getBatteryPercentage();
+
+    _btSerial.print("BATTERY: ");
+    _btSerial.printf("%.2fV (%.1f%%)\n", voltage, percentage);
+
+    Serial.print("Respondendo nível da bateria: ");
+    Serial.printf("%.2fV (%.1f%%)\n", voltage, percentage);
+
+}
+
+
 // Trata comandos do tipo /sound?name=...
-void UartHandler::onSoundCommand(const String& cmd) {
+void BluetoothHandler::onSoundCommand(const String& cmd) {
 
     String name = cmd.substring(cmd.indexOf('=') + 1);
 
@@ -68,7 +86,8 @@ void UartHandler::onSoundCommand(const String& cmd) {
 
 }
 
-void UartHandler::onUnknownCommand(const String& cmd) {
+// Trata comandos desconhecidos
+void BluetoothHandler::onUnknownCommand(const String& cmd) {
 
     Serial.println("Comando desconhecido:");
     Serial.println(cmd);
@@ -76,7 +95,7 @@ void UartHandler::onUnknownCommand(const String& cmd) {
 }
 
 // Extrai valor de parâmetro da query (ex: "x=10&y=20")
-float UartHandler::extractParam(const String& input, const String& key) {
+float BluetoothHandler::extractParam(const String& input, const String& key) {
     
     int keyIndex = input.indexOf(key + "=");
     if (keyIndex == -1) return 0.0;
@@ -91,7 +110,7 @@ float UartHandler::extractParam(const String& input, const String& key) {
 }
 
 // Converte uma string recebida para o tipo de emoção correspondente
-Emotion UartHandler::getEmotionFromString(const String& emotionStr) {
+Emotion BluetoothHandler::getEmotionFromString(const String& emotionStr) {
             
     if (emotionStr.equalsIgnoreCase("happiness")) return HAPPINESS;
     if (emotionStr.equalsIgnoreCase("sadness")) return SADNESS;

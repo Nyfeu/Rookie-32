@@ -22,8 +22,8 @@
 //   SemaphoreHandle
 
 /// @ingroup Tasks
-/// Semáforo da TaskUART
-SemaphoreHandle_t taskUARTSemaphore;
+/// Semáforo da TaskBluetooth
+SemaphoreHandle_t taskBluetoothSemaphore;
 
 /// @ingroup Tasks
 /// Semáforo da TaskObstacle
@@ -50,7 +50,7 @@ SemaphoreHandle_t initMutex;
 
 #include "Tasks/TaskBeep.hpp"       
 #include "Tasks/TaskEyes.hpp"       
-#include "Tasks/TaskUART.hpp"      
+#include "Tasks/TaskBluetooth.hpp"      
 #include "Tasks/TaskObstacle.hpp"
 #include "Tasks/TaskBattery.hpp"
 
@@ -68,7 +68,7 @@ SemaphoreHandle_t initMutex;
  * 
  * Tarefas criadas:
  * - `TaskBeep`: Gerencia sinais sonoros de feedback.
- * - `TaskUART`: Realiza comunicação via UART.
+ * - `TaskBluetooth`: Realiza comunicação serial via Bluetooth.
  * - `TaskObstacle`: Faz leitura de sensor de obstáculos.
  * - `TaskBattery`: Monitora nível da bateria.
  * - `TaskEyes`: Controla o display OLED.
@@ -83,7 +83,7 @@ SemaphoreHandle_t initMutex;
 
     // Criando semáforos para cada task
     taskBeeperSemaphore = xSemaphoreCreateBinary();
-    taskUARTSemaphore = xSemaphoreCreateBinary();
+    taskBluetoothSemaphore = xSemaphoreCreateBinary();
     taskObstacleSemaphore = xSemaphoreCreateBinary();
     taskBatterySemaphore = xSemaphoreCreateBinary();
     taskEyesSemaphore = xSemaphoreCreateBinary();
@@ -96,29 +96,29 @@ SemaphoreHandle_t initMutex;
     // Inicializando as tarefas do sistema:
 
     TaskBeep::start();
-    TaskUART::start();
+    TaskBluetooth::start();
     TaskObstacle::start();
     TaskBattery::start();
     TaskEyes::start();
     
     // Barreira de sincronização: espera até que todas as tasks estejam prontas
     xSemaphoreTake(taskBeeperSemaphore, portMAX_DELAY);
-    xSemaphoreTake(taskUARTSemaphore, portMAX_DELAY);
+    xSemaphoreTake(taskBluetoothSemaphore, portMAX_DELAY);
     xSemaphoreTake(taskObstacleSemaphore, portMAX_DELAY);
     xSemaphoreTake(taskBatterySemaphore, portMAX_DELAY);
     xSemaphoreTake(taskEyesSemaphore, portMAX_DELAY);
 
     // Adicionando os TWDTs (Task Watchdog Timer)
     #if WDT_ACTIVE
-        esp_task_wdt_add(TaskUART::taskHandle);
+        esp_task_wdt_add(TaskBluetooth::taskHandle);
     #endif
 
     // Verifica se os TWDTs das tasks foram inicializados adequadamente:
     #if WDT_CHECK
 
-        // TWDT: TaskUART
-        if (esp_task_wdt_status(TaskUART::taskHandle) != ESP_OK) Serial.println("TWDT TaskUART: [FAILED]");
-        else Serial.println("TWDT TaskUART: [OK]");
+        // TWDT: TaskBluetooth
+        if (esp_task_wdt_status(TaskBluetooth::taskHandle) != ESP_OK) Serial.println("TWDT TaskBluetooth: [FAILED]");
+        else Serial.println("TWDT TaskBluetooth: [OK]");
 
     #endif
 

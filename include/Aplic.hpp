@@ -40,7 +40,7 @@
 #define DEBUG_OBSTACLE  OFF                 // Verifica sensor de distância
 #define DEBUG_DISTANCE  OFF                 // Verifica distância lida pelo sensor
 #define DEBUG_VOLTAGE   OFF                 // Verifica nível de bateria
-#define DEBUG_UART      OFF                 // Verifica comunicação UART
+#define DEBUG_SERIAL    OFF                 // Verifica comunicação serial
 
 //-----------------------------------------------------------------------------------------------------------
 //   Pinout
@@ -66,13 +66,6 @@
 //   Obstáculos
 
 #define MIN_DISTANCE 20
-
-//-----------------------------------------------------------------------------------------------------------
-//   Comunicação UART
-
-#define UART_BAUD_RATE 115200
-#define UART_RX_PIN 16
-#define UART_TX_PIN 17
 
 //-----------------------------------------------------------------------------------------------------------
 

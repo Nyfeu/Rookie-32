@@ -52,7 +52,7 @@ void TaskEyes::taskFunction(void *pvParameters) {
         eyes.updateAnimation();
         xSemaphoreGive(mutex);
 
-        // Permite que outras tasks sejam executadas enquanto a task Beep está aguardando
+        // Permite que outras tasks sejam executadas enquanto a task está aguardando
         vTaskDelay(pdMS_TO_TICKS(EYES_DELAY));
 
     }

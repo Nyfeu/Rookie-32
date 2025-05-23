@@ -34,11 +34,13 @@
 //-----------------------------------------------------------------------------------------------------------
 //   Debug
 
-#define WDT_CHECK       ON                  // Verifica inicialização dos TWDTs
+#define WDT_CHECK       OFF                 // Verifica inicialização dos TWDTs
+#define DEBUG_MOTORS    ON                  // Verifica motores
+#define DEBUG_BEEPER    OFF                 // Verifica o buzzer
 #define DEBUG_OBSTACLE  OFF                 // Verifica sensor de distância
 #define DEBUG_DISTANCE  OFF                 // Verifica distância lida pelo sensor
 #define DEBUG_VOLTAGE   OFF                 // Verifica nível de bateria
-#define DEBUG_UART      ON                  // Verifica comunicação UART
+#define DEBUG_UART      OFF                 // Verifica comunicação UART
 
 //-----------------------------------------------------------------------------------------------------------
 //   Pinout
@@ -49,6 +51,11 @@
 #define BUZZER_CHANNEL       0  
 #define BATT_PIN             34 
 #define LED_BUILTIN          2
+
+#define MOTOR_IN1A          25
+#define MOTOR_IN2A          26
+#define MOTOR_IN1B          27
+#define MOTOR_IN2B          14
 
 //-----------------------------------------------------------------------------------------------------------
 //   Comunicação Serial

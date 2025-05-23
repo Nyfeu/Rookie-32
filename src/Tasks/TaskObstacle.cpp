@@ -1,11 +1,15 @@
 #include "Tasks/TaskObstacle.hpp"
 #include "Modules/ObstacleDetector.hpp"
+#include "Modules/MotorController.hpp"
 
 // Referência ao semáforo da task (definido em Tasks.hpp)
 extern SemaphoreHandle_t taskObstacleSemaphore;
 
 // Referência ao mutex de inicialização (definido em Tasks.hpp)
 extern SemaphoreHandle_t initMutex;
+
+// Referência ao controle de motores (definido em HW.hpp)
+extern MotorController motor;
 
 // Inicialização do handle da task, como NULL
 TaskHandle_t TaskObstacle::taskHandle = NULL;
@@ -31,6 +35,7 @@ void TaskObstacle::taskFunction(void *pvParameters) {
     ObstacleDetector detector(TRIGGER_PIN, ECHO_PIN, MIN_DISTANCE);
     
     detector.setCallback([]() { 
+        motor.pararTodos(); // Para todos os motores
         TaskBeep::triggerBeep(ANXIETY); 
     });
     

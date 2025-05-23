@@ -67,12 +67,23 @@ void TaskBeep::taskFunction(void *pvParameters) {
 // Implementação da função de emissão do beep
 void TaskBeep::emitBeep(Emotion emotion) {
     
+    #if DEBUG_BEEPER == ON
+
+        Serial.println("Executando beep...");
+
+    #endif
     beeper.playEmotion(emotion);
 
 }
 
 // Função para agendar um beep com uma emoção específica
 void TaskBeep::triggerBeep(Emotion emotion) {
+
+    #if DEBUG_BEEPER == ON
+
+        Serial.println("Agendando beep...");
+
+    #endif
 
     // Coloca a emoção na fila para a task Beep processar
     if (xQueueSend(beepQueue, &emotion, portMAX_DELAY) != pdTRUE) {

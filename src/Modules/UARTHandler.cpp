@@ -1,4 +1,7 @@
 #include "Modules/UARTHandler.hpp"
+#include "Modules/MotorController.hpp"
+
+extern MotorController motor;
 
 UartHandler::UartHandler(HardwareSerial& serial, int rxPin, int txPin, unsigned long baud)
     : _serial(serial), _rxPin(rxPin), _txPin(txPin), _baud(baud) {}
@@ -38,10 +41,7 @@ void UartHandler::onMoveCommand(const String& cmd) {
     float x = extractParam(cmd, "x");
     float y = extractParam(cmd, "y");
 
-    Serial.print("Comando MOVE → x = ");
-    Serial.print(x);
-    Serial.print(", y = ");
-    Serial.println(y);
+    motor.handle(x, y);
 
 }
 

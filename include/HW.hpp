@@ -5,9 +5,13 @@
 #include "Modules/Beeper.hpp"
 #include "Modules/BatteryMonitor.hpp"
 #include "Modules/ObstacleDetector.hpp"
+#include "Modules/MotorController.hpp"
 
 // Instância do beeper utilizando o pino do buzzer
 Beeper beeper(BUZZER_PIN);
+
+// Instância do controle de motores
+MotorController motor(MOTOR_IN1A, MOTOR_IN1B, MOTOR_IN2A, MOTOR_IN2B);
 
 // Instância de monitor de bateria
 BatteryMonitor battery(BATT_PIN);
@@ -29,8 +33,10 @@ void initBuzzerPWM() {
  * @brief Inicializa o PWM para os motores (implementação futura).
  * Essa função será utilizada para configurar os canais PWM dos motores.
  */
-void initMotorPWM() {
-    // Configuração do PWM para os motores será adicionada posteriormente
+void initMotor() {
+    // Configuração para os motores 
+    motor.begin();
+    motor.pararTodos(); // Para todos os motores
 }
 
 /**
@@ -79,7 +85,7 @@ void initPinout() {
 void initHW() {
 
     initBuzzerPWM();
-    initMotorPWM();    // Inicialização futura do PWM dos motores
+    initMotor();
     initBatteryADC();
     initPinout();
     initSerialComms();

@@ -41,54 +41,44 @@ namespace {
 // Implementação do playTone
 void Beeper::playTone(int frequency, int duration) {
     tone(buzzerPin, frequency, duration);
-    delay(duration); 
+    vTaskDelay(pdMS_TO_TICKS(duration));   // Libera a CPU para outras tasks durante o tempo do beep
     noTone(buzzerPin);
 }
 
 void Beeper::playEmotion(Emotion emotion) {
-
     const int (*tones)[2];
+    int numTones = 0;
 
     switch (emotion) {
-        
-        case HAPPINESS: {
+        case HAPPINESS:
             tones = happiness_tones;
+            numTones = sizeof(happiness_tones) / sizeof(happiness_tones[0]);
             break;
-        }
-
-        case SADNESS: {
+        case SADNESS:
             tones = sadness_tones;
+            numTones = sizeof(sadness_tones) / sizeof(sadness_tones[0]);
             break;
-        }
-
-        case ANXIETY: {
+        case ANXIETY:
             tones = anxiety_tones;
+            numTones = sizeof(anxiety_tones) / sizeof(anxiety_tones[0]);
             break;
-        }
-
-        case CONFUSION: {
+        case CONFUSION:
             tones = confusion_tones;
+            numTones = sizeof(confusion_tones) / sizeof(confusion_tones[0]);
             break;
-        }
-
-        case CALM: {
+        case CALM:
             tones = calm_tones;
+            numTones = sizeof(calm_tones) / sizeof(calm_tones[0]);
             break;
-        }
-
-        case ALERT: {
+        case ALERT:
             tones = alert_tones;
+            numTones = sizeof(alert_tones) / sizeof(alert_tones[0]);
             break;
-        }
-    
-        default: return;
-
+        default:
+            return;
     }
-
-    int numTones = sizeof(happiness_tones) / sizeof(happiness_tones[0]);
 
     for (int i = 0; i < numTones; i++) {
         playTone(tones[i][0], tones[i][1]);
     }
-
 }

@@ -2,6 +2,12 @@
 #include "Modules/MotorController.hpp"
 #include "Modules/BatteryMonitor.hpp"
 
+#if DEBUG_SERIAL == ON
+    #define DEBUG_UNKNOWN_COMMAND(cmd) onUnknownCommand(cmd)
+#else 
+    #define DEBUG_UNKNOWN_COMMAND(cmd)
+#endif
+
 // Referência ao leitor de bateria (definido em HW.hpp)
 extern BatteryMonitor battery;
 
@@ -26,12 +32,16 @@ void BluetoothHandler::handleClient() {
         String command = _btSerial.readStringUntil('\n');
         command.trim();
 
-        Serial.print("Recebido via Bluetooth: ");
-        Serial.println(command);
+        #if DEBUG_SERIAL == ON
+            
+            Serial.print("Recebido via Bluetooth: ");
+            Serial.println(command);
+
+        #endif
 
         if (command.startsWith("/move?")) onMoveCommand(command);
         else if (command.startsWith("/sound?")) onSoundCommand(command);
-        else onUnknownCommand(command);
+        else DEBUG_UNKNOWN_COMMAND(command);
 
         digitalWrite(LED_BUILTIN, LOW);
 

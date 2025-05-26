@@ -35,7 +35,7 @@
 //   Debug
 
 #define WDT_CHECK       OFF                 // Verifica inicialização dos TWDTs
-#define DEBUG_MOTORS    ON                  // Verifica motores
+#define DEBUG_MOTORS    OFF                 // Verifica motores
 #define DEBUG_BEEPER    OFF                 // Verifica o buzzer
 #define DEBUG_OBSTACLE  OFF                 // Verifica sensor de distância
 #define DEBUG_DISTANCE  OFF                 // Verifica distância lida pelo sensor

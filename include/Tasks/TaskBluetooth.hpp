@@ -19,7 +19,7 @@
 #define BLUETOOTH_PRIORITY 3
 
 /// Delay da TaskBluetooth em [ms]
-#define BLUETOOTH_DELAY  100
+#define BLUETOOTH_DELAY  10
 
 /// Tamanho da stack da TaskBluetooth em [bytes]
 #define BLUETOOTH_STACK 4096

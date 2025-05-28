@@ -11,7 +11,7 @@
 Beeper beeper(BUZZER_PIN);
 
 // Instância do controle de motores
-MotorController motor(MOTOR_IN1A, MOTOR_IN1B, MOTOR_IN2A, MOTOR_IN2B);
+MotorController motor(MOTOR_IN1A, MOTOR_IN2A, MOTOR_IN1B, MOTOR_IN2B);
 
 // Instância de monitor de bateria
 BatteryMonitor battery(BATT_PIN);

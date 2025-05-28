@@ -21,7 +21,7 @@ void MotorController::pararTodos()
     digitalWrite(in2B, LOW);
 }
 
-void MotorController::moverFrente()
+void MotorController::moverTras()
 {
     digitalWrite(in1A, HIGH);
     digitalWrite(in2A, LOW);
@@ -29,7 +29,7 @@ void MotorController::moverFrente()
     digitalWrite(in2B, LOW);
 }
 
-void MotorController::moverTras()
+void MotorController::moverFrente()
 {
     digitalWrite(in1A, LOW);
     digitalWrite(in2A, HIGH);
@@ -66,17 +66,30 @@ void MotorController::handle(float x, float y) {
     else if (abs(y) > abs(x))
     {
 
-        if (y > 0)
+        if (y > 0) {
+            #if DEBUG_MOTORS == ON
+                Serial.println("Movendo para frente");
+            #endif
             moverFrente();
-        else
+        } else {
+            #if DEBUG_MOTORS == ON
+                Serial.println("Movendo para trás");
+            #endif
             moverTras();
-    }
-    else
-    {
+        }
+    
+    } else {
 
-        if (x > 0)
+        if (x > 0) {
+            #if DEBUG_MOTORS == ON
+                Serial.println("Movendo para a direita");
+            #endif
             virarDireita();
-        else
+        } else {
+            #if DEBUG_MOTORS == ON
+                Serial.println("Movendo para a esquerda");
+            #endif
             virarEsquerda();
+        }
     }
 }

@@ -41,6 +41,7 @@ void BluetoothHandler::handleClient() {
 
         if (command.startsWith("/move?")) onMoveCommand(command);
         else if (command.startsWith("/sound?")) onSoundCommand(command);
+        else if (command.startsWith("/battery")) onBatteryCommand();
         else DEBUG_UNKNOWN_COMMAND(command);
 
         digitalWrite(LED_BUILTIN, LOW);
@@ -64,12 +65,18 @@ void BluetoothHandler::onBatteryCommand() {
     float voltage = battery.readBatteryVoltage();      
     float percentage = battery.getBatteryPercentage();
 
-    _btSerial.print("BATTERY: ");
-    _btSerial.printf("%.2fV (%.1f%%)\n", voltage, percentage);
-
     #if DEBUG_SERIAL == ON
+
+        _btSerial.print("BATTERY: ");
+        _btSerial.printf("%.2fV (%.1f%%)\n", voltage, percentage);
+
         Serial.print("Respondendo nível da bateria: ");
         Serial.printf("%.2fV (%.1f%%)\n", voltage, percentage);
+
+    #else 
+
+        _btSerial.println(percentage);
+
     #endif
 
 }

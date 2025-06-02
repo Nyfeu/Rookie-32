@@ -7,7 +7,7 @@
 ![PlatformIO](https://img.shields.io/badge/PlatformIO-%23222.svg?style=for-the-badge&logo=platformio&logoColor=%23f5822a)
 
 
-O Rookie-32 consiste em um carrinho robótico controlado remotamente via Bluetooth, utilizando um aplicativo móvel para navegação e interação. O Rookie-32 conta com motores controlados por pontes H e esteiras, garantindo mobilidade eficiente. Para evitar colisões, um sensor ultrassônico (HC-SR04) detecta obstáculos no caminho, permitindo com que as rodas parem.
+O Rookie-32 consiste em um carrinho robótico controlado remotamente via Bluetooth, utilizando um aplicativo móvel para navegação e interação. O Rookie-32 conta com motores controlados por pontes H e esteiras, garantindo mobilidade eficiente. Para evitar colisões, um sensor ultrassônico (HC-SR04) detecta obstáculos no caminho.
 
 Além disso, o sistema emite alertas sonoros através de um buzzer de 3.3V, seja para informar eventos importantes durante a navegação, quanto para dar ao sistema uma personalidade amigável. A interface visual do carrinho inclui um display OLED, que exibe animações de olhos que mudam a cada requisição, tornando a interação mais dinâmica. O sistema também pode capturar imagens utilizando um segundo microcontrolador (ESP32-CAM), ampliando as possibilidades de monitoramento e visão remota.
 

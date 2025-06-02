@@ -1,9 +1,11 @@
-# Rookie-32 🪖 [IN PROGRESS]
+# Rookie-32 🪖
 
-[![PlatformIO](https://img.shields.io/badge/Platform-ESP32S-00878F?logo=espressif)](https://platformio.org/)
-[![FreeRTOS](https://img.shields.io/badge/OS-FreeRTOS-003366?logo=freertos&logoColor=white)](https://www.freertos.org/)
-[![Arduino](https://img.shields.io/badge/Framework-Arduino-00979D?logo=arduino)](https://www.arduino.cc/)
-[![App](https://img.shields.io/badge/App-Flutter-02569B?logo=flutter)](https://flutter.dev)
+![Espressif](https://img.shields.io/badge/espressif-E7352C.svg?style=for-the-badge&logo=espressif&logoColor=white)
+[![FreeRTOS](https://img.shields.io/badge/FreeRTOS-7DC847?style=for-the-badge)](https://www.freertos.org/)
+![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
+![PlatformIO](https://img.shields.io/badge/PlatformIO-%23222.svg?style=for-the-badge&logo=platformio&logoColor=%23f5822a)
+
 
 O Rookie-32 consiste em um carrinho robótico controlado remotamente via Bluetooth, utilizando um aplicativo móvel para navegação e interação. O Rookie-32 conta com motores controlados por pontes H e esteiras, garantindo mobilidade eficiente. Para evitar colisões, um sensor ultrassônico (HC-SR04) detecta obstáculos no caminho, permitindo com que as rodas parem.
 

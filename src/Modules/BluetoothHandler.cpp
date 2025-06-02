@@ -67,8 +67,10 @@ void BluetoothHandler::onBatteryCommand() {
     _btSerial.print("BATTERY: ");
     _btSerial.printf("%.2fV (%.1f%%)\n", voltage, percentage);
 
-    Serial.print("Respondendo nível da bateria: ");
-    Serial.printf("%.2fV (%.1f%%)\n", voltage, percentage);
+    #if DEBUG_SERIAL == ON
+        Serial.print("Respondendo nível da bateria: ");
+        Serial.printf("%.2fV (%.1f%%)\n", voltage, percentage);
+    #endif
 
 }
 
@@ -80,8 +82,10 @@ void BluetoothHandler::onSoundCommand(const String& cmd) {
 
     if (name.length() > 0) {
 
-        Serial.print("Comando SOUND → name = ");
-        Serial.println(name);
+        #if DEBUG_SERIAL == ON
+            Serial.print("Comando SOUND → name = ");
+            Serial.println(name);
+        #endif
 
         Emotion emotion = getEmotionFromString(name);
         if (emotion != ERROR) {

@@ -2,6 +2,7 @@
 #define _MOTOR_CONTROLLER_HPP
 
 #include <Arduino.h>
+#include "Aplic.hpp"
 
 class MotorController {
 private:

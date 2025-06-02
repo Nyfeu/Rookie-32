@@ -35,7 +35,6 @@ void TaskObstacle::taskFunction(void *pvParameters) {
     ObstacleDetector detector(TRIGGER_PIN, ECHO_PIN, MIN_DISTANCE);
     
     detector.setCallback([]() { 
-        motor.pararTodos(); // Para todos os motores
         TaskBeep::triggerBeep(ANXIETY); 
     });
     

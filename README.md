@@ -96,9 +96,7 @@ Para garantir a clareza e facilitar a manutenção e futuras colaborações no p
 Para visualizar a documentação completa, basta acessar `docs/html/index.html`
 
 ## Vídeo do Projeto 🎬
-Confira o funcionamento do projeto e o Rookie-32 em ação no vídeo abaixo:
-
-&lt;iframe width="560" height="315" src="https://youtu.be/cbEZXXL1LRQ?feature=shared" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+Confira o funcionamento do projeto e o Rookie-32 em ação no vídeo abaixo: [YouTube](https://youtu.be/cbEZXXL1LRQ?feature=shared)
 
 ---
 

@@ -53,28 +53,13 @@ const EyeFrame happyFrames[2] = {
 };
 
 /**
- * @brief Frame estático para a expressão NERD.
- * @details Usa uma imagem única que ocupa toda a área dos olhos.
- */
-const EyeFrame nerdFrame[1] = {
-    {
-        nerd_face,
-        nullptr,
-        128,
-        64,
-        1000,
-        true
-    }
-};
-
-/**
  * @brief Frame estático para a expressão CALM.
  * @details Usa dois olhos separados, cada um com 16x16 pixels.
  */
 const EyeFrame calmFrame[1] = {
     {
-        calm_half_left,
-        calm_half_right,
+        sad_right_eye,
+        sad_left_eye,
         32,
         16,
         100,
@@ -88,11 +73,26 @@ const EyeFrame calmFrame[1] = {
  */
 const EyeFrame sadnessFrame[1] = {
     {
-        round_eye_left,
-        round_eye_right,
+        sad_left_eye,
+        sad_right_eye,
         32,
         16,
-        100,
+        1000,
+        false
+    }
+};
+
+/**
+ * @brief Frame estático para a expressão ALERT.
+ * @details Usa dois olhos separados, cada um com 16x16 pixels.
+ */
+const EyeFrame alertFrame[1] = {
+    {
+        alert_sign,
+        alert_sign,
+        32,
+        16,
+        1000,
         false
     }
 };

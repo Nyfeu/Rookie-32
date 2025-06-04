@@ -49,7 +49,7 @@ const EyeFrame& EyeAnimator::getCurrentFrame() {
         case HAPPINESS: return happyFrames[animationFrame];
         case CALM: return calmFrame[animationFrame];
         case SADNESS: return sadnessFrame[animationFrame];
-        case ALERT: return nerdFrame[animationFrame];
+        case ALERT: return alertFrame[animationFrame];
         // Adicionar casos para outras emoções
         default: return happyFrames[0];
     }
@@ -60,7 +60,7 @@ uint8_t EyeAnimator::getFrameCount() {
         case HAPPINESS: return sizeof(happyFrames)/sizeof(EyeFrame);
         case CALM: return sizeof(calmFrame)/sizeof(EyeFrame);
         case SADNESS: return sizeof(sadnessFrame)/sizeof(EyeFrame);
-        case ALERT: return sizeof(nerdFrame)/sizeof(EyeFrame);
+        case ALERT: return sizeof(alertFrame)/sizeof(EyeFrame);
         // Adicionar outras emoções
         default: return 1;
     }

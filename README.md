@@ -6,6 +6,16 @@
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 ![PlatformIO](https://img.shields.io/badge/PlatformIO-%23222.svg?style=for-the-badge&logo=platformio&logoColor=%23f5822a)
 
+## Integrantes do Grupo 
+
+| Nome | R.A. |
+| ---- | ---- |
+| André Solano F. R. Maiolini | 19.02012-0 |
+| Durval Consorti Soranz de Barros Santos | 22.01097-0 |
+| Leonardo Roberto Amadio | 22.01300-8 | 
+| Olivier Kishi Sauberli | 19.02220-4 |
+
+## Apresentação do Projeto
 
 O Rookie-32 consiste em um carrinho robótico controlado remotamente via Bluetooth, utilizando um aplicativo móvel para navegação e interação. O Rookie-32 conta com motores controlados por pontes H e esteiras, garantindo mobilidade eficiente. Para evitar colisões, um sensor ultrassônico (HC-SR04) detecta obstáculos no caminho.
 

@@ -93,14 +93,14 @@ Files</h2></td></tr>
 <tr class="memitem:_task_beep_8hpp" id="r__task_beep_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_task_beep_8hpp.html">TaskBeep.hpp</a></td></tr>
 <tr class="memdesc:_task_beep_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task responsável pela emissão de beeps de feedback. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:_task_bluetooth_8hpp" id="r__task_bluetooth_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_task_bluetooth_8hpp.html">TaskBluetooth.hpp</a></td></tr>
+<tr class="memdesc:_task_bluetooth_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task responsável pela comunicação Bluetooth. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:_task_eyes_8hpp" id="r__task_eyes_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_task_eyes_8hpp.html">TaskEyes.hpp</a></td></tr>
 <tr class="memdesc:_task_eyes_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task responsável pelo controle dos olhos no display. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:_task_obstacle_8hpp" id="r__task_obstacle_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_task_obstacle_8hpp.html">TaskObstacle.hpp</a></td></tr>
 <tr class="memdesc:_task_obstacle_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task responsável pela verificação de obstáculos. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:_task_wi_fi_8hpp" id="r__task_wi_fi_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_task_wi_fi_8hpp.html">TaskWiFi.hpp</a></td></tr>
-<tr class="memdesc:_task_wi_fi_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task responsável pela comunicação Wi-Fi. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -111,8 +111,8 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gadef0ac87b4e854c579793f7aaefdde65" id="r_gadef0ac87b4e854c579793f7aaefdde65"><td class="memItemLeft" align="right" valign="top">SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadef0ac87b4e854c579793f7aaefdde65">taskWIFISemaphore</a></td></tr>
-<tr class="separator:gadef0ac87b4e854c579793f7aaefdde65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga497efff528cf7a8d8b00d219bcddda8f" id="r_ga497efff528cf7a8d8b00d219bcddda8f"><td class="memItemLeft" align="right" valign="top">SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga497efff528cf7a8d8b00d219bcddda8f">taskBluetoothSemaphore</a></td></tr>
+<tr class="separator:ga497efff528cf7a8d8b00d219bcddda8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacca850b0de63367fd103fb31bcc5748e" id="r_gacca850b0de63367fd103fb31bcc5748e"><td class="memItemLeft" align="right" valign="top">SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacca850b0de63367fd103fb31bcc5748e">taskObstacleSemaphore</a></td></tr>
 <tr class="separator:gacca850b0de63367fd103fb31bcc5748e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9c6d946f63793d46a7f605bd951beb42" id="r_ga9c6d946f63793d46a7f605bd951beb42"><td class="memItemLeft" align="right" valign="top">SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9c6d946f63793d46a7f605bd951beb42">taskBatterySemaphore</a></td></tr>
@@ -121,6 +121,8 @@ Variables</h2></td></tr>
 <tr class="separator:gaf64b0e0f79d052bb50348fbf6246a464"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaccfe48e11582762bec4e7707851aee7d" id="r_gaccfe48e11582762bec4e7707851aee7d"><td class="memItemLeft" align="right" valign="top">SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaccfe48e11582762bec4e7707851aee7d">taskEyesSemaphore</a></td></tr>
 <tr class="separator:gaccfe48e11582762bec4e7707851aee7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa653fb8107282c9b88160ed87baa18c3" id="r_gaa653fb8107282c9b88160ed87baa18c3"><td class="memItemLeft" align="right" valign="top">SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa653fb8107282c9b88160ed87baa18c3">initMutex</a></td></tr>
+<tr class="separator:gaa653fb8107282c9b88160ed87baa18c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Conjunto de tarefas do sistema baseadas em FreeRTOS. </p>
@@ -149,7 +151,7 @@ Variables</h2></td></tr>
 </ul>
 <p>Tarefas criadas:</p><ul>
 <li><code><a class="el" href="class_task_beep.html" title="Classe responsável pelo controle do beep do sistema com diferentes emoções.">TaskBeep</a></code>: Gerencia sinais sonoros de feedback.</li>
-<li><code><a class="el" href="class_task_w_i_f_i.html" title="Gerencia a comunicação Wi-Fi via task dedicada.">TaskWIFI</a></code>: Realiza comunicação via Wi-Fi.</li>
+<li><code><a class="el" href="class_task_bluetooth.html" title="Gerencia a comunicação Bluetooth via task dedicada.">TaskBluetooth</a></code>: Realiza comunicação serial via Bluetooth.</li>
 <li><code><a class="el" href="class_task_obstacle.html" title="Classe responsável pela verificação de obstáculos.">TaskObstacle</a></code>: Faz leitura de sensor de obstáculos.</li>
 <li><code><a class="el" href="class_task_battery.html" title="Classe responsável pela verificação do nível de tensão da bateria.">TaskBattery</a></code>: Monitora nível da bateria.</li>
 <li><code><a class="el" href="class_task_eyes.html">TaskEyes</a></code>: Controla o display OLED. </li>
@@ -158,6 +160,21 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="gaa653fb8107282c9b88160ed87baa18c3" name="gaa653fb8107282c9b88160ed87baa18c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa653fb8107282c9b88160ed87baa18c3">&#9670;&#160;</a></span>initMutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SemaphoreHandle_t initMutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Mutex de inicialização </p>
+
+</div>
+</div>
 <a id="ga9c6d946f63793d46a7f605bd951beb42" name="ga9c6d946f63793d46a7f605bd951beb42"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9c6d946f63793d46a7f605bd951beb42">&#9670;&#160;</a></span>taskBatterySemaphore</h2>
 
@@ -188,6 +205,21 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga497efff528cf7a8d8b00d219bcddda8f" name="ga497efff528cf7a8d8b00d219bcddda8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga497efff528cf7a8d8b00d219bcddda8f">&#9670;&#160;</a></span>taskBluetoothSemaphore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SemaphoreHandle_t taskBluetoothSemaphore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Semáforo da <a class="el" href="class_task_bluetooth.html" title="Gerencia a comunicação Bluetooth via task dedicada.">TaskBluetooth</a> </p>
+
+</div>
+</div>
 <a id="gaccfe48e11582762bec4e7707851aee7d" name="gaccfe48e11582762bec4e7707851aee7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaccfe48e11582762bec4e7707851aee7d">&#9670;&#160;</a></span>taskEyesSemaphore</h2>
 
@@ -215,21 +247,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Semáforo da <a class="el" href="class_task_obstacle.html" title="Classe responsável pela verificação de obstáculos.">TaskObstacle</a> </p>
-
-</div>
-</div>
-<a id="gadef0ac87b4e854c579793f7aaefdde65" name="gadef0ac87b4e854c579793f7aaefdde65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadef0ac87b4e854c579793f7aaefdde65">&#9670;&#160;</a></span>taskWIFISemaphore</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SemaphoreHandle_t taskWIFISemaphore</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Semáforo da <a class="el" href="class_task_w_i_f_i.html" title="Gerencia a comunicação Wi-Fi via task dedicada.">TaskWIFI</a> </p>
 
 </div>
 </div>

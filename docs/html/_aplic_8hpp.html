@@ -80,6 +80,9 @@ $(function() {
   <div class="headertitle"><div class="title">Aplic.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Definições globais de configuração e pinagem para o projeto Rookie-32.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;Arduino.h&quot;</code><br />
 <code>#include &lt;freertos/FreeRTOS.h&gt;</code><br />
 <code>#include &lt;freertos/task.h&gt;</code><br />
@@ -90,297 +93,86 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ad76d1750a6cdeebd506bfcd6752554d2" id="r_ad76d1750a6cdeebd506bfcd6752554d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:ad76d1750a6cdeebd506bfcd6752554d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29e413f6725b2ba32d165ffaa35b01e5" id="r_a29e413f6725b2ba32d165ffaa35b01e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:a29e413f6725b2ba32d165ffaa35b01e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28e5d173943cd009722c9356b3fb8965" id="r_a28e5d173943cd009722c9356b3fb8965"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28e5d173943cd009722c9356b3fb8965">MAX_BATTERY_VOLTAGE</a>&#160;&#160;&#160;2.857</td></tr>
-<tr class="separator:a28e5d173943cd009722c9356b3fb8965"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a849409e3e573bc5bf96c09835145e45a" id="r_a849409e3e573bc5bf96c09835145e45a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a849409e3e573bc5bf96c09835145e45a">MIN_BATTERY_VOLTAGE</a>&#160;&#160;&#160;2.143</td></tr>
-<tr class="separator:a849409e3e573bc5bf96c09835145e45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a787aa0b1aae423946fb31fab8a3db49c" id="r_a787aa0b1aae423946fb31fab8a3db49c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a787aa0b1aae423946fb31fab8a3db49c">WDT_ACTIVE</a>&#160;&#160;&#160;<a class="el" href="#ad76d1750a6cdeebd506bfcd6752554d2">ON</a></td></tr>
-<tr class="separator:a787aa0b1aae423946fb31fab8a3db49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7d19da927c561c5df4c2647977cca06" id="r_aa7d19da927c561c5df4c2647977cca06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7d19da927c561c5df4c2647977cca06">WDT_TIMEOUT</a>&#160;&#160;&#160;5</td></tr>
-<tr class="separator:aa7d19da927c561c5df4c2647977cca06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc080d43ef3c34e517adad72d82a3bb0" id="r_abc080d43ef3c34e517adad72d82a3bb0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc080d43ef3c34e517adad72d82a3bb0">WDT_CHECK</a>&#160;&#160;&#160;<a class="el" href="#ad76d1750a6cdeebd506bfcd6752554d2">ON</a></td></tr>
-<tr class="separator:abc080d43ef3c34e517adad72d82a3bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad618fa282f00aad68d30879639ebca6c" id="r_ad618fa282f00aad68d30879639ebca6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad618fa282f00aad68d30879639ebca6c">DEBUG_OBSTACLE</a>&#160;&#160;&#160;<a class="el" href="#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a></td></tr>
-<tr class="separator:ad618fa282f00aad68d30879639ebca6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fa443e87e0948afbc224e505099ebda" id="r_a3fa443e87e0948afbc224e505099ebda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fa443e87e0948afbc224e505099ebda">DEBUG_VOLTAGE</a>&#160;&#160;&#160;<a class="el" href="#ad76d1750a6cdeebd506bfcd6752554d2">ON</a></td></tr>
-<tr class="separator:a3fa443e87e0948afbc224e505099ebda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adacee581176b7076b7baf0f72d81460f" id="r_adacee581176b7076b7baf0f72d81460f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adacee581176b7076b7baf0f72d81460f">TRIGGER_PIN</a>&#160;&#160;&#160;33</td></tr>
-<tr class="separator:adacee581176b7076b7baf0f72d81460f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acea96cea4a13b6cb38e57a86788adf90" id="r_acea96cea4a13b6cb38e57a86788adf90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acea96cea4a13b6cb38e57a86788adf90">ECHO_PIN</a>&#160;&#160;&#160;32</td></tr>
-<tr class="separator:acea96cea4a13b6cb38e57a86788adf90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab61d0981ed42df9e18211b273d22cfcd" id="r_ab61d0981ed42df9e18211b273d22cfcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a>&#160;&#160;&#160;15</td></tr>
-<tr class="separator:ab61d0981ed42df9e18211b273d22cfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac69331f8facce28cfd7b94076ca7055e" id="r_ac69331f8facce28cfd7b94076ca7055e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac69331f8facce28cfd7b94076ca7055e">BUZZER_CHANNEL</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ac69331f8facce28cfd7b94076ca7055e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92165ee224e6e3601f6973cca883fe51" id="r_a92165ee224e6e3601f6973cca883fe51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92165ee224e6e3601f6973cca883fe51">BATT_PIN</a>&#160;&#160;&#160;34</td></tr>
-<tr class="separator:a92165ee224e6e3601f6973cca883fe51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4455691936f92fdd6c37566fc58ba1f" id="r_ad4455691936f92fdd6c37566fc58ba1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4455691936f92fdd6c37566fc58ba1f">BAUD_RATE</a>&#160;&#160;&#160;9600</td></tr>
-<tr class="separator:ad4455691936f92fdd6c37566fc58ba1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a549d41dcf9444ed7d6df1da3c73e7d16" id="r_a549d41dcf9444ed7d6df1da3c73e7d16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a549d41dcf9444ed7d6df1da3c73e7d16">MIN_DISTANCE</a>&#160;&#160;&#160;20</td></tr>
-<tr class="separator:a549d41dcf9444ed7d6df1da3c73e7d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79adf2f289eea7ff6bcc013a6385b10c" id="r_a79adf2f289eea7ff6bcc013a6385b10c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79adf2f289eea7ff6bcc013a6385b10c">WIFI_NAME</a>&#160;&#160;&#160;&quot;ESP32_Car_Controller&quot;</td></tr>
-<tr class="separator:a79adf2f289eea7ff6bcc013a6385b10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8685d8aff7e570048090a3a51afceb07" id="r_a8685d8aff7e570048090a3a51afceb07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8685d8aff7e570048090a3a51afceb07">WIFI_PASSWORD</a>&#160;&#160;&#160;&quot;123456789&quot;</td></tr>
-<tr class="separator:a8685d8aff7e570048090a3a51afceb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad76d1750a6cdeebd506bfcd6752554d2" id="r_gad76d1750a6cdeebd506bfcd6752554d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___general___configs.html#gad76d1750a6cdeebd506bfcd6752554d2">ON</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gad76d1750a6cdeebd506bfcd6752554d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro para habilitar uma funcionalidade (valor 1).  <br /></td></tr>
+<tr class="separator:gad76d1750a6cdeebd506bfcd6752554d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga29e413f6725b2ba32d165ffaa35b01e5" id="r_ga29e413f6725b2ba32d165ffaa35b01e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___general___configs.html#ga29e413f6725b2ba32d165ffaa35b01e5">OFF</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga29e413f6725b2ba32d165ffaa35b01e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro para desabilitar uma funcionalidade (valor 0).  <br /></td></tr>
+<tr class="separator:ga29e413f6725b2ba32d165ffaa35b01e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga28e5d173943cd009722c9356b3fb8965" id="r_ga28e5d173943cd009722c9356b3fb8965"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___battery___configs.html#ga28e5d173943cd009722c9356b3fb8965">MAX_BATTERY_VOLTAGE</a>&#160;&#160;&#160;2.857</td></tr>
+<tr class="memdesc:ga28e5d173943cd009722c9356b3fb8965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tensão máxima esperada da bateria (valor lido no pino ADC) para 100% de carga.  <br /></td></tr>
+<tr class="separator:ga28e5d173943cd009722c9356b3fb8965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga849409e3e573bc5bf96c09835145e45a" id="r_ga849409e3e573bc5bf96c09835145e45a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___battery___configs.html#ga849409e3e573bc5bf96c09835145e45a">MIN_BATTERY_VOLTAGE</a>&#160;&#160;&#160;2.143</td></tr>
+<tr class="memdesc:ga849409e3e573bc5bf96c09835145e45a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tensão mínima esperada da bateria (valor lido no pino ADC) para 0% de carga.  <br /></td></tr>
+<tr class="separator:ga849409e3e573bc5bf96c09835145e45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga787aa0b1aae423946fb31fab8a3db49c" id="r_ga787aa0b1aae423946fb31fab8a3db49c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_d_t___configs.html#ga787aa0b1aae423946fb31fab8a3db49c">WDT_ACTIVE</a>&#160;&#160;&#160;<a class="el" href="group___general___configs.html#ga29e413f6725b2ba32d165ffaa35b01e5">OFF</a></td></tr>
+<tr class="memdesc:ga787aa0b1aae423946fb31fab8a3db49c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ativa ou desativa o Task Watchdog Timer (TWDT) do sistema.  <br /></td></tr>
+<tr class="separator:ga787aa0b1aae423946fb31fab8a3db49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa7d19da927c561c5df4c2647977cca06" id="r_gaa7d19da927c561c5df4c2647977cca06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_d_t___configs.html#gaa7d19da927c561c5df4c2647977cca06">WDT_TIMEOUT</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:gaa7d19da927c561c5df4c2647977cca06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tempo limite do Watchdog Timer (WDT) em segundos.  <br /></td></tr>
+<tr class="separator:gaa7d19da927c561c5df4c2647977cca06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc080d43ef3c34e517adad72d82a3bb0" id="r_gabc080d43ef3c34e517adad72d82a3bb0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___flags.html#gabc080d43ef3c34e517adad72d82a3bb0">WDT_CHECK</a>&#160;&#160;&#160;<a class="el" href="group___general___configs.html#ga29e413f6725b2ba32d165ffaa35b01e5">OFF</a></td></tr>
+<tr class="memdesc:gabc080d43ef3c34e517adad72d82a3bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita a verificação da inicialização dos Task Watchdog Timers (TWDTs).  <br /></td></tr>
+<tr class="separator:gabc080d43ef3c34e517adad72d82a3bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b1e43504f5bfa615b923db01cbd8460" id="r_ga9b1e43504f5bfa615b923db01cbd8460"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___flags.html#ga9b1e43504f5bfa615b923db01cbd8460">DEBUG_MOTORS</a>&#160;&#160;&#160;<a class="el" href="group___general___configs.html#ga29e413f6725b2ba32d165ffaa35b01e5">OFF</a></td></tr>
+<tr class="memdesc:ga9b1e43504f5bfa615b923db01cbd8460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita mensagens de debug relacionadas ao controle dos motores.  <br /></td></tr>
+<tr class="separator:ga9b1e43504f5bfa615b923db01cbd8460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea4e5bb6455ea20618fb1b35ecdf58b2" id="r_gaea4e5bb6455ea20618fb1b35ecdf58b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___flags.html#gaea4e5bb6455ea20618fb1b35ecdf58b2">DEBUG_BEEPER</a>&#160;&#160;&#160;<a class="el" href="group___general___configs.html#ga29e413f6725b2ba32d165ffaa35b01e5">OFF</a></td></tr>
+<tr class="memdesc:gaea4e5bb6455ea20618fb1b35ecdf58b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita mensagens de debug relacionadas ao beeper (buzzer).  <br /></td></tr>
+<tr class="separator:gaea4e5bb6455ea20618fb1b35ecdf58b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad618fa282f00aad68d30879639ebca6c" id="r_gad618fa282f00aad68d30879639ebca6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___flags.html#gad618fa282f00aad68d30879639ebca6c">DEBUG_OBSTACLE</a>&#160;&#160;&#160;<a class="el" href="group___general___configs.html#ga29e413f6725b2ba32d165ffaa35b01e5">OFF</a></td></tr>
+<tr class="memdesc:gad618fa282f00aad68d30879639ebca6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita mensagens de debug relacionadas à detecção de obstáculos.  <br /></td></tr>
+<tr class="separator:gad618fa282f00aad68d30879639ebca6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd122d8a8c0adedf855791e6d626c32f" id="r_gacd122d8a8c0adedf855791e6d626c32f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___flags.html#gacd122d8a8c0adedf855791e6d626c32f">DEBUG_DISTANCE</a>&#160;&#160;&#160;<a class="el" href="group___general___configs.html#ga29e413f6725b2ba32d165ffaa35b01e5">OFF</a></td></tr>
+<tr class="memdesc:gacd122d8a8c0adedf855791e6d626c32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita a impressão da distância lida pelo sensor de obstáculos no Serial Monitor.  <br /></td></tr>
+<tr class="separator:gacd122d8a8c0adedf855791e6d626c32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3fa443e87e0948afbc224e505099ebda" id="r_ga3fa443e87e0948afbc224e505099ebda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___flags.html#ga3fa443e87e0948afbc224e505099ebda">DEBUG_VOLTAGE</a>&#160;&#160;&#160;<a class="el" href="group___general___configs.html#ga29e413f6725b2ba32d165ffaa35b01e5">OFF</a></td></tr>
+<tr class="memdesc:ga3fa443e87e0948afbc224e505099ebda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita a impressão do nível de tensão e porcentagem da bateria no Serial Monitor.  <br /></td></tr>
+<tr class="separator:ga3fa443e87e0948afbc224e505099ebda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61e127df60d55ea4c8bd6b8ec1f88367" id="r_ga61e127df60d55ea4c8bd6b8ec1f88367"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___debug___flags.html#ga61e127df60d55ea4c8bd6b8ec1f88367">DEBUG_SERIAL</a>&#160;&#160;&#160;<a class="el" href="group___general___configs.html#ga29e413f6725b2ba32d165ffaa35b01e5">OFF</a></td></tr>
+<tr class="memdesc:ga61e127df60d55ea4c8bd6b8ec1f88367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita mensagens de debug relacionadas à comunicação serial (geral).  <br /></td></tr>
+<tr class="separator:ga61e127df60d55ea4c8bd6b8ec1f88367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadacee581176b7076b7baf0f72d81460f" id="r_gadacee581176b7076b7baf0f72d81460f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pinout___configs.html#gadacee581176b7076b7baf0f72d81460f">TRIGGER_PIN</a>&#160;&#160;&#160;33</td></tr>
+<tr class="memdesc:gadacee581176b7076b7baf0f72d81460f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pino GPIO conectado ao pino TRIGGER do sensor ultrassônico HC-SR04.  <br /></td></tr>
+<tr class="separator:gadacee581176b7076b7baf0f72d81460f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacea96cea4a13b6cb38e57a86788adf90" id="r_gacea96cea4a13b6cb38e57a86788adf90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pinout___configs.html#gacea96cea4a13b6cb38e57a86788adf90">ECHO_PIN</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memdesc:gacea96cea4a13b6cb38e57a86788adf90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pino GPIO conectado ao pino ECHO do sensor ultrassônico HC-SR04.  <br /></td></tr>
+<tr class="separator:gacea96cea4a13b6cb38e57a86788adf90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab61d0981ed42df9e18211b273d22cfcd" id="r_gab61d0981ed42df9e18211b273d22cfcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pinout___configs.html#gab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a>&#160;&#160;&#160;15</td></tr>
+<tr class="memdesc:gab61d0981ed42df9e18211b273d22cfcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pino GPIO conectado ao buzzer.  <br /></td></tr>
+<tr class="separator:gab61d0981ed42df9e18211b273d22cfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac69331f8facce28cfd7b94076ca7055e" id="r_gac69331f8facce28cfd7b94076ca7055e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pinout___configs.html#gac69331f8facce28cfd7b94076ca7055e">BUZZER_CHANNEL</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:gac69331f8facce28cfd7b94076ca7055e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Canal PWM utilizado para controlar o buzzer.  <br /></td></tr>
+<tr class="separator:gac69331f8facce28cfd7b94076ca7055e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga92165ee224e6e3601f6973cca883fe51" id="r_ga92165ee224e6e3601f6973cca883fe51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pinout___configs.html#ga92165ee224e6e3601f6973cca883fe51">BATT_PIN</a>&#160;&#160;&#160;34</td></tr>
+<tr class="memdesc:ga92165ee224e6e3601f6973cca883fe51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pino GPIO conectado ao divisor de tensão para leitura da bateria (ADC).  <br /></td></tr>
+<tr class="separator:ga92165ee224e6e3601f6973cca883fe51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga450a7c16ead7b3c7b882536b08f30a00" id="r_ga450a7c16ead7b3c7b882536b08f30a00"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pinout___configs.html#ga450a7c16ead7b3c7b882536b08f30a00">LED_BUILTIN</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:ga450a7c16ead7b3c7b882536b08f30a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pino do LED embutido na placa ESP32 (geralmente GPIO2).  <br /></td></tr>
+<tr class="separator:ga450a7c16ead7b3c7b882536b08f30a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9cb6fbf7979f640e6e890f5fa03053f6" id="r_ga9cb6fbf7979f640e6e890f5fa03053f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pinout___configs.html#ga9cb6fbf7979f640e6e890f5fa03053f6">MOTOR_IN1A</a>&#160;&#160;&#160;25</td></tr>
+<tr class="memdesc:ga9cb6fbf7979f640e6e890f5fa03053f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pino GPIO para controle do IN1 do Motor A (Ponte H).  <br /></td></tr>
+<tr class="separator:ga9cb6fbf7979f640e6e890f5fa03053f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31ea1cb72ecfecb0a89e1f853472e406" id="r_ga31ea1cb72ecfecb0a89e1f853472e406"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pinout___configs.html#ga31ea1cb72ecfecb0a89e1f853472e406">MOTOR_IN2A</a>&#160;&#160;&#160;26</td></tr>
+<tr class="memdesc:ga31ea1cb72ecfecb0a89e1f853472e406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pino GPIO para controle do IN2 do Motor A (Ponte H).  <br /></td></tr>
+<tr class="separator:ga31ea1cb72ecfecb0a89e1f853472e406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b60047fe07046423c981197080fa053" id="r_ga5b60047fe07046423c981197080fa053"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pinout___configs.html#ga5b60047fe07046423c981197080fa053">MOTOR_IN1B</a>&#160;&#160;&#160;27</td></tr>
+<tr class="memdesc:ga5b60047fe07046423c981197080fa053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pino GPIO para controle do IN1 do Motor B (Ponte H).  <br /></td></tr>
+<tr class="separator:ga5b60047fe07046423c981197080fa053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ad47b042f78b7e8ec1d82659855c707" id="r_ga8ad47b042f78b7e8ec1d82659855c707"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pinout___configs.html#ga8ad47b042f78b7e8ec1d82659855c707">MOTOR_IN2B</a>&#160;&#160;&#160;14</td></tr>
+<tr class="memdesc:ga8ad47b042f78b7e8ec1d82659855c707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pino GPIO para controle do IN2 do Motor B (Ponte H).  <br /></td></tr>
+<tr class="separator:ga8ad47b042f78b7e8ec1d82659855c707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4455691936f92fdd6c37566fc58ba1f" id="r_gad4455691936f92fdd6c37566fc58ba1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___serial___comms___configs.html#gad4455691936f92fdd6c37566fc58ba1f">BAUD_RATE</a>&#160;&#160;&#160;9600</td></tr>
+<tr class="memdesc:gad4455691936f92fdd6c37566fc58ba1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Taxa de transmissão (baud rate) para a comunicação serial.  <br /></td></tr>
+<tr class="separator:gad4455691936f92fdd6c37566fc58ba1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga549d41dcf9444ed7d6df1da3c73e7d16" id="r_ga549d41dcf9444ed7d6df1da3c73e7d16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___obstacle___detection___configs.html#ga549d41dcf9444ed7d6df1da3c73e7d16">MIN_DISTANCE</a>&#160;&#160;&#160;20</td></tr>
+<tr class="memdesc:ga549d41dcf9444ed7d6df1da3c73e7d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distância mínima em centímetros para considerar a detecção de um obstáculo.  <br /></td></tr>
+<tr class="separator:ga549d41dcf9444ed7d6df1da3c73e7d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a92165ee224e6e3601f6973cca883fe51" name="a92165ee224e6e3601f6973cca883fe51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92165ee224e6e3601f6973cca883fe51">&#9670;&#160;</a></span>BATT_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BATT_PIN&#160;&#160;&#160;34</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad4455691936f92fdd6c37566fc58ba1f" name="ad4455691936f92fdd6c37566fc58ba1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4455691936f92fdd6c37566fc58ba1f">&#9670;&#160;</a></span>BAUD_RATE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BAUD_RATE&#160;&#160;&#160;9600</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac69331f8facce28cfd7b94076ca7055e" name="ac69331f8facce28cfd7b94076ca7055e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac69331f8facce28cfd7b94076ca7055e">&#9670;&#160;</a></span>BUZZER_CHANNEL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUZZER_CHANNEL&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab61d0981ed42df9e18211b273d22cfcd" name="ab61d0981ed42df9e18211b273d22cfcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab61d0981ed42df9e18211b273d22cfcd">&#9670;&#160;</a></span>BUZZER_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUZZER_PIN&#160;&#160;&#160;15</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad618fa282f00aad68d30879639ebca6c" name="ad618fa282f00aad68d30879639ebca6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad618fa282f00aad68d30879639ebca6c">&#9670;&#160;</a></span>DEBUG_OBSTACLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_OBSTACLE&#160;&#160;&#160;<a class="el" href="#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3fa443e87e0948afbc224e505099ebda" name="a3fa443e87e0948afbc224e505099ebda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fa443e87e0948afbc224e505099ebda">&#9670;&#160;</a></span>DEBUG_VOLTAGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_VOLTAGE&#160;&#160;&#160;<a class="el" href="#ad76d1750a6cdeebd506bfcd6752554d2">ON</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acea96cea4a13b6cb38e57a86788adf90" name="acea96cea4a13b6cb38e57a86788adf90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acea96cea4a13b6cb38e57a86788adf90">&#9670;&#160;</a></span>ECHO_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ECHO_PIN&#160;&#160;&#160;32</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a28e5d173943cd009722c9356b3fb8965" name="a28e5d173943cd009722c9356b3fb8965"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28e5d173943cd009722c9356b3fb8965">&#9670;&#160;</a></span>MAX_BATTERY_VOLTAGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_BATTERY_VOLTAGE&#160;&#160;&#160;2.857</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a849409e3e573bc5bf96c09835145e45a" name="a849409e3e573bc5bf96c09835145e45a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a849409e3e573bc5bf96c09835145e45a">&#9670;&#160;</a></span>MIN_BATTERY_VOLTAGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MIN_BATTERY_VOLTAGE&#160;&#160;&#160;2.143</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a549d41dcf9444ed7d6df1da3c73e7d16" name="a549d41dcf9444ed7d6df1da3c73e7d16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a549d41dcf9444ed7d6df1da3c73e7d16">&#9670;&#160;</a></span>MIN_DISTANCE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MIN_DISTANCE&#160;&#160;&#160;20</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a29e413f6725b2ba32d165ffaa35b01e5" name="a29e413f6725b2ba32d165ffaa35b01e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29e413f6725b2ba32d165ffaa35b01e5">&#9670;&#160;</a></span>OFF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OFF&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad76d1750a6cdeebd506bfcd6752554d2" name="ad76d1750a6cdeebd506bfcd6752554d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad76d1750a6cdeebd506bfcd6752554d2">&#9670;&#160;</a></span>ON</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ON&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adacee581176b7076b7baf0f72d81460f" name="adacee581176b7076b7baf0f72d81460f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adacee581176b7076b7baf0f72d81460f">&#9670;&#160;</a></span>TRIGGER_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TRIGGER_PIN&#160;&#160;&#160;33</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a787aa0b1aae423946fb31fab8a3db49c" name="a787aa0b1aae423946fb31fab8a3db49c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a787aa0b1aae423946fb31fab8a3db49c">&#9670;&#160;</a></span>WDT_ACTIVE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define WDT_ACTIVE&#160;&#160;&#160;<a class="el" href="#ad76d1750a6cdeebd506bfcd6752554d2">ON</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abc080d43ef3c34e517adad72d82a3bb0" name="abc080d43ef3c34e517adad72d82a3bb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc080d43ef3c34e517adad72d82a3bb0">&#9670;&#160;</a></span>WDT_CHECK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define WDT_CHECK&#160;&#160;&#160;<a class="el" href="#ad76d1750a6cdeebd506bfcd6752554d2">ON</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa7d19da927c561c5df4c2647977cca06" name="aa7d19da927c561c5df4c2647977cca06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7d19da927c561c5df4c2647977cca06">&#9670;&#160;</a></span>WDT_TIMEOUT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define WDT_TIMEOUT&#160;&#160;&#160;5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a79adf2f289eea7ff6bcc013a6385b10c" name="a79adf2f289eea7ff6bcc013a6385b10c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79adf2f289eea7ff6bcc013a6385b10c">&#9670;&#160;</a></span>WIFI_NAME</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define WIFI_NAME&#160;&#160;&#160;&quot;ESP32_Car_Controller&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8685d8aff7e570048090a3a51afceb07" name="a8685d8aff7e570048090a3a51afceb07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8685d8aff7e570048090a3a51afceb07">&#9670;&#160;</a></span>WIFI_PASSWORD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define WIFI_PASSWORD&#160;&#160;&#160;&quot;123456789&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definições globais de configuração e pinagem para o projeto Rookie-32. </p>
+<p>Este arquivo contém todas as definições importantes de macros para o projeto, incluindo inclusões de bibliotecas principais (FreeRTOS e Arduino Framework), configurações gerais, parâmetros da bateria, configurações do Watchdog Timer (WDT), flags de debug, pinagem de hardware, configurações de comunicação serial, e parâmetros para o sensor de obstáculos e comunicação Wi-Fi. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0

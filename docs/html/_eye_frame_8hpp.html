@@ -99,20 +99,47 @@ Variables</h2></td></tr>
 <tr class="memitem:a2d5c742167ad769b40fab70d8f471504" id="r_a2d5c742167ad769b40fab70d8f471504"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_eye_frame.html">EyeFrame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d5c742167ad769b40fab70d8f471504">happyFrames</a> [2]</td></tr>
 <tr class="memdesc:a2d5c742167ad769b40fab70d8f471504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frames de animação para a emoção HAPPY.  <br /></td></tr>
 <tr class="separator:a2d5c742167ad769b40fab70d8f471504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d5c599a3aa06b737de327683344805" id="r_a65d5c599a3aa06b737de327683344805"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_eye_frame.html">EyeFrame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65d5c599a3aa06b737de327683344805">nerdFrame</a> [1]</td></tr>
-<tr class="memdesc:a65d5c599a3aa06b737de327683344805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame estático para a expressão NERD.  <br /></td></tr>
-<tr class="separator:a65d5c599a3aa06b737de327683344805"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a137d088828f1c2f7c84dff98455e1788" id="r_a137d088828f1c2f7c84dff98455e1788"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_eye_frame.html">EyeFrame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a137d088828f1c2f7c84dff98455e1788">calmFrame</a> [1]</td></tr>
 <tr class="memdesc:a137d088828f1c2f7c84dff98455e1788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame estático para a expressão CALM.  <br /></td></tr>
 <tr class="separator:a137d088828f1c2f7c84dff98455e1788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae56c8db7cff64aa41f81b164058c40ff" id="r_ae56c8db7cff64aa41f81b164058c40ff"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_eye_frame.html">EyeFrame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae56c8db7cff64aa41f81b164058c40ff">sadnessFrame</a> [1]</td></tr>
 <tr class="memdesc:ae56c8db7cff64aa41f81b164058c40ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame estático para a expressão SADNESS.  <br /></td></tr>
 <tr class="separator:ae56c8db7cff64aa41f81b164058c40ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2798dc627de8d1d0623e59f89023e5f3" id="r_a2798dc627de8d1d0623e59f89023e5f3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_eye_frame.html">EyeFrame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2798dc627de8d1d0623e59f89023e5f3">alertFrame</a> [1]</td></tr>
+<tr class="memdesc:a2798dc627de8d1d0623e59f89023e5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame estático para a expressão ALERT.  <br /></td></tr>
+<tr class="separator:a2798dc627de8d1d0623e59f89023e5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Define a estrutura de dados e os frames usados para animações de olhos e expressões faciais. </p>
 <p>Este arquivo fornece uma estrutura para representar um quadro (frame) de uma animação facial, bem como conjuntos de frames pré-definidos para representar emoções específicas como felicidade, calma, tristeza e uma expressão "nerd". </p>
 </div><h2 class="groupheader">Variable Documentation</h2>
+<a id="a2798dc627de8d1d0623e59f89023e5f3" name="a2798dc627de8d1d0623e59f89023e5f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2798dc627de8d1d0623e59f89023e5f3">&#9670;&#160;</a></span>alertFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_eye_frame.html">EyeFrame</a> alertFrame[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {</div>
+<div class="line">        alert_sign,</div>
+<div class="line">        alert_sign,</div>
+<div class="line">        32,</div>
+<div class="line">        16,</div>
+<div class="line">        1000,</div>
+<div class="line">        <span class="keyword">false</span></div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Frame estático para a expressão ALERT. </p>
+<p>Usa dois olhos separados, cada um com 16x16 pixels. </p>
+
+</div>
+</div>
 <a id="a137d088828f1c2f7c84dff98455e1788" name="a137d088828f1c2f7c84dff98455e1788"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a137d088828f1c2f7c84dff98455e1788">&#9670;&#160;</a></span>calmFrame</h2>
 
@@ -126,8 +153,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    {</div>
-<div class="line">        calm_half_left,</div>
-<div class="line">        calm_half_right,</div>
+<div class="line">        sad_right_eye,</div>
+<div class="line">        sad_left_eye,</div>
 <div class="line">        32,</div>
 <div class="line">        16,</div>
 <div class="line">        100,</div>
@@ -175,33 +202,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a65d5c599a3aa06b737de327683344805" name="a65d5c599a3aa06b737de327683344805"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65d5c599a3aa06b737de327683344805">&#9670;&#160;</a></span>nerdFrame</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="struct_eye_frame.html">EyeFrame</a> nerdFrame[1]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    {</div>
-<div class="line">        nerd_face,</div>
-<div class="line">        <span class="keyword">nullptr</span>,</div>
-<div class="line">        128,</div>
-<div class="line">        64,</div>
-<div class="line">        1000,</div>
-<div class="line">        <span class="keyword">true</span></div>
-<div class="line">    }</div>
-<div class="line">}</div>
-</div><!-- fragment -->
-<p>Frame estático para a expressão NERD. </p>
-<p>Usa uma imagem única que ocupa toda a área dos olhos. </p>
-
-</div>
-</div>
 <a id="ae56c8db7cff64aa41f81b164058c40ff" name="ae56c8db7cff64aa41f81b164058c40ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae56c8db7cff64aa41f81b164058c40ff">&#9670;&#160;</a></span>sadnessFrame</h2>
 
@@ -215,11 +215,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    {</div>
-<div class="line">        round_eye_left,</div>
-<div class="line">        round_eye_right,</div>
+<div class="line">        sad_left_eye,</div>
+<div class="line">        sad_right_eye,</div>
 <div class="line">        32,</div>
 <div class="line">        16,</div>
-<div class="line">        100,</div>
+<div class="line">        1000,</div>
 <div class="line">        <span class="keyword">false</span></div>
 <div class="line">    }</div>
 <div class="line">}</div>

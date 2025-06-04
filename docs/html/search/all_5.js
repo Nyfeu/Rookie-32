@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['echo_5fpin_0',['ECHO_PIN',['../_aplic_8hpp.html#acea96cea4a13b6cb38e57a86788adf90',1,'Aplic.hpp']]],
+  ['echo_5fpin_0',['ECHO_PIN',['../group___pinout___configs.html#gacea96cea4a13b6cb38e57a86788adf90',1,'Aplic.hpp']]],
   ['emotion_1',['Emotion',['../_emotion_8hpp.html#ac0447ced44ef5108a4a2429e33fbabc1',1,'Emotion.hpp']]],
   ['emotion_2ehpp_2',['Emotion.hpp',['../_emotion_8hpp.html',1,'']]],
   ['error_3',['ERROR',['../_emotion_8hpp.html#ac0447ced44ef5108a4a2429e33fbabc1a2fd6f336d08340583bd620a7f5694c90',1,'Emotion.hpp']]],
-  ['esp32_20rookie_2032_4',['Projeto Robô ESP32 (Rookie-32)',['../index.html',1,'']]],
-  ['eye_5fheight_5',['EYE_HEIGHT',['../_eye_animator_8hpp.html#ae65355c15f90f3cbe7570610a1f73b6f',1,'EyeAnimator.hpp']]],
-  ['eyeanimator_6',['EyeAnimator',['../class_eye_animator.html',1,'EyeAnimator'],['../class_eye_animator.html#a922d011e54e5ff2588a3b9389457c76f',1,'EyeAnimator::EyeAnimator()']]],
+  ['esp32_20rookie_2032_20🤖_4',['Projeto Robô ESP32 (Rookie-32) 🤖',['../index.html',1,'']]],
+  ['eye_5fheight_5',['EYE_HEIGHT',['../group___eye_animator___macros.html#gae65355c15f90f3cbe7570610a1f73b6f',1,'EyeAnimator.hpp']]],
+  ['eyeanimator_6',['EyeAnimator',['../class_eye_animator.html',1,'EyeAnimator'],['../class_eye_animator.html#a922d011e54e5ff2588a3b9389457c76f',1,'EyeAnimator::EyeAnimator()'],['../group___eye_animator___macros.html',1,'Macros de Configuração do EyeAnimator']]],
   ['eyeanimator_2ecpp_7',['EyeAnimator.cpp',['../_eye_animator_8cpp.html',1,'']]],
   ['eyeanimator_2ehpp_8',['EyeAnimator.hpp',['../_eye_animator_8hpp.html',1,'']]],
   ['eyeframe_9',['EyeFrame',['../struct_eye_frame.html',1,'']]],

@@ -83,74 +83,110 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">Aplic.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_aplic_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef APLIC_HPP</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define APLIC_HPP</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//   Inclusões Principais (FreeRTOS &amp; Arduino Framework)</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Arduino.h&quot;</span>                        <span class="comment">// Framework do Arduino</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;freertos/FreeRTOS.h&gt;</span>              <span class="comment">// Núcleo do FreeRTOS: permite gerenciamento de tarefas no ESP32</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;freertos/task.h&gt;</span>                  <span class="comment">// Manipulação de tarefas (tasks) no FreeRTOS</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;freertos/semphr.h&gt;</span>                <span class="comment">// Gerenciamento de semáforos no FreeRTOS</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;esp_task_wdt.h&gt;</span>                   <span class="comment">// Biblioteca do ESP32 para configurar e interagir com o Watchdog Timer</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//   Gerais</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#ad76d1750a6cdeebd506bfcd6752554d2">   16</a></span><span class="preprocessor">#define ON                   1</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#a29e413f6725b2ba32d165ffaa35b01e5">   17</a></span><span class="preprocessor">#define OFF                  0</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//   Bateria</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#a28e5d173943cd009722c9356b3fb8965">   22</a></span><span class="preprocessor">#define MAX_BATTERY_VOLTAGE  2.857          </span><span class="comment">// 2.857V = 100% de carga (8.0V na bateria)</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#a849409e3e573bc5bf96c09835145e45a">   23</a></span><span class="preprocessor">#define MIN_BATTERY_VOLTAGE  2.143          </span><span class="comment">// 2.143V = 0.0% de carga (6.0V na bateria)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// Está sendo considerado um divisor de tensão, para limitar a tensão de entrada do ADC a 3.0V</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// Um limiar (threshold) é definido a partir de 8.0V na bateria - para 100% da carga</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//   Watchdog Timer (WDT)</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#a787aa0b1aae423946fb31fab8a3db49c">   31</a></span><span class="preprocessor">#define WDT_ACTIVE  ON              </span><span class="comment">// ON/OFF o WDT do sistema</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#aa7d19da927c561c5df4c2647977cca06">   32</a></span><span class="preprocessor">#define WDT_TIMEOUT  5              </span><span class="comment">// Timeout Watchdog Timer (WDT) [s]</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">//   Debug</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#abc080d43ef3c34e517adad72d82a3bb0">   37</a></span><span class="preprocessor">#define WDT_CHECK       ON                  </span><span class="comment">// Verifica inicialização dos TWDTs</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#ad618fa282f00aad68d30879639ebca6c">   38</a></span><span class="preprocessor">#define DEBUG_OBSTACLE  OFF                 </span><span class="comment">// Verifica sensor de distância</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#a3fa443e87e0948afbc224e505099ebda">   39</a></span><span class="preprocessor">#define DEBUG_VOLTAGE   ON                  </span><span class="comment">// Verifica nível de bateria</span></div>
+<a href="_aplic_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef APLIC_HPP</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define APLIC_HPP</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//   Inclusões Principais (FreeRTOS &amp; Arduino Framework)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;Arduino.h&quot;</span>                        <span class="comment">// Framework do Arduino</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;freertos/FreeRTOS.h&gt;</span>              <span class="comment">// Núcleo do FreeRTOS: permite gerenciamento de tarefas no ESP32</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;freertos/task.h&gt;</span>                  <span class="comment">// Manipulação de tarefas (tasks) no FreeRTOS</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;freertos/semphr.h&gt;</span>                <span class="comment">// Gerenciamento de semáforos no FreeRTOS</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;esp_task_wdt.h&gt;</span>                   <span class="comment">// Biblioteca do ESP32 para configurar e interagir com o Watchdog Timer</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//   Gerais</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="group___general___configs.html#gad76d1750a6cdeebd506bfcd6752554d2">   34</a></span><span class="preprocessor">#define ON                   1</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="group___general___configs.html#ga29e413f6725b2ba32d165ffaa35b01e5">   39</a></span><span class="preprocessor">#define OFF                  0</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">//   Pinout</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#adacee581176b7076b7baf0f72d81460f">   44</a></span><span class="preprocessor">#define TRIGGER_PIN          33 </span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#acea96cea4a13b6cb38e57a86788adf90">   45</a></span><span class="preprocessor">#define ECHO_PIN             32 </span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#ab61d0981ed42df9e18211b273d22cfcd">   46</a></span><span class="preprocessor">#define BUZZER_PIN           15 </span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#ac69331f8facce28cfd7b94076ca7055e">   47</a></span><span class="preprocessor">#define BUZZER_CHANNEL       0  </span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#a92165ee224e6e3601f6973cca883fe51">   48</a></span><span class="preprocessor">#define BATT_PIN             34 </span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">//   Comunicação Serial</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#ad4455691936f92fdd6c37566fc58ba1f">   53</a></span><span class="preprocessor">#define BAUD_RATE 9600</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">//   Obstáculos</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#a549d41dcf9444ed7d6df1da3c73e7d16">   58</a></span><span class="preprocessor">#define MIN_DISTANCE 20</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">//   Comunicação Wi-Fi</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#a79adf2f289eea7ff6bcc013a6385b10c">   63</a></span><span class="preprocessor">#define WIFI_NAME &quot;ESP32_Car_Controller&quot;    </span><span class="comment">// Nome da rede Wi-Fi (SSID)</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="_aplic_8hpp.html#a8685d8aff7e570048090a3a51afceb07">   64</a></span><span class="preprocessor">#define WIFI_PASSWORD &quot;123456789&quot;           </span><span class="comment">// Senha da rede Wi-Fi</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#endif </span><span class="comment">/* APLIC_HPP */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> <span class="comment">// Fim do grupo General_Configs</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">//   Bateria</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="group___battery___configs.html#ga28e5d173943cd009722c9356b3fb8965">   55</a></span><span class="preprocessor">#define MAX_BATTERY_VOLTAGE  2.857          </span><span class="comment">// 2.857V = 100% de carga (8.0V na bateria)</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="group___battery___configs.html#ga849409e3e573bc5bf96c09835145e45a">   62</a></span><span class="preprocessor">#define MIN_BATTERY_VOLTAGE  2.143          </span><span class="comment">// 2.143V = 0.0% de carga (6.0V na bateria)</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// Está sendo considerado um divisor de tensão, para limitar a tensão de entrada do ADC a 3.0V</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">// Um limiar (threshold) é definido a partir de 8.0V na bateria - para 100% da carga</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> <span class="comment">// Fim do grupo Battery_Configs</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">//   Watchdog Timer (WDT)</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="group___w_d_t___configs.html#ga787aa0b1aae423946fb31fab8a3db49c">   80</a></span><span class="preprocessor">#define WDT_ACTIVE  OFF                     </span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="group___w_d_t___configs.html#gaa7d19da927c561c5df4c2647977cca06">   86</a></span><span class="preprocessor">#define WDT_TIMEOUT  5                      </span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> <span class="comment">// Fim do grupo WDT_Configs</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">//   Debug</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="group___debug___flags.html#gabc080d43ef3c34e517adad72d82a3bb0">  101</a></span><span class="preprocessor">#define WDT_CHECK       OFF                 </span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="group___debug___flags.html#ga9b1e43504f5bfa615b923db01cbd8460">  107</a></span><span class="preprocessor">#define DEBUG_MOTORS    OFF                 </span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="group___debug___flags.html#gaea4e5bb6455ea20618fb1b35ecdf58b2">  113</a></span><span class="preprocessor">#define DEBUG_BEEPER    OFF                 </span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="group___debug___flags.html#gad618fa282f00aad68d30879639ebca6c">  119</a></span><span class="preprocessor">#define DEBUG_OBSTACLE  OFF                 </span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="group___debug___flags.html#gacd122d8a8c0adedf855791e6d626c32f">  125</a></span><span class="preprocessor">#define DEBUG_DISTANCE  OFF                 </span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="group___debug___flags.html#ga3fa443e87e0948afbc224e505099ebda">  131</a></span><span class="preprocessor">#define DEBUG_VOLTAGE   OFF                 </span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="group___debug___flags.html#ga61e127df60d55ea4c8bd6b8ec1f88367">  137</a></span><span class="preprocessor">#define DEBUG_SERIAL    OFF                 </span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> <span class="comment">// Fim do grupo Debug_Flags</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">//   Pinout</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="group___pinout___configs.html#gadacee581176b7076b7baf0f72d81460f">  151</a></span><span class="preprocessor">#define TRIGGER_PIN          33 </span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="group___pinout___configs.html#gacea96cea4a13b6cb38e57a86788adf90">  156</a></span><span class="preprocessor">#define ECHO_PIN             32 </span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="group___pinout___configs.html#gab61d0981ed42df9e18211b273d22cfcd">  161</a></span><span class="preprocessor">#define BUZZER_PIN           15 </span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="group___pinout___configs.html#gac69331f8facce28cfd7b94076ca7055e">  166</a></span><span class="preprocessor">#define BUZZER_CHANNEL       0  </span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="group___pinout___configs.html#ga92165ee224e6e3601f6973cca883fe51">  171</a></span><span class="preprocessor">#define BATT_PIN             34 </span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="group___pinout___configs.html#ga450a7c16ead7b3c7b882536b08f30a00">  176</a></span><span class="preprocessor">#define LED_BUILTIN          2</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="group___pinout___configs.html#ga9cb6fbf7979f640e6e890f5fa03053f6">  181</a></span><span class="preprocessor">#define MOTOR_IN1A          25</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="group___pinout___configs.html#ga31ea1cb72ecfecb0a89e1f853472e406">  186</a></span><span class="preprocessor">#define MOTOR_IN2A          26</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="group___pinout___configs.html#ga5b60047fe07046423c981197080fa053">  191</a></span><span class="preprocessor">#define MOTOR_IN1B          27</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="group___pinout___configs.html#ga8ad47b042f78b7e8ec1d82659855c707">  196</a></span><span class="preprocessor">#define MOTOR_IN2B          14</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> <span class="comment">// Fim do grupo Pinout_Configs</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment">//   Comunicação Serial</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="group___serial___comms___configs.html#gad4455691936f92fdd6c37566fc58ba1f">  210</a></span><span class="preprocessor">#define BAUD_RATE 9600</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> <span class="comment">// Fim do grupo Serial_Comms_Configs</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">//   Obstáculos</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="group___obstacle___detection___configs.html#ga549d41dcf9444ed7d6df1da3c73e7d16">  224</a></span><span class="preprocessor">#define MIN_DISTANCE 20</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> <span class="comment">// Fim do grupo Obstacle_Detection_Configs</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">//-----------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor">#endif </span><span class="comment">/* APLIC_HPP */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

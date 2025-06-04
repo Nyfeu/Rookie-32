@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['obstacle_5fdelay_0',['OBSTACLE_DELAY',['../_task_obstacle_8hpp.html#a0d5847ba7e7ba64bd4ec939df283b477',1,'TaskObstacle.hpp']]],
-  ['obstacle_5fpriority_1',['OBSTACLE_PRIORITY',['../_task_obstacle_8hpp.html#af59db770ebf1a53d522091308f9bb037',1,'TaskObstacle.hpp']]],
-  ['obstacle_5fstack_2',['OBSTACLE_STACK',['../_task_obstacle_8hpp.html#a04a54d279c87f8c0b04f388b2e2ea054',1,'TaskObstacle.hpp']]],
-  ['obstacledetector_3',['ObstacleDetector',['../class_obstacle_detector.html',1,'ObstacleDetector'],['../class_obstacle_detector.html#a9d8e1fa099bc4a0105117673619aa7e9',1,'ObstacleDetector::ObstacleDetector()']]],
-  ['obstacledetector_2ecpp_4',['ObstacleDetector.cpp',['../_obstacle_detector_8cpp.html',1,'']]],
-  ['obstacledetector_2ehpp_5',['ObstacleDetector.hpp',['../_obstacle_detector_8hpp.html',1,'']]],
-  ['off_6',['OFF',['../_aplic_8hpp.html#a29e413f6725b2ba32d165ffaa35b01e5',1,'Aplic.hpp']]],
-  ['oled_5freset_7',['OLED_RESET',['../_eye_animator_8hpp.html#a619e07239fb3b9b14d40646ab41d5b4f',1,'EyeAnimator.hpp']]],
-  ['on_8',['ON',['../_aplic_8hpp.html#ad76d1750a6cdeebd506bfcd6752554d2',1,'Aplic.hpp']]]
+  ['parartodos_0',['pararTodos',['../class_motor_controller.html#a07e1f142ec2abe857ccbd59fabd49f86',1,'MotorController']]],
+  ['pinagem_1',['Configurações de Pinagem',['../group___pinout___configs.html',1,'']]],
+  ['playemotion_2',['playEmotion',['../class_beeper.html#a925fb784174b5136b4821bc2c84c9c40',1,'Beeper']]],
+  ['principais_3',['Principais',['../index.html#features_sec',1,'🌟 Funcionalidades Principais'],['../index.html#components_sec',1,'🛠️ Componentes Principais']]],
+  ['projeto_20robô_20esp32_20rookie_2032_20🤖_4',['Projeto Robô ESP32 (Rookie-32) 🤖',['../index.html',1,'']]]
 ];

@@ -78,20 +78,30 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Gerencia a animação e exibição de "olhos" em um display OLED.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_eye_animator_8hpp_source.html">EyeAnimator.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a922d011e54e5ff2588a3b9389457c76f" id="r_a922d011e54e5ff2588a3b9389457c76f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a922d011e54e5ff2588a3b9389457c76f">EyeAnimator</a> ()</td></tr>
+<tr class="memdesc:a922d011e54e5ff2588a3b9389457c76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor da classe <a class="el" href="class_eye_animator.html" title="Gerencia a animação e exibição de &quot;olhos&quot; em um display OLED.">EyeAnimator</a>.  <br /></td></tr>
 <tr class="separator:a922d011e54e5ff2588a3b9389457c76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff32590fa14c69642ed64e53a80d437e" id="r_aff32590fa14c69642ed64e53a80d437e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff32590fa14c69642ed64e53a80d437e">begin</a> ()</td></tr>
+<tr class="memdesc:aff32590fa14c69642ed64e53a80d437e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o display OLED.  <br /></td></tr>
 <tr class="separator:aff32590fa14c69642ed64e53a80d437e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae72e90919ab74c894dbfa24f7aa9c4e2" id="r_ae72e90919ab74c894dbfa24f7aa9c4e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae72e90919ab74c894dbfa24f7aa9c4e2">setEmotion</a> (<a class="el" href="_emotion_8hpp.html#ac0447ced44ef5108a4a2429e33fbabc1">Emotion</a> newEmotion)</td></tr>
+<tr class="memdesc:ae72e90919ab74c894dbfa24f7aa9c4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a nova emoção a ser exibida.  <br /></td></tr>
 <tr class="separator:ae72e90919ab74c894dbfa24f7aa9c4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7627916b80d57b9ee325d52eab588ce8" id="r_a7627916b80d57b9ee325d52eab588ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7627916b80d57b9ee325d52eab588ce8">updateAnimation</a> ()</td></tr>
+<tr class="memdesc:a7627916b80d57b9ee325d52eab588ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza o frame atual da animação dos olhos.  <br /></td></tr>
 <tr class="separator:a7627916b80d57b9ee325d52eab588ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Gerencia a animação e exibição de "olhos" em um display OLED. </p>
+<p>Esta classe é responsável por inicializar o display OLED, definir e atualizar as emoções exibidas (que são representadas por animações de olhos), e desenhar os frames correspondentes na tela. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a922d011e54e5ff2588a3b9389457c76f" name="a922d011e54e5ff2588a3b9389457c76f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a922d011e54e5ff2588a3b9389457c76f">&#9670;&#160;</a></span>EyeAnimator()</h2>
 
@@ -115,6 +125,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construtor da classe <a class="el" href="class_eye_animator.html" title="Gerencia a animação e exibição de &quot;olhos&quot; em um display OLED.">EyeAnimator</a>. </p>
+<p>Inicializa o objeto do display com a largura, altura e endereço I2C, define a emoção inicial como HAPPINESS, e reseta os contadores de tempo e frame. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -133,6 +146,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Inicializa o display OLED. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> se o display foi inicializado com sucesso, <code>false</code> caso contrário. </dd></dl>
+
 </div>
 </div>
 <a id="ae72e90919ab74c894dbfa24f7aa9c4e2" name="ae72e90919ab74c894dbfa24f7aa9c4e2"></a>
@@ -150,6 +166,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Define a nova emoção a ser exibida. </p>
+<p>Se a nova emoção for diferente da atual, a animação é reiniciada para o primeiro frame da nova emoção. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newEmotion</td><td>A nova emoção a ser definida. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a7627916b80d57b9ee325d52eab588ce8" name="a7627916b80d57b9ee325d52eab588ce8"></a>
@@ -166,6 +190,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Atualiza o frame atual da animação dos olhos. </p>
+<p>Esta função avança para o próximo frame da animação se o tempo de duração do frame atual tiver passado, e redesenha os olhos no display. </p>
 
 </div>
 </div>

@@ -1,30 +1,74 @@
 /**
- * @mainpage Projeto Robô ESP32 (Rookie-32)
- * 
- * @section intro_sec Introdução
- * Este projeto consiste em um sistema embarcado desenvolvido para o ESP32,
- * utilizando FreeRTOS para realizar multitarefas de forma eficiente e modular.
- * O sistema integra controle de olhos animados em display OLED, comunicação Wi-Fi,
- * detecção de obstáculos, monitoramento de bateria e emissão de sinais sonoros (beep).
- * 
- * @section features_sec Funcionalidades Principais
- * - Controle multitarefa com FreeRTOS
- * - Animações faciais por OLED (TaskEyes)
- * - Comunicação Wi-Fi (TaskWIFI)
- * - Sinalização sonora com base em estados emocionais (TaskBeep)
- * - Detecção de obstáculos com sensores de proximidade (TaskObstacle)
- * - Monitoramento de carga e tensão de bateria (TaskBattery)
- * - Integração com watchdog (TWDT) para robustez
- * 
- * @section arch_sec Arquitetura
- * Cada funcionalidade é encapsulada em uma tarefa independente, representada por uma
- * classe C++ e gerenciada pelo FreeRTOS. A inicialização das tarefas e semáforos
- * ocorre por meio da função `createFreeRTOSTasks()`, garantindo sincronização segura.
+ * @mainpage Projeto Robô ESP32 (Rookie-32) 🤖
  *
- * @section dev_sec Desenvolvimento
- * Desenvolvido utilizando:
- * - ESP32 Dev Module
- * - FreeRTOS (via ESP-IDF / Arduino)
- * - PlatformIO (estrutura de projeto)
- * - C++
+ * @brief O Rookie-32 é um robô móvel **inteligente** e **expressivo**, controlado via Bluetooth, que integra sensores, atuadores e comunicação sem fio em uma plataforma embarcada com FreeRTOS.
+ *
+ * @section intro_sec 🚀 Introdução
+ * Este projeto consiste no desenvolvimento do Rookie-32, um sistema embarcado avançado
+ * para o ESP32, que utiliza o FreeRTOS para gerenciar múltiplas tarefas de forma
+ * **eficiente** e **modular**. O objetivo principal é criar um robô móvel que combine
+ * navegação autônoma com interações expressivas, proporcionando uma experiência
+ * de usuário rica e demonstrando conceitos fundamentais de sistemas embarcados. ✨
+ *
+ * @section features_sec 🌟 Funcionalidades Principais
+ * O Rookie-32 possui um conjunto de funcionalidades robustas que o tornam um projeto completo e versátil:
+ * - **Controle Multitarefa com FreeRTOS:** Gerenciamento eficiente de recursos e execução concorrente
+ * de operações através de tarefas dedicadas. ⚙️
+ * - **Animações Faciais por Display OLED:** Expressão de "emoções" e estados do sistema
+ * através de olhos animados exibidos em um display OLED (gerenciado pela @ref TaskEyes). 👀
+ * - **Comunicação Bluetooth:** Controle remoto e troca de dados bidirecional com um aplicativo móvel.
+ * (gerenciado pela @ref TaskBluetooth). 📱↔️🤖
+ * - **Detecção de Obstáculos:** Navegação segura com sensores ultrassônicos HC-SR04 para identificar e
+ * evitar colisões (gerenciado pela @ref TaskObstacle). 🛡️
+ * - **Sinalização Sonora Expressiva:** Emissão de alertas e "sons de personalidade"
+ * através de um buzzer de 3.3V (controlado pela @ref TaskBeep). 🔊🎶
+ * - **Monitoramento de Bateria Inteligente:** Acompanhamento em tempo real do nível de carga
+ * e tensão da bateria via ADC (monitorado pela @ref TaskBattery). 🔋
+ * - **Integração com Watchdog Timer (TWDT):** Aumento da **robustez** do sistema, prevenindo
+ * travamentos e garantindo a continuidade da operação. 🐶
+ * - **Controle de Motores:** Mobilidade do robô garantida por motores DC com esteiras,
+ * controlados por pontes H. 🚜
+ * - **Capacidades de Visão (Futura/Desejável):** Provisão para captura e transmissão de imagens
+ * em tempo real via ESP32-CAM em rede Wi-Fi (como funcionalidade desejável). 📸
+ *
+ * @section arch_sec 💡 Arquitetura de Software
+ * A arquitetura do Rookie-32 é fortemente baseada em um modelo de **multitarefas**,
+ * onde cada funcionalidade principal é encapsulada em uma tarefa independente do FreeRTOS.
+ * Isso promove a **modularidade**, **escalabilidade** e a **reusabilidade** do código.
+ * A inicialização de todas as tarefas e dos mecanismos de sincronização (semáforos)
+ * é centralizada na função `createFreeRTOSTasks()`, garantindo um ambiente operacional
+ * coeso e seguro. 🧠
+ *
+ * @section components_sec 🛠️ Componentes Principais
+ * A implementação do Rookie-32 envolve a seguinte lista de componentes de hardware e software:
+ *
+ * <b>Hardware:</b>
+ * - Microcontrolador Principal: ESP32S NodeMCU ESP-12
+ * - Microcontrolador de Visão: ESP32-CAM (para funcionalidades futuras de câmera)
+ * - Display: OLED 128x64 (I2C)
+ * - Motores: 2x Motores DC com Esteiras e Pontes H
+ * - Buzzer: Piezoelétrico de 3.3V
+ * - Fonte de Alimentação: Pack de Bateria Li-Ion 8.4V Recarregável com Regulador de Tensão (LM7805)
+ * - Sensor de Proximidade: HC-SR04 (Ultrassônico)
+ *
+ * <b>Software:</b>
+ * - Plataforma de Desenvolvimento: PlatformIO (com Arduino Framework)
+ * - Sistema Operacional de Tempo Real (RTOS): FreeRTOS
+ * - Linguagem de Programação Embarcada: C++
+ * - Aplicativo de Controle: Desenvolvido em Dart (Framework Flutter) para Android/iOS.
+ *
+ * @section usage_sec 🎮 Como Usar
+ * A interação com o Rookie-32 é primariamente feita através do aplicativo móvel:
+ * - Conecte-se ao robô via Bluetooth utilizando o aplicativo móvel. 📲
+ * - Utilize o joystick virtual no aplicativo para controlar a movimentação do robô. 🕹️
+ * - Botões dedicados permitem ativar sons específicos e alterar as expressões dos olhos no display OLED. 👀🔊
+ * - O nível da bateria pode ser consultado diretamente no aplicativo. 🔋📊
+ *
+ * @section dev_sec 💻 Desenvolvimento
+ * O projeto foi desenvolvido utilizando:
+ * - **Microcontrolador:** ESP32 Dev Module.
+ * - **RTOS:** FreeRTOS (integrado via ESP-IDF / Arduino Framework).
+ * - **Ambiente:** PlatformIO (para gerenciamento da estrutura do projeto e dependências).
+ * - **Linguagem:** C++.
+ *
  */

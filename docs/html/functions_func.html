@@ -76,7 +76,8 @@ $(function() {
 <h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
 <li>BatteryMonitor()&#160;:&#160;<a class="el" href="class_battery_monitor.html#adf29038f82235c61e96815cbdc3e9796">BatteryMonitor</a></li>
 <li>Beeper()&#160;:&#160;<a class="el" href="class_beeper.html#acba699f551138e660fce4036a084d819">Beeper</a></li>
-<li>begin()&#160;:&#160;<a class="el" href="class_eye_animator.html#aff32590fa14c69642ed64e53a80d437e">EyeAnimator</a>, <a class="el" href="class_wi_fi___a_p.html#a5bf0a7be856a72e28186c2842c3390ae">WiFi_AP</a></li>
+<li>begin()&#160;:&#160;<a class="el" href="class_bluetooth_handler.html#a1be9f64099418609c836223223293ee4">BluetoothHandler</a>, <a class="el" href="class_eye_animator.html#aff32590fa14c69642ed64e53a80d437e">EyeAnimator</a>, <a class="el" href="class_motor_controller.html#a1cb5865ca59693edd2059cde1f222531">MotorController</a></li>
+<li>BluetoothHandler()&#160;:&#160;<a class="el" href="class_bluetooth_handler.html#a19b38d2648503de934f34de471efccaf">BluetoothHandler</a></li>
 </ul>
 
 
@@ -91,12 +92,14 @@ $(function() {
 
 
 <h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
-<li>handleClient()&#160;:&#160;<a class="el" href="class_wi_fi___a_p.html#aca8dbd596dd5e3e78c4c2bbba1f2524d">WiFi_AP</a></li>
+<li>handle()&#160;:&#160;<a class="el" href="class_motor_controller.html#a6a0bdc653f684f3e0173f8bbd8be3a1c">MotorController</a></li>
+<li>handleClient()&#160;:&#160;<a class="el" href="class_bluetooth_handler.html#af4cf6a4784ebe81370390693adfce530">BluetoothHandler</a></li>
 </ul>
 
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>measureDistance()&#160;:&#160;<a class="el" href="class_obstacle_detector.html#a527dcc442345c95063baa86272ac8c9a">ObstacleDetector</a></li>
+<li>MotorController()&#160;:&#160;<a class="el" href="class_motor_controller.html#ada097819e38e27a6fc99f1f01d6375a4">MotorController</a></li>
 </ul>
 
 
@@ -106,6 +109,7 @@ $(function() {
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>pararTodos()&#160;:&#160;<a class="el" href="class_motor_controller.html#a07e1f142ec2abe857ccbd59fabd49f86">MotorController</a></li>
 <li>playEmotion()&#160;:&#160;<a class="el" href="class_beeper.html#a925fb784174b5136b4821bc2c84c9c40">Beeper</a></li>
 </ul>
 
@@ -117,18 +121,16 @@ $(function() {
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>setCallback()&#160;:&#160;<a class="el" href="class_obstacle_detector.html#aba591fb86b978ed81ad1d266fb228a61">ObstacleDetector</a></li>
-<li>setClientConnectCallback()&#160;:&#160;<a class="el" href="class_wi_fi___a_p.html#afcd11f317aaee4198c49bb9629a9257c">WiFi_AP</a></li>
-<li>setClientDisconnectCallback()&#160;:&#160;<a class="el" href="class_wi_fi___a_p.html#ab064ee5ba29be3b848bddce13e18f188">WiFi_AP</a></li>
 <li>setEmotion()&#160;:&#160;<a class="el" href="class_eye_animator.html#ae72e90919ab74c894dbfa24f7aa9c4e2">EyeAnimator</a></li>
 <li>setMaxBatteryVoltage()&#160;:&#160;<a class="el" href="class_battery_monitor.html#aed4681f76e62bc4dade47ebc81b463d7">BatteryMonitor</a></li>
 <li>setMinBatteryVoltage()&#160;:&#160;<a class="el" href="class_battery_monitor.html#af0cae282c239bdd985746f210532fc0c">BatteryMonitor</a></li>
-<li>setSoundCallback()&#160;:&#160;<a class="el" href="class_wi_fi___a_p.html#a1c1ac786ebaeaf11c3ec7b0647e4ced4">WiFi_AP</a></li>
-<li>start()&#160;:&#160;<a class="el" href="class_task_battery.html#a1fee491bdeea4ab60756139bbb5bce69">TaskBattery</a>, <a class="el" href="class_task_beep.html#a106bf56cef3fbcb17fdb59024208ba99">TaskBeep</a>, <a class="el" href="class_task_eyes.html#af145370590b71aa2290feeec54ef29b8">TaskEyes</a>, <a class="el" href="class_task_obstacle.html#a4b0b57cb73f8946661f31a24105fd977">TaskObstacle</a>, <a class="el" href="class_task_w_i_f_i.html#a3ec0a992dab7341fb30d723c85ee2ba3">TaskWIFI</a></li>
+<li>setSoundCallback()&#160;:&#160;<a class="el" href="class_bluetooth_handler.html#a19f3847aa0a80f3da2e7308982b8f818">BluetoothHandler</a></li>
+<li>start()&#160;:&#160;<a class="el" href="class_task_battery.html#a1fee491bdeea4ab60756139bbb5bce69">TaskBattery</a>, <a class="el" href="class_task_beep.html#a106bf56cef3fbcb17fdb59024208ba99">TaskBeep</a>, <a class="el" href="class_task_bluetooth.html#a64a74b7a4e9b48c38a5934439a08fe62">TaskBluetooth</a>, <a class="el" href="class_task_eyes.html#af145370590b71aa2290feeec54ef29b8">TaskEyes</a>, <a class="el" href="class_task_obstacle.html#a4b0b57cb73f8946661f31a24105fd977">TaskObstacle</a></li>
 </ul>
 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
-<li>taskFunction()&#160;:&#160;<a class="el" href="class_task_battery.html#af48657be13b2cc8f8b0b6c0f02f0cf9f">TaskBattery</a>, <a class="el" href="class_task_beep.html#a94601fd299a5908a5dea95ea2633ec02">TaskBeep</a>, <a class="el" href="class_task_eyes.html#ac05b439691c9ceec9cb45772330c8a2e">TaskEyes</a>, <a class="el" href="class_task_obstacle.html#a8dcfea26f7b2ee32fa5ef93b34b9c7a9">TaskObstacle</a>, <a class="el" href="class_task_w_i_f_i.html#a7206a7039aa1726307b48134ca7f96c4">TaskWIFI</a></li>
+<li>taskFunction()&#160;:&#160;<a class="el" href="class_task_battery.html#af48657be13b2cc8f8b0b6c0f02f0cf9f">TaskBattery</a>, <a class="el" href="class_task_beep.html#a94601fd299a5908a5dea95ea2633ec02">TaskBeep</a>, <a class="el" href="class_task_bluetooth.html#a541a205f6554811d22778fdf55f1d68e">TaskBluetooth</a>, <a class="el" href="class_task_eyes.html#ac05b439691c9ceec9cb45772330c8a2e">TaskEyes</a>, <a class="el" href="class_task_obstacle.html#a8dcfea26f7b2ee32fa5ef93b34b9c7a9">TaskObstacle</a></li>
 <li>triggerBeep()&#160;:&#160;<a class="el" href="class_task_beep.html#a273de62b34038989f8abe6c6daea509a">TaskBeep</a></li>
 <li>triggerEmotion()&#160;:&#160;<a class="el" href="class_task_eyes.html#ad74085975549062a67cbefeb147c5839">TaskEyes</a></li>
 </ul>
@@ -141,11 +143,6 @@ $(function() {
 
 <h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
 <li>verify()&#160;:&#160;<a class="el" href="class_obstacle_detector.html#ae3c1ccf8eda135482852546aa08c01fe">ObstacleDetector</a></li>
-</ul>
-
-
-<h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
-<li>WiFi_AP()&#160;:&#160;<a class="el" href="class_wi_fi___a_p.html#a202c975cb75381bc147bbeed5bdab88b">WiFi_AP</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

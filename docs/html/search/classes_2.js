@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['obstacledetector_0',['ObstacleDetector',['../class_obstacle_detector.html',1,'']]]
+  ['motorcontroller_0',['MotorController',['../class_motor_controller.html',1,'']]]
 ];

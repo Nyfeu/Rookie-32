@@ -1,30 +1,5 @@
 var searchData=
 [
-  ['taskbattery_0',['TaskBattery',['../class_task_battery.html',1,'']]],
-  ['taskbattery_2ecpp_1',['TaskBattery.cpp',['../_task_battery_8cpp.html',1,'']]],
-  ['taskbattery_2ehpp_2',['TaskBattery.hpp',['../_task_battery_8hpp.html',1,'']]],
-  ['taskbatterysemaphore_3',['taskBatterySemaphore',['../group___tasks.html#ga9c6d946f63793d46a7f605bd951beb42',1,'taskBatterySemaphore:&#160;Tasks.hpp'],['../group___tasks.html#ga9c6d946f63793d46a7f605bd951beb42',1,'taskBatterySemaphore:&#160;Tasks.hpp']]],
-  ['taskbeep_4',['TaskBeep',['../class_task_beep.html',1,'']]],
-  ['taskbeep_2ecpp_5',['TaskBeep.cpp',['../_task_beep_8cpp.html',1,'']]],
-  ['taskbeep_2ehpp_6',['TaskBeep.hpp',['../_task_beep_8hpp.html',1,'']]],
-  ['taskbeepersemaphore_7',['taskBeeperSemaphore',['../group___tasks.html#gaf64b0e0f79d052bb50348fbf6246a464',1,'taskBeeperSemaphore:&#160;Tasks.hpp'],['../group___tasks.html#gaf64b0e0f79d052bb50348fbf6246a464',1,'taskBeeperSemaphore:&#160;Tasks.hpp']]],
-  ['taskeyes_8',['TaskEyes',['../class_task_eyes.html',1,'']]],
-  ['taskeyes_2ecpp_9',['TaskEyes.cpp',['../_task_eyes_8cpp.html',1,'']]],
-  ['taskeyes_2ehpp_10',['TaskEyes.hpp',['../_task_eyes_8hpp.html',1,'']]],
-  ['taskeyessemaphore_11',['taskEyesSemaphore',['../group___tasks.html#gaccfe48e11582762bec4e7707851aee7d',1,'taskEyesSemaphore:&#160;Tasks.hpp'],['../group___tasks.html#gaccfe48e11582762bec4e7707851aee7d',1,'taskEyesSemaphore:&#160;Tasks.hpp']]],
-  ['taskfunction_12',['taskFunction',['../class_task_battery.html#af48657be13b2cc8f8b0b6c0f02f0cf9f',1,'TaskBattery::taskFunction()'],['../class_task_beep.html#a94601fd299a5908a5dea95ea2633ec02',1,'TaskBeep::taskFunction()'],['../class_task_eyes.html#ac05b439691c9ceec9cb45772330c8a2e',1,'TaskEyes::taskFunction()'],['../class_task_obstacle.html#a8dcfea26f7b2ee32fa5ef93b34b9c7a9',1,'TaskObstacle::taskFunction()'],['../class_task_w_i_f_i.html#a7206a7039aa1726307b48134ca7f96c4',1,'TaskWIFI::taskFunction()']]],
-  ['taskhandle_13',['taskHandle',['../class_task_battery.html#a01e8a0e41f7b9b70ddbb173d312c348e',1,'TaskBattery::taskHandle'],['../class_task_beep.html#a71e2641a4fcc56301bb9f3395f29104f',1,'TaskBeep::taskHandle'],['../class_task_eyes.html#afae8c09ec018fb02a047cc28affcced0',1,'TaskEyes::taskHandle'],['../class_task_obstacle.html#a103b1b81a2593eaa838052be9a6ebb0b',1,'TaskObstacle::taskHandle'],['../class_task_w_i_f_i.html#aa8f7714b8fcd23d431b6f622cb7898b3',1,'TaskWIFI::taskHandle']]],
-  ['taskobstacle_14',['TaskObstacle',['../class_task_obstacle.html',1,'']]],
-  ['taskobstacle_2ecpp_15',['TaskObstacle.cpp',['../_task_obstacle_8cpp.html',1,'']]],
-  ['taskobstacle_2ehpp_16',['TaskObstacle.hpp',['../_task_obstacle_8hpp.html',1,'']]],
-  ['taskobstaclesemaphore_17',['taskObstacleSemaphore',['../group___tasks.html#gacca850b0de63367fd103fb31bcc5748e',1,'taskObstacleSemaphore:&#160;Tasks.hpp'],['../group___tasks.html#gacca850b0de63367fd103fb31bcc5748e',1,'taskObstacleSemaphore:&#160;Tasks.hpp']]],
-  ['tasks_18',['Tasks',['../group___tasks.html',1,'']]],
-  ['tasks_2ehpp_19',['Tasks.hpp',['../_tasks_8hpp.html',1,'']]],
-  ['taskwifi_20',['TaskWIFI',['../class_task_w_i_f_i.html',1,'']]],
-  ['taskwifi_2ecpp_21',['TaskWiFi.cpp',['../_task_wi_fi_8cpp.html',1,'']]],
-  ['taskwifi_2ehpp_22',['TaskWiFi.hpp',['../_task_wi_fi_8hpp.html',1,'']]],
-  ['taskwifisemaphore_23',['taskWIFISemaphore',['../group___tasks.html#gadef0ac87b4e854c579793f7aaefdde65',1,'taskWIFISemaphore:&#160;Tasks.hpp'],['../group___tasks.html#gadef0ac87b4e854c579793f7aaefdde65',1,'taskWIFISemaphore:&#160;Tasks.hpp']]],
-  ['trigger_5fpin_24',['TRIGGER_PIN',['../_aplic_8hpp.html#adacee581176b7076b7baf0f72d81460f',1,'Aplic.hpp']]],
-  ['triggerbeep_25',['triggerBeep',['../class_task_beep.html#a273de62b34038989f8abe6c6daea509a',1,'TaskBeep']]],
-  ['triggeremotion_26',['triggerEmotion',['../class_task_eyes.html#ad74085975549062a67cbefeb147c5839',1,'TaskEyes']]]
+  ['updateanimation_0',['updateAnimation',['../class_eye_animator.html#a7627916b80d57b9ee325d52eab588ce8',1,'EyeAnimator']]],
+  ['usar_1',['🎮 Como Usar',['../index.html#usage_sec',1,'']]]
 ];

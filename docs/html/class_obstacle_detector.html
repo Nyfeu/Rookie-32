@@ -78,20 +78,30 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Gerencia a detecção de obstáculos usando um sensor ultrassônico HC-SR04.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_obstacle_detector_8hpp_source.html">ObstacleDetector.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9d8e1fa099bc4a0105117673619aa7e9" id="r_a9d8e1fa099bc4a0105117673619aa7e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d8e1fa099bc4a0105117673619aa7e9">ObstacleDetector</a> (int trig, int echo, int distancia)</td></tr>
+<tr class="memdesc:a9d8e1fa099bc4a0105117673619aa7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor da classe <a class="el" href="class_obstacle_detector.html" title="Gerencia a detecção de obstáculos usando um sensor ultrassônico HC-SR04.">ObstacleDetector</a>.  <br /></td></tr>
 <tr class="separator:a9d8e1fa099bc4a0105117673619aa7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba591fb86b978ed81ad1d266fb228a61" id="r_aba591fb86b978ed81ad1d266fb228a61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba591fb86b978ed81ad1d266fb228a61">setCallback</a> (void(*func)())</td></tr>
+<tr class="memdesc:aba591fb86b978ed81ad1d266fb228a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a função de callback a ser executada quando um obstáculo é detectado.  <br /></td></tr>
 <tr class="separator:aba591fb86b978ed81ad1d266fb228a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a527dcc442345c95063baa86272ac8c9a" id="r_a527dcc442345c95063baa86272ac8c9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a527dcc442345c95063baa86272ac8c9a">measureDistance</a> ()</td></tr>
+<tr class="memdesc:a527dcc442345c95063baa86272ac8c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mede a distância usando o sensor ultrassônico.  <br /></td></tr>
 <tr class="separator:a527dcc442345c95063baa86272ac8c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3c1ccf8eda135482852546aa08c01fe" id="r_ae3c1ccf8eda135482852546aa08c01fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3c1ccf8eda135482852546aa08c01fe">verify</a> ()</td></tr>
+<tr class="memdesc:ae3c1ccf8eda135482852546aa08c01fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica a presença de obstáculos.  <br /></td></tr>
 <tr class="separator:ae3c1ccf8eda135482852546aa08c01fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Gerencia a detecção de obstáculos usando um sensor ultrassônico HC-SR04. </p>
+<p>Esta classe fornece métodos para medir distâncias e verificar a presença de obstáculos, disparando um callback opcional quando um obstáculo é detectado dentro de uma distância limite. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9d8e1fa099bc4a0105117673619aa7e9" name="a9d8e1fa099bc4a0105117673619aa7e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d8e1fa099bc4a0105117673619aa7e9">&#9670;&#160;</a></span>ObstacleDetector()</h2>
 
@@ -116,6 +126,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Construtor da classe <a class="el" href="class_obstacle_detector.html" title="Gerencia a detecção de obstáculos usando um sensor ultrassônico HC-SR04.">ObstacleDetector</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trig</td><td>O pino TRIGGER do sensor ultrassônico. </td></tr>
+    <tr><td class="paramname">echo</td><td>O pino ECHO do sensor ultrassônico. </td></tr>
+    <tr><td class="paramname">distancia</td><td>A distância máxima em centímetros para considerar a detecção de um obstáculo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -133,6 +153,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Mede a distância usando o sensor ultrassônico. </p>
+<p>A função envia um pulso ultrassônico e mede o tempo de retorno para calcular a distância. </p><dl class="section return"><dt>Returns</dt><dd>A distância medida em centímetros. </dd></dl>
 
 </div>
 </div>
@@ -159,6 +182,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Define a função de callback a ser executada quando um obstáculo é detectado. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>Ponteiro para a função de callback (sem parâmetros e sem retorno). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ae3c1ccf8eda135482852546aa08c01fe" name="ae3c1ccf8eda135482852546aa08c01fe"></a>
@@ -175,6 +206,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verifica a presença de obstáculos. </p>
+<p>Se a distância medida for menor ou igual a <code>distancia_obstaculo</code> e uma função de callback estiver configurada, o callback é chamado. </p><dl class="section return"><dt>Returns</dt><dd><code>true</code> se um obstáculo for detectado e o callback for chamado, <code>false</code> caso contrário. </dd></dl>
 
 </div>
 </div>

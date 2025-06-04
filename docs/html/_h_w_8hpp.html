@@ -81,10 +81,14 @@ $(function() {
   <div class="headertitle"><div class="title">HW.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Definições e funções de inicialização para os componentes de hardware do Rookie-32.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_aplic_8hpp_source.html">Aplic.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_beeper_8hpp_source.html">Modules/Beeper.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_battery_monitor_8hpp_source.html">Modules/BatteryMonitor.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_obstacle_detector_8hpp_source.html">Modules/ObstacleDetector.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_motor_controller_8hpp_source.html">Modules/MotorController.hpp</a>&quot;</code><br />
 </div>
 <p><a href="_h_w_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -93,9 +97,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a527d6f30644bbd25a967e7764a9d5c62" id="r_a527d6f30644bbd25a967e7764a9d5c62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a527d6f30644bbd25a967e7764a9d5c62">initBuzzerPWM</a> ()</td></tr>
 <tr class="memdesc:a527d6f30644bbd25a967e7764a9d5c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o PWM para o buzzer. Configura o canal PWM no pino BUZZER_PIN com 1kHz e 8 bits de resolução. Define o duty cycle inicial para 50%.  <br /></td></tr>
 <tr class="separator:a527d6f30644bbd25a967e7764a9d5c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac546fc184c186942efb41efc702259b1" id="r_ac546fc184c186942efb41efc702259b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac546fc184c186942efb41efc702259b1">initMotorPWM</a> ()</td></tr>
-<tr class="memdesc:ac546fc184c186942efb41efc702259b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o PWM para os motores (implementação futura). Essa função será utilizada para configurar os canais PWM dos motores.  <br /></td></tr>
-<tr class="separator:ac546fc184c186942efb41efc702259b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72af49fb7191c300fa1a1a8ec5c91b13" id="r_a72af49fb7191c300fa1a1a8ec5c91b13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72af49fb7191c300fa1a1a8ec5c91b13">initMotor</a> ()</td></tr>
+<tr class="memdesc:a72af49fb7191c300fa1a1a8ec5c91b13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o PWM para os motores (implementação futura). Essa função será utilizada para configurar os canais PWM dos motores.  <br /></td></tr>
+<tr class="separator:a72af49fb7191c300fa1a1a8ec5c91b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafb209257d953c0d6f6cd6ec916d52ed" id="r_aafb209257d953c0d6f6cd6ec916d52ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafb209257d953c0d6f6cd6ec916d52ed">initSerialComms</a> ()</td></tr>
 <tr class="memdesc:aafb209257d953c0d6f6cd6ec916d52ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa a comunicação serial. Configura a Serial Monitor com a taxa de transmissão definida e aguarda conexão. Após a inicialização, imprime mensagens indicando status e toca um som de felicidade.  <br /></td></tr>
 <tr class="separator:aafb209257d953c0d6f6cd6ec916d52ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,12 +115,20 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a78e42e4d1830f13a1c4deeba5f88968a" id="r_a78e42e4d1830f13a1c4deeba5f88968a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_beeper.html">Beeper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78e42e4d1830f13a1c4deeba5f88968a">beeper</a> (<a class="el" href="_aplic_8hpp.html#ab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a>)</td></tr>
+<tr class="memitem:a78e42e4d1830f13a1c4deeba5f88968a" id="r_a78e42e4d1830f13a1c4deeba5f88968a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_beeper.html">Beeper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78e42e4d1830f13a1c4deeba5f88968a">beeper</a> (<a class="el" href="group___pinout___configs.html#gab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a>)</td></tr>
+<tr class="memdesc:a78e42e4d1830f13a1c4deeba5f88968a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instância global do beeper utilizando o pino do buzzer definido em <a class="el" href="_aplic_8hpp.html" title="Definições globais de configuração e pinagem para o projeto Rookie-32.">Aplic.hpp</a>.  <br /></td></tr>
 <tr class="separator:a78e42e4d1830f13a1c4deeba5f88968a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e03f225e36724c20b64ce4fcb40dfce" id="r_a9e03f225e36724c20b64ce4fcb40dfce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_battery_monitor.html">BatteryMonitor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e03f225e36724c20b64ce4fcb40dfce">battery</a> (<a class="el" href="_aplic_8hpp.html#a92165ee224e6e3601f6973cca883fe51">BATT_PIN</a>)</td></tr>
+<tr class="memitem:af352c31e7f298d801acca9c5f1d736bc" id="r_af352c31e7f298d801acca9c5f1d736bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_motor_controller.html">MotorController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af352c31e7f298d801acca9c5f1d736bc">motor</a> (<a class="el" href="group___pinout___configs.html#ga9cb6fbf7979f640e6e890f5fa03053f6">MOTOR_IN1A</a>, <a class="el" href="group___pinout___configs.html#ga31ea1cb72ecfecb0a89e1f853472e406">MOTOR_IN2A</a>, <a class="el" href="group___pinout___configs.html#ga5b60047fe07046423c981197080fa053">MOTOR_IN1B</a>, <a class="el" href="group___pinout___configs.html#ga8ad47b042f78b7e8ec1d82659855c707">MOTOR_IN2B</a>)</td></tr>
+<tr class="memdesc:af352c31e7f298d801acca9c5f1d736bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instância global do controle de motores utilizando os pinos definidos em <a class="el" href="_aplic_8hpp.html" title="Definições globais de configuração e pinagem para o projeto Rookie-32.">Aplic.hpp</a>.  <br /></td></tr>
+<tr class="separator:af352c31e7f298d801acca9c5f1d736bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e03f225e36724c20b64ce4fcb40dfce" id="r_a9e03f225e36724c20b64ce4fcb40dfce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_battery_monitor.html">BatteryMonitor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e03f225e36724c20b64ce4fcb40dfce">battery</a> (<a class="el" href="group___pinout___configs.html#ga92165ee224e6e3601f6973cca883fe51">BATT_PIN</a>)</td></tr>
+<tr class="memdesc:a9e03f225e36724c20b64ce4fcb40dfce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instância global do monitor de bateria utilizando o pino ADC definido em <a class="el" href="_aplic_8hpp.html" title="Definições globais de configuração e pinagem para o projeto Rookie-32.">Aplic.hpp</a>.  <br /></td></tr>
 <tr class="separator:a9e03f225e36724c20b64ce4fcb40dfce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definições e funções de inicialização para os componentes de hardware do Rookie-32. </p>
+<p>Este arquivo centraliza a criação de instâncias globais para os módulos de hardware como o beeper, o controlador de motores e o monitor de bateria. Ele também define funções para inicializar cada um desses componentes e a comunicação geral do sistema, como PWM para o buzzer, configuração dos pinos, e comunicação serial. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="af06fe91f215a5bfdfff0c86a69c758a4" name="af06fe91f215a5bfdfff0c86a69c758a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af06fe91f215a5bfdfff0c86a69c758a4">&#9670;&#160;</a></span>initBatteryADC()</h2>
 
@@ -174,14 +186,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ac546fc184c186942efb41efc702259b1" name="ac546fc184c186942efb41efc702259b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac546fc184c186942efb41efc702259b1">&#9670;&#160;</a></span>initMotorPWM()</h2>
+<a id="a72af49fb7191c300fa1a1a8ec5c91b13" name="a72af49fb7191c300fa1a1a8ec5c91b13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72af49fb7191c300fa1a1a8ec5c91b13">&#9670;&#160;</a></span>initMotor()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void initMotorPWM </td>
+          <td class="memname">void initMotor </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -239,13 +251,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_battery_monitor.html">BatteryMonitor</a> battery(<a class="el" href="_aplic_8hpp.html#a92165ee224e6e3601f6973cca883fe51">BATT_PIN</a>) </td>
+          <td class="memname"><a class="el" href="class_battery_monitor.html">BatteryMonitor</a> battery(<a class="el" href="group___pinout___configs.html#ga92165ee224e6e3601f6973cca883fe51">BATT_PIN</a>) </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_aplic_8hpp.html#a92165ee224e6e3601f6973cca883fe51">BATT_PIN</a></td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group___pinout___configs.html#ga92165ee224e6e3601f6973cca883fe51">BATT_PIN</a></td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Instância global do monitor de bateria utilizando o pino ADC definido em <a class="el" href="_aplic_8hpp.html" title="Definições globais de configuração e pinagem para o projeto Rookie-32.">Aplic.hpp</a>. </p>
 
 </div>
 </div>
@@ -256,13 +270,48 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_beeper.html">Beeper</a> beeper(<a class="el" href="_aplic_8hpp.html#ab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a>) </td>
+          <td class="memname"><a class="el" href="class_beeper.html">Beeper</a> beeper(<a class="el" href="group___pinout___configs.html#gab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a>) </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_aplic_8hpp.html#ab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a></td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group___pinout___configs.html#gab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a></td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Instância global do beeper utilizando o pino do buzzer definido em <a class="el" href="_aplic_8hpp.html" title="Definições globais de configuração e pinagem para o projeto Rookie-32.">Aplic.hpp</a>. </p>
+
+</div>
+</div>
+<a id="af352c31e7f298d801acca9c5f1d736bc" name="af352c31e7f298d801acca9c5f1d736bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af352c31e7f298d801acca9c5f1d736bc">&#9670;&#160;</a></span>motor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_motor_controller.html">MotorController</a> motor(<a class="el" href="group___pinout___configs.html#ga9cb6fbf7979f640e6e890f5fa03053f6">MOTOR_IN1A</a>, <a class="el" href="group___pinout___configs.html#ga31ea1cb72ecfecb0a89e1f853472e406">MOTOR_IN2A</a>, <a class="el" href="group___pinout___configs.html#ga5b60047fe07046423c981197080fa053">MOTOR_IN1B</a>, <a class="el" href="group___pinout___configs.html#ga8ad47b042f78b7e8ec1d82659855c707">MOTOR_IN2B</a>) </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___pinout___configs.html#ga9cb6fbf7979f640e6e890f5fa03053f6">MOTOR_IN1A</a></td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___pinout___configs.html#ga31ea1cb72ecfecb0a89e1f853472e406">MOTOR_IN2A</a></td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___pinout___configs.html#ga5b60047fe07046423c981197080fa053">MOTOR_IN1B</a></td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___pinout___configs.html#ga8ad47b042f78b7e8ec1d82659855c707">MOTOR_IN2B</a></td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Instância global do controle de motores utilizando os pinos definidos em <a class="el" href="_aplic_8hpp.html" title="Definições globais de configuração e pinagem para o projeto Rookie-32.">Aplic.hpp</a>. </p>
 
 </div>
 </div>

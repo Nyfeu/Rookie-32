@@ -1,3 +1,13 @@
+/**
+ * @file HW.hpp
+ * @brief Definições e funções de inicialização para os componentes de hardware do Rookie-32.
+ *
+ * Este arquivo centraliza a criação de instâncias globais para os módulos de hardware
+ * como o beeper, o controlador de motores e o monitor de bateria. Ele também define
+ * funções para inicializar cada um desses componentes e a comunicação geral do sistema,
+ * como PWM para o buzzer, configuração dos pinos, e comunicação serial.
+ */
+
 #ifndef _HW_H
 #define _HW_H
 
@@ -7,13 +17,19 @@
 #include "Modules/ObstacleDetector.hpp"
 #include "Modules/MotorController.hpp"
 
-// Instância do beeper utilizando o pino do buzzer
+/**
+ * @brief Instância global do beeper utilizando o pino do buzzer definido em Aplic.hpp.
+ */
 Beeper beeper(BUZZER_PIN);
 
-// Instância do controle de motores
+/**
+ * @brief Instância global do controle de motores utilizando os pinos definidos em Aplic.hpp.
+ */
 MotorController motor(MOTOR_IN1A, MOTOR_IN2A, MOTOR_IN1B, MOTOR_IN2B);
 
-// Instância de monitor de bateria
+/**
+ * @brief Instância global do monitor de bateria utilizando o pino ADC definido em Aplic.hpp.
+ */
 BatteryMonitor battery(BATT_PIN);
 
 /**

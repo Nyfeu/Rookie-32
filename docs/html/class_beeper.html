@@ -78,16 +78,24 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Gerencia a emissão de sons através de um buzzer.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_beeper_8hpp_source.html">Beeper.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acba699f551138e660fce4036a084d819" id="r_acba699f551138e660fce4036a084d819"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acba699f551138e660fce4036a084d819">Beeper</a> (int pin)</td></tr>
+<tr class="memdesc:acba699f551138e660fce4036a084d819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor da classe <a class="el" href="class_beeper.html" title="Gerencia a emissão de sons através de um buzzer.">Beeper</a>.  <br /></td></tr>
 <tr class="separator:acba699f551138e660fce4036a084d819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a925fb784174b5136b4821bc2c84c9c40" id="r_a925fb784174b5136b4821bc2c84c9c40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a925fb784174b5136b4821bc2c84c9c40">playEmotion</a> (<a class="el" href="_emotion_8hpp.html#ac0447ced44ef5108a4a2429e33fbabc1">Emotion</a> emotion)</td></tr>
+<tr class="memdesc:a925fb784174b5136b4821bc2c84c9c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reproduz uma sequência de tons associada a uma emoção específica.  <br /></td></tr>
 <tr class="separator:a925fb784174b5136b4821bc2c84c9c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Gerencia a emissão de sons através de um buzzer. </p>
+<p>Esta classe permite controlar um buzzer conectado a um pino digital, reproduzindo tons específicos ou sequências de tons que representam diferentes "emoções" ou estados do sistema. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acba699f551138e660fce4036a084d819" name="acba699f551138e660fce4036a084d819"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acba699f551138e660fce4036a084d819">&#9670;&#160;</a></span>Beeper()</h2>
 
@@ -111,6 +119,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construtor da classe <a class="el" href="class_beeper.html" title="Gerencia a emissão de sons através de um buzzer.">Beeper</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>O pino digital onde o buzzer está conectado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -128,6 +144,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reproduz uma sequência de tons associada a uma emoção específica. </p>
+<p>A sequência de tons para cada emoção é pré-definida internamente. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">emotion</td><td>A emoção (tipo Emotion) a ser reproduzida. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

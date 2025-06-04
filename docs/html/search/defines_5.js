@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['screen_5faddress_0',['SCREEN_ADDRESS',['../_eye_animator_8hpp.html#a4dc358585abdaa9531e340bab60ae0b5',1,'EyeAnimator.hpp']]],
-  ['screen_5fheight_1',['SCREEN_HEIGHT',['../_eye_animator_8hpp.html#a6974d08a74da681b3957b2fead2608b8',1,'EyeAnimator.hpp']]],
-  ['screen_5fwidth_2',['SCREEN_WIDTH',['../_eye_animator_8hpp.html#a2cd109632a6dcccaa80b43561b1ab700',1,'EyeAnimator.hpp']]]
+  ['obstacle_5fdelay_0',['OBSTACLE_DELAY',['../_task_obstacle_8hpp.html#a0d5847ba7e7ba64bd4ec939df283b477',1,'TaskObstacle.hpp']]],
+  ['obstacle_5fpriority_1',['OBSTACLE_PRIORITY',['../_task_obstacle_8hpp.html#af59db770ebf1a53d522091308f9bb037',1,'TaskObstacle.hpp']]],
+  ['obstacle_5fstack_2',['OBSTACLE_STACK',['../_task_obstacle_8hpp.html#a04a54d279c87f8c0b04f388b2e2ea054',1,'TaskObstacle.hpp']]],
+  ['off_3',['OFF',['../_aplic_8hpp.html#a29e413f6725b2ba32d165ffaa35b01e5',1,'Aplic.hpp']]],
+  ['oled_5freset_4',['OLED_RESET',['../_eye_animator_8hpp.html#a619e07239fb3b9b14d40646ab41d5b4f',1,'EyeAnimator.hpp']]],
+  ['on_5',['ON',['../_aplic_8hpp.html#ad76d1750a6cdeebd506bfcd6752554d2',1,'Aplic.hpp']]]
 ];

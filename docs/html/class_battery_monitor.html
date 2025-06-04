@@ -78,22 +78,33 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Gerencia a leitura e cálculo do nível de carga da bateria.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_battery_monitor_8hpp_source.html">BatteryMonitor.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adf29038f82235c61e96815cbdc3e9796" id="r_adf29038f82235c61e96815cbdc3e9796"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf29038f82235c61e96815cbdc3e9796">BatteryMonitor</a> (int pin)</td></tr>
+<tr class="memdesc:adf29038f82235c61e96815cbdc3e9796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor da classe <a class="el" href="class_battery_monitor.html" title="Gerencia a leitura e cálculo do nível de carga da bateria.">BatteryMonitor</a>.  <br /></td></tr>
 <tr class="separator:adf29038f82235c61e96815cbdc3e9796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed4681f76e62bc4dade47ebc81b463d7" id="r_aed4681f76e62bc4dade47ebc81b463d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed4681f76e62bc4dade47ebc81b463d7">setMaxBatteryVoltage</a> (float voltage)</td></tr>
+<tr class="memdesc:aed4681f76e62bc4dade47ebc81b463d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a tensão máxima da bateria para o cálculo da porcentagem.  <br /></td></tr>
 <tr class="separator:aed4681f76e62bc4dade47ebc81b463d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0cae282c239bdd985746f210532fc0c" id="r_af0cae282c239bdd985746f210532fc0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0cae282c239bdd985746f210532fc0c">setMinBatteryVoltage</a> (float voltage)</td></tr>
+<tr class="memdesc:af0cae282c239bdd985746f210532fc0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a tensão mínima da bateria para o cálculo da porcentagem.  <br /></td></tr>
 <tr class="separator:af0cae282c239bdd985746f210532fc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f9a77462a407563c27270e98eb89a17" id="r_a6f9a77462a407563c27270e98eb89a17"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f9a77462a407563c27270e98eb89a17">readBatteryVoltage</a> ()</td></tr>
+<tr class="memdesc:a6f9a77462a407563c27270e98eb89a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê a tensão real da bateria diretamente do ADC e a retorna em Volts.  <br /></td></tr>
 <tr class="separator:a6f9a77462a407563c27270e98eb89a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa3df4ba3c0c13a75a05d1a37154a05c" id="r_afa3df4ba3c0c13a75a05d1a37154a05c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa3df4ba3c0c13a75a05d1a37154a05c">getBatteryPercentage</a> ()</td></tr>
+<tr class="memdesc:afa3df4ba3c0c13a75a05d1a37154a05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula e retorna o nível de carga da bateria em porcentagem.  <br /></td></tr>
 <tr class="separator:afa3df4ba3c0c13a75a05d1a37154a05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Gerencia a leitura e cálculo do nível de carga da bateria. </p>
+<p>Esta classe fornece funcionalidades para interagir com um pino ADC para ler a tensão da bateria e converter essa leitura em uma porcentagem de carga, com base em tensões mínima e máxima configuráveis. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adf29038f82235c61e96815cbdc3e9796" name="adf29038f82235c61e96815cbdc3e9796"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf29038f82235c61e96815cbdc3e9796">&#9670;&#160;</a></span>BatteryMonitor()</h2>
 
@@ -117,6 +128,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construtor da classe <a class="el" href="class_battery_monitor.html" title="Gerencia a leitura e cálculo do nível de carga da bateria.">BatteryMonitor</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>O número do pino ADC ao qual o divisor de tensão da bateria está conectado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -135,6 +154,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Calcula e retorna o nível de carga da bateria em porcentagem. </p>
+<p>O cálculo é baseado na tensão lida do ADC e nas tensões mínima e máxima configuradas. A função garante que a porcentagem fique entre 0% e 100%. </p><dl class="section return"><dt>Returns</dt><dd>O nível de carga da bateria em porcentagem (0.0 a 100.0). </dd></dl>
+
 </div>
 </div>
 <a id="a6f9a77462a407563c27270e98eb89a17" name="a6f9a77462a407563c27270e98eb89a17"></a>
@@ -151,6 +173,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Lê a tensão real da bateria diretamente do ADC e a retorna em Volts. </p>
+<dl class="section return"><dt>Returns</dt><dd>A tensão da bateria em Volts. </dd></dl>
 
 </div>
 </div>
@@ -177,6 +202,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Define a tensão máxima da bateria para o cálculo da porcentagem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">voltage</td><td>A tensão máxima em Volts que corresponde a 100% de carga. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="af0cae282c239bdd985746f210532fc0c" name="af0cae282c239bdd985746f210532fc0c"></a>
@@ -201,6 +234,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Define a tensão mínima da bateria para o cálculo da porcentagem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">voltage</td><td>A tensão mínima em Volts que corresponde a 0% de carga. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

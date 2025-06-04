@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tasks_0',['Tasks',['../group___tasks.html',1,'']]]
+  ['bateria_0',['Configurações da Bateria',['../group___battery___configs.html',1,'']]]
 ];

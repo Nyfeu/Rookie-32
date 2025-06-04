@@ -67,5 +67,38 @@ Controle pelo App:
 - Toque nos botões para ativar sons e mudar emojis 👀.
 - Ligue/desligue a lanterna utilizando o botão toggle 🔦.
 
+## Custos do Protótipo 💵
+
+| Componente                 | Preço    | 
+| -------------------------- | -------- |
+| Ponte H L298n              | R$ 17,96 |
+| Sensor HC-Sr04             | R$ 17,00 |
+| ESP32S NodeMcu ESP-12      | R$ 47,40 |
+| ESP32-CAM                  | R$ 59,90 |
+| Buzzer 5V                  | R$ 2,48  |
+| Motor DC 3-6V TTL (2x)     | R$ 15,00 |
+| Display OLED 0.96"         | R$ 27,80 |
+| Regulador de Tensão LM7805 | R$ 2,50  |
+| Módulo Display de Bateria  | R$ 10,00 |
+| Pack Bateria Li-Íon (8.4V) | R$ 40,00 |
+| Filamento ABS (1 kg)       | R$ 67,26 |
+| **Total**                  | **R$ 307,24** |
+
+## Documentação do Código com Doxygen 📄
+
+Para garantir a clareza e facilitar a manutenção e futuras colaborações no projeto Rookie-32, toda a base de código foi documentada utilizando o Doxygen. O Doxygen é uma ferramenta padrão de fato para gerar documentação a partir de código-fonte documentado.
+
+### Como funciona:
+
+- Comentários Estruturados: O código será anotado com comentários especiais formatados para o Doxygen, descrevendo funções, variáveis, estruturas e módulos.
+- Geração Automática: A partir desses comentários, o Doxygen pode gerar documentação em diversos formatos, como HTML, LaTeX, RTF, XML e man pages.
+
+Para visualizar a documentação completa, basta acessar `docs/html/index.html`
+
+## Vídeo do Projeto 🎬
+Confira o funcionamento do projeto e o Rookie-32 em ação no vídeo abaixo:
+
+&lt;iframe width="560" height="315" src="https://youtu.be/cbEZXXL1LRQ?feature=shared" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+
 ---
 

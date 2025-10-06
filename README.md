@@ -12,8 +12,7 @@
 | ---- | ---- |
 | André Solano F. R. Maiolini | 19.02012-0 |
 | Durval Consorti Soranz de Barros Santos | 22.01097-0 |
-| Leonardo Roberto Amadio | 22.01300-8 | 
-| Olivier Kishi Sauberli | 19.02220-4 |
+| Leonardo Roberto Amadio | 22.01300-8 |
 
 ## Apresentação do Projeto
 
@@ -104,9 +103,6 @@ Para garantir a clareza e facilitar a manutenção e futuras colaborações no p
 - Geração Automática: A partir desses comentários, o Doxygen pode gerar documentação em diversos formatos, como HTML, LaTeX, RTF, XML e man pages.
 
 Para visualizar a documentação completa, basta acessar `docs/html/index.html`
-
-## Vídeo do Projeto 🎬
-Confira o funcionamento do projeto e o Rookie-32 em ação no vídeo abaixo: [YouTube](https://youtu.be/cbEZXXL1LRQ?feature=shared)
 
 ---
 
